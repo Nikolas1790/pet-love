@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pet-love/static/css/main.b09bb6a4.css",
-    "main.js": "/pet-love/static/js/main.224addf9.js",
+    "main.js": "/pet-love/static/js/main.20bfc36a.js",
     "static/js/264.6945f2cb.chunk.js": "/pet-love/static/js/264.6945f2cb.chunk.js",
     "static/js/484.2d8fe9e7.chunk.js": "/pet-love/static/js/484.2d8fe9e7.chunk.js",
     "static/js/536.5f218859.chunk.js": "/pet-love/static/js/536.5f218859.chunk.js",
@@ -11,9 +11,17 @@
     "static/js/128.f1f960e2.chunk.js": "/pet-love/static/js/128.f1f960e2.chunk.js",
     "static/js/449.e70f3d66.chunk.js": "/pet-love/static/js/449.e70f3d66.chunk.js",
     "static/js/196.88c4c961.chunk.js": "/pet-love/static/js/196.88c4c961.chunk.js",
+    "static/media/Manrope-Bold.woff": "/pet-love/static/media/Manrope-Bold.b6c4aa0b0b711186d005.woff",
+    "static/media/Manrope-Medium.woff": "/pet-love/static/media/Manrope-Medium.4e55dc20921a95ef83f4.woff",
+    "static/media/Manrope-Semibold.woff": "/pet-love/static/media/Manrope-Semibold.f4e54434d986b1395b3b.woff",
+    "static/media/Manrope-ExtraBold.woff": "/pet-love/static/media/Manrope-ExtraBold.af754df8afbc222b77e8.woff",
+    "static/media/Manrope-Bold.woff2": "/pet-love/static/media/Manrope-Bold.1fc53579e1040cbf987d.woff2",
+    "static/media/Manrope-Medium.woff2": "/pet-love/static/media/Manrope-Medium.9cccfee0f8d3153ae547.woff2",
+    "static/media/Manrope-Semibold.woff2": "/pet-love/static/media/Manrope-Semibold.0d44fe833dd4c7229544.woff2",
+    "static/media/Manrope-ExtraBold.woff2": "/pet-love/static/media/Manrope-ExtraBold.a90ad203eaed8bfd3323.woff2",
     "index.html": "/pet-love/index.html",
     "main.b09bb6a4.css.map": "/pet-love/static/css/main.b09bb6a4.css.map",
-    "main.224addf9.js.map": "/pet-love/static/js/main.224addf9.js.map",
+    "main.20bfc36a.js.map": "/pet-love/static/js/main.20bfc36a.js.map",
     "264.6945f2cb.chunk.js.map": "/pet-love/static/js/264.6945f2cb.chunk.js.map",
     "484.2d8fe9e7.chunk.js.map": "/pet-love/static/js/484.2d8fe9e7.chunk.js.map",
     "536.5f218859.chunk.js.map": "/pet-love/static/js/536.5f218859.chunk.js.map",
@@ -26,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.b09bb6a4.css",
-    "static/js/main.224addf9.js"
+    "static/js/main.20bfc36a.js"
   ]
 }
