@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", 
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "SF Pro Text", 
 			"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 			"Helvetica Neue", sans-serif;
   font-size: 16px;
