@@ -1,4 +1,4 @@
-import color from 'common/GlobalColers'
+import color from 'common/GlobalColors'
 import styled from 'styled-components'
 import { Field } from 'formik';
 import { NavLink } from 'react-router-dom';
