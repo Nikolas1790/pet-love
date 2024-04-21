@@ -1,9 +1,16 @@
-import { LogoLink } from "./Logo.styled";
+import { LogoHeart, LogoLink } from "./Logo.styled";
+import sprite from '../../img/sprite.svg';
 
 export default function Logo() {
   return (           
     <LogoLink to='/home'>
-      Logo
+      petl
+        <LogoHeart>
+          <svg width={18} height={16}>
+            <use href={`${sprite}#icon-heart`} />
+          </svg>
+        </LogoHeart>
+      ve
     </LogoLink > 
   );
 };
