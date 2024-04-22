@@ -15,7 +15,6 @@ export const NavBtn = styled(NavLink)`
   border-radius: 30px;
 
   color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
-
   background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeLight : color.orangePrimary};
 
   transition: all 0.25s linear;
@@ -25,7 +24,6 @@ export const NavBtn = styled(NavLink)`
   &:hover {
     background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeDim : color.orangePrimaryActive};
     color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
-
     outline: none;
   }
 `
