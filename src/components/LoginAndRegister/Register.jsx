@@ -1,6 +1,6 @@
 import { ContentContainer } from 'common/GiobalStyles';
 import desctopRegisterDog from '../../img/loginAndRegister/DesctopRegisterCat.jpg';
-import { Container, FormContainer, PetImg } from './RegisterAndLogin.styled';
+import { Container, FormContainer, PetImg, Text, Title } from './RegisterAndLogin.styled';
 
 export default function Register() {
 
@@ -10,7 +10,9 @@ export default function Register() {
         <PetImg srcSet={desctopRegisterDog} alt="cat" />
 
         <FormContainer>
-          registerrr
+          <Title>Registration</Title>
+          
+          <Text>Thank you for your interest in our platform. </Text>
         </FormContainer>        
       </Container>
     </ContentContainer>

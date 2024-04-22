@@ -1,6 +1,6 @@
 import { ContentContainer } from 'common/GiobalStyles';
 import desctopLoginDog from '../../img/loginAndRegister/DesctopLoginDog.jpg';
-import { Container, FormContainer, PetImg } from './RegisterAndLogin.styled';
+import { Container, FormContainer, PetImg, Text, Title } from './RegisterAndLogin.styled';
 
 export default function Login() {  
   return (
@@ -9,7 +9,9 @@ export default function Login() {
         <PetImg srcSet={desctopLoginDog} alt="dog" />
 
         <FormContainer>
-          Loginnn
+          <Title>Log in</Title>
+          
+          <Text>Welcome! Please enter your credentials to login to the platform: </Text>
         </FormContainer>
       </Container>
     </ContentContainer>
