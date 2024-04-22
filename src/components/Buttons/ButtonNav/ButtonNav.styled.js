@@ -2,8 +2,8 @@ import color from 'common/GlobalColors'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const CustomBtn = styled(NavLink)`
-display: flex;
+export const NavBtn = styled(NavLink)`
+  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
@@ -13,15 +13,19 @@ display: flex;
   height: 50px;
   width: ${({ width }) => width || '100%'};
   border-radius: 30px;
-  border: 1px solid ${color.blackPrimaryLight};
+
+  color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
+
+  background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeLight : color.orangePrimary};
 
   transition: all 0.25s linear;
   &:focus {
     outline: none;
   }
   &:hover {
-    border: 1px solid ${color.orangePrimary};
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeDim : color.orangePrimaryActive};
+    color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
+
     outline: none;
   }
 `
