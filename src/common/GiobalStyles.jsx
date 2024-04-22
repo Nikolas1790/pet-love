@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, styled } from 'styled-components';
 import color from './GlobalColors';
 
 import ManropeBoldWoff from '../fonts/Manrope-Bold.woff';
@@ -105,3 +105,10 @@ html {
   overflow: hidden;
 }
 `;
+
+
+export const  ContentContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
