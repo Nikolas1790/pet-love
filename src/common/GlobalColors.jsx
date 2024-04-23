@@ -1,5 +1,6 @@
 const color = {
   blackPrimary: 'rgb(38, 38, 38)',
+  blackPrimaryTranslucent: 'rgba(38, 38, 38, 0.5)',
   blackPrimaryLight: 'rgba(38, 38, 38, 0.15)',
 
   orangePrimary: 'rgb(246, 184, 61)',

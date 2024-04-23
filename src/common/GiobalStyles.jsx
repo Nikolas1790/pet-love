@@ -1,39 +1,39 @@
 import { createGlobalStyle, styled } from 'styled-components';
 import color from './GlobalColors';
 
-import ManropeBoldWoff from '../fonts/Manrope-Bold.woff';
-import ManropeBoldWoff2 from '../fonts/Manrope-Bold.woff2';
-import ManropeExtraBoldWoff from '../fonts/Manrope-ExtraBold.woff';
-import ManropeExtraBoldWoff2 from '../fonts/Manrope-ExtraBold.woff2';
+import ManropeRegularWoff from '../fonts/Manrope-Regular.woff';
+import ManropeRegularWoff2 from '../fonts/Manrope-Regular.woff2';
 import ManropeMediumWoff from '../fonts/Manrope-Medium.woff';
 import ManropeMediumWoff2 from '../fonts/Manrope-Medium.woff2';
 import ManropeSemiboldWoff from '../fonts/Manrope-Semibold.woff';
 import ManropeSemiboldWoff2 from '../fonts/Manrope-Semibold.woff2';
+import ManropeBoldWoff from '../fonts/Manrope-Bold.woff';
+import ManropeBoldWoff2 from '../fonts/Manrope-Bold.woff2';
 
 export const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400; 
-  src: url(${ManropeBoldWoff2}) format('woff2'), url(${ManropeBoldWoff}) format('woff');
+  src: url(${ManropeRegularWoff2}) format('woff2'), url(${ManropeRegularWoff}) format('woff');
 }
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500; 
-  src: url(${ManropeExtraBoldWoff2}) format('woff2'), url(${ManropeExtraBoldWoff}) format('woff');
-}
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600; 
   src: url(${ManropeMediumWoff2}) format('woff2'), url(${ManropeMediumWoff}) format('woff');
 }
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 700; 
+  font-weight: 600; 
   src: url(${ManropeSemiboldWoff2}) format('woff2'), url(${ManropeSemiboldWoff}) format('woff');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700; 
+  src: url(${ManropeBoldWoff2}) format('woff2'), url(${ManropeBoldWoff}) format('woff');
 }
 
 *,
@@ -52,6 +52,7 @@ body {
   font-weight: 500;
   font-style: normal;
   line-height: 1.25;
+  letter-spacing: -0.03em;
   color: ${color.blackPrimary};
   background-color: ${color.mainBackground};
   width: 100%;
