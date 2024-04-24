@@ -89,10 +89,8 @@ export default function Register() {
                             </TopRightSvg>
                           )
                         )}
-                       {touched.userName && !errors.userName && <SecureMessage>Enter a valid Name</SecureMessage>}
-                       {touched.userName && errors.userName && <SecureMessage>Name</SecureMessage>}
-
-                       {/* <ErrorMessageStyled name="userName" component='div' /> */}
+                       {touched.userName && !errors.userName && <SecureMessage error={errors.userName && touched.userName ? "true" : "" }>Name is secure</SecureMessage>}
+                       {touched.userName && errors.userName && <SecureMessage error={errors.userName && touched.userName ? "true" : "" }>Enter a valid Name</SecureMessage>}
                       </FormFieldConteiner>
                         
                       <FormFieldConteiner>
@@ -115,10 +113,8 @@ export default function Register() {
                             </TopRightSvg>
                           )
                         )}
-                       {touched.email && !errors.email && <SecureMessage>Enter a valid Email</SecureMessage>}
-                       {touched.email && errors.email && <SecureMessage> Email</SecureMessage>}
-
-                       {/* <ErrorMessageStyled name="email" component='div' /> */}
+                       {touched.email && !errors.email && <SecureMessage  error={errors.email && touched.email ? "true" : "" } >Email is secure</SecureMessage>}
+                       {touched.email && errors.email && <SecureMessage  error={errors.email && touched.email ? "true" : "" }>Enter a valid Email</SecureMessage>}
                       </FormFieldConteiner>
                         
                       <FormFieldConteiner>
@@ -127,11 +123,23 @@ export default function Register() {
                           name="password" 
                           type={showPassword ? "text" : "password"} 
                           placeholder="Password" 
-                          style={{
-                            borderColor: touched.password && errors.password ? "red" : 
-                                         touched.password && !errors.password ? "green" : "defaultColor",
-                          }}
+                          error={errors.password && touched.password ? "true" : "" } 
+                          right={touched.password && !errors.password ? "true" : ""}
                         />
+                        {touched.password && (
+                          errors.password ? (
+                            <TopRightSvg right="50px" >
+                              <use href={`${sprite}#icon-cross-small`} />
+                            </TopRightSvg>
+                          ) : (
+                            <TopRightSvg right="50px" >
+                              <use href={`${sprite}#icon-check`} />
+                            </TopRightSvg>
+                          )
+                        )}
+                       {touched.password && !errors.password && <SecureMessage error={errors.password && touched.password ? "true" : "" } >Password is secure</SecureMessage>}
+                       {touched.password && errors.password && <SecureMessage error={errors.password && touched.password ? "true" : "" }>Enter a valid Password</SecureMessage>}
+                       
                         {showPassword ? (
                           <EyeSvg onMouseDown={(e) => {
                             e.preventDefault(); 
@@ -155,11 +163,23 @@ export default function Register() {
                           name="confirmPassword" 
                           type={showConfirmPassword ? "text" : "password"} 
                           placeholder="Confirm password" 
-                          style={{
-                            borderColor: touched.confirmPassword && errors.confirmPassword ? "red" : 
-                                         touched.confirmPassword && !errors.confirmPassword ? "green" : "defaultColor",
-                          }}
+                          error={errors.confirmPassword && touched.confirmPassword ? "true" : "" } 
+                          right={touched.confirmPassword && !errors.confirmPassword ? "true" : ""}
                         />
+                        {touched.confirmPassword && (
+                          errors.confirmPassword ? (
+                            <TopRightSvg  right="50px">
+                              <use href={`${sprite}#icon-cross-small`} />
+                            </TopRightSvg>
+                          ) : (
+                            <TopRightSvg  right="50px">
+                              <use href={`${sprite}#icon-check`} />
+                            </TopRightSvg>
+                          )
+                        )}
+                       {touched.confirmPassword && !errors.confirmPassword && <SecureMessage error={errors.confirmPassword && touched.confirmPassword ? "true" : "" } >Confirm password is secure</SecureMessage>}
+                       {touched.confirmPassword && errors.confirmPassword && <SecureMessage error={errors.confirmPassword && touched.confirmPassword ? "true" : "" }>Enter a valid Confirm password</SecureMessage>}
+
                         {showConfirmPassword ? (
                           <EyeSvg onMouseDown={(e) => {
                             e.preventDefault(); 
