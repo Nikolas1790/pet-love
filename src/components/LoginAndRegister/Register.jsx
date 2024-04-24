@@ -6,6 +6,7 @@ import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContai
 // import { useDispatch } from 'react-redux';
 import sprite from '../../img/sprite.svg';
 import { useState } from 'react';
+import ButtonOrange from 'components/Buttons/ButtonOrange/ButtonOrange';
 // import { toast } from 'react-toastify';
 
 const initialValues = {
@@ -153,8 +154,7 @@ export default function Register() {
                       </FormFieldConteiner>
                             
                     </FormConteiner>   
-
-                    <button>btn</button>  
+                    <ButtonOrange label='Registration' />
                   </FormFields>                    
                 </Form>
               )}

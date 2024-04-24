@@ -73,6 +73,7 @@ export const FormFields = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-bottom: 16px;
 `;
 
 export const FormConteiner = styled.div`
