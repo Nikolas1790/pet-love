@@ -2,7 +2,7 @@ import {  Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { ContentContainer } from 'common/GiobalStyles';
 import desctopRegisterDog from '../../img/loginAndRegister/DesctopRegisterCat.jpg';
-import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, PetImg, Text, Title } from './RegisterAndLogin.styled';
+import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, PetImg, SecureMessage, Text, Title, TopRightSvg } from './RegisterAndLogin.styled';
 // import { useDispatch } from 'react-redux';
 import sprite from '../../img/sprite.svg';
 import { useState } from 'react';
@@ -17,7 +17,7 @@ const initialValues = {
 };
   
 const schema = Yup.object({
-  userName: Yup.string().required('Required').min(2, "The name must have at least 2 letters"),
+  userName: Yup.string().required('Required'),
   email: Yup.string().matches(/^\w+([.-]?\w+)*@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email address').required('Required'),
   password: Yup.string().required('Required').min(7, "Password must be at least 7 characters"),
   confirmPassword: Yup.string().required("Required").oneOf([Yup.ref("password"), null], "Passwords must match"),
@@ -75,12 +75,24 @@ export default function Register() {
                           name="userName" 
                           type="userName" 
                           placeholder="Name" 
-                          error={errors.userName && touched.userName ? "true" : "false" } 
-                          style={{
-                            borderColor: touched.userName && errors.userName ? "red" : 
-                                         touched.userName && !errors.userName ? "green" : "defaultColor",
-                          }}
+                          error={errors.userName && touched.userName ? "true" : "" } 
+                          right={touched.userName && !errors.userName ? "true" : ""}
                         />
+                        {touched.userName && (
+                          errors.userName ? (
+                            <TopRightSvg>
+                              <use href={`${sprite}#icon-cross-small`} />
+                            </TopRightSvg>
+                          ) : (
+                            <TopRightSvg>
+                              <use href={`${sprite}#icon-check`} />
+                            </TopRightSvg>
+                          )
+                        )}
+                       {touched.userName && !errors.userName && <SecureMessage>Enter a valid Name</SecureMessage>}
+                       {touched.userName && errors.userName && <SecureMessage>Name</SecureMessage>}
+
+                       {/* <ErrorMessageStyled name="userName" component='div' /> */}
                       </FormFieldConteiner>
                         
                       <FormFieldConteiner>
@@ -89,12 +101,24 @@ export default function Register() {
                           name="email" 
                           type="email" 
                           placeholder="Email" 
-                          error={errors.email && touched.email ? "true" : "false" } 
-                          style={{
-                            borderColor: touched.email && errors.email ? "red" : 
-                                         touched.email && !errors.email ? "green" : "defaultColor",
-                          }}
+                          error={errors.email && touched.email ? "true" : "" } 
+                          right={touched.email && !errors.email ? "true" : ""}
                         />
+                        {touched.email && (
+                          errors.email ? (
+                            <TopRightSvg>
+                              <use href={`${sprite}#icon-cross-small`} />
+                            </TopRightSvg>
+                          ) : (
+                            <TopRightSvg>
+                              <use href={`${sprite}#icon-check`} />
+                            </TopRightSvg>
+                          )
+                        )}
+                       {touched.email && !errors.email && <SecureMessage>Enter a valid Email</SecureMessage>}
+                       {touched.email && errors.email && <SecureMessage> Email</SecureMessage>}
+
+                       {/* <ErrorMessageStyled name="email" component='div' /> */}
                       </FormFieldConteiner>
                         
                       <FormFieldConteiner>

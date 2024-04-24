@@ -1,5 +1,5 @@
 import color from 'common/GlobalColors'
-import { Field } from 'formik'
+import {  Field } from 'formik'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -92,6 +92,10 @@ export const FormField = styled(Field)`
   width: 100%;
   height: 52px;
   border: 1px solid rgba(38, 38, 38, 0.15);
+  border: 1px solid	${({error, right}) => (error === "true" ? color.redWrong :(right ==="true" ? color.greenRight : color.blackPrimaryLight))};
+
+
+
   border-radius: 30px;
   padding: 16px;
   outline: none;
@@ -121,3 +125,42 @@ export const AuthorizationLink = styled(NavLink)`
 export const AuthorizationLinkSpan = styled.span`
   color: ${color.orangePrimary};
 `;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const TopRightSvg = styled.svg`
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  /* stroke: ${color.blackPrimary}; */
+  fill: none;
+`;
+
+export const SecureMessage = styled.p`
+  font-size: 10px;
+  color: ${color.redWrong};
+  padding: 4px 0px 0px 14px;
+`;
+// export const ErrorMessageStyled = styled(ErrorMessage)`
+//   font-size: 10px;
+//   color: red;
+//   padding: 4px 0px 0px 14px;
+// `;

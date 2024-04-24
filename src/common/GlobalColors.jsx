@@ -11,7 +11,8 @@ const color = {
   white: 'rgb(255, 255, 255)',
   mainBackground: ' rgb(249, 249, 249)',
 
-  // blackModalColr: 'rgba(29, 30, 33, 0.8)',
+  greenRight: 'rgb(8, 170, 131)',
+  redWrong: 'rgb(239, 36, 71)',
 };
   
 export default color; 
