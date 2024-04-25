@@ -85,7 +85,7 @@ export const Text = styled.p`
 export const FormFields = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: ${({page}) => (page === "login" ? '64px' : '32px')};
   margin-bottom: 16px;
 `;
 
