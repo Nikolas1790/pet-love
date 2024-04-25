@@ -13,7 +13,6 @@ export default function Header() {
       <HeaderBlock>
         <Logo />
         <Nav />   
-
         { token ?  <UserNav /> :<AuthNav />}
       </HeaderBlock> 
     </HeaderContainer>
