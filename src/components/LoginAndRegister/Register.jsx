@@ -2,26 +2,28 @@ import {  Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { ContentContainer } from 'common/GiobalStyles';
 import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, ImgContainer, PetImg, SecureMessage, SmsImg, Text, Title, TopRightSvg } from './RegisterAndLogin.styled';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import sprite from '../../img/sprite.svg';
 import { useState } from 'react';
 import ButtonOrange from 'components/Buttons/ButtonOrange/ButtonOrange';
-// import { toast } from 'react-toastify';
-
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { register } from '../../redux/auth/operationsAuth';
 
 
 import desctopRegisterDog from '../../img/loginAndRegister/DesctopRegisterCat.jpg';
 import registerBlock from '../../img/loginAndRegister/registerBlock.jpg';
 
+
 const initialValues = {
-  userName: '',
+  name: '',
   email: '',
   password: '',
   confirmPassword: '',
 };
   
 const schema = Yup.object({
-  userName: Yup.string().required('Required'),
+  name: Yup.string().required('Required'),
   email: Yup.string().matches(/^\w+([.-]?\w+)*@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email address').required('Required'),
   password: Yup.string().required('Required').min(7, "Password must be at least 7 characters"),
   confirmPassword: Yup.string().required("Required").oneOf([Yup.ref("password"), null], "Passwords must match"),
@@ -31,8 +33,8 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(false);  
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -42,15 +44,17 @@ export default function Register() {
   }; 
   
   const handleSubmit = async (values) => {
+    const {  confirmPassword, ...dataToSend } = values; 
+
     try {
-      // await dispatch(register(values)).unwrap();
-      // navigate('/dashboard');
+      await dispatch(register( dataToSend)).unwrap();
+      navigate('/profile');
     } catch (error) {
-      // if (error === "Request failed with status code 409") {
-      //   toast.error("User with this email already exists.");
-      // } else {
-      //   toast.error("Registration failed. Please try again later.");
-      // }
+      if (error === "Request failed with status code 409") {
+        toast.error("User with this email already exists.");
+      } else {
+        toast.error("Registration failed. Please try again later.");
+      }
     }
   }
 
@@ -66,10 +70,6 @@ export default function Register() {
           <Title>Registration</Title>          
           <Text>Thank you for your interest in our platform. </Text>
 
-
-
-
-
             <Formik  initialValues = {initialValues} validationSchema={schema} onSubmit={handleSubmit} >
               {({ errors, touched }) => (
                 <Form>
@@ -78,15 +78,15 @@ export default function Register() {
               
                       <FormFieldConteiner>
                         <FormField
-                          id="userName" 
-                          name="userName" 
-                          type="userName" 
+                          id="name" 
+                          name="name" 
+                          type="name" 
                           placeholder="Name" 
-                          error={errors.userName && touched.userName ? "true" : "" } 
-                          right={touched.userName && !errors.userName ? "true" : ""}
+                          error={errors.name && touched.name ? "true" : "" } 
+                          right={touched.name && !errors.name ? "true" : ""}
                         />
-                        {touched.userName && (
-                          errors.userName ? (
+                        {touched.namee && (
+                          errors.name ? (
                             <TopRightSvg>
                               <use href={`${sprite}#icon-cross-small`} />
                             </TopRightSvg>
@@ -96,8 +96,8 @@ export default function Register() {
                             </TopRightSvg>
                           )
                         )}
-                       {touched.userName && !errors.userName && <SecureMessage error={errors.userName && touched.userName ? "true" : "" }>Name is secure</SecureMessage>}
-                       {touched.userName && errors.userName && <SecureMessage error={errors.userName && touched.userName ? "true" : "" }>Enter a valid Name</SecureMessage>}
+                       {touched.name && !errors.name && <SecureMessage error={errors.name && touched.name ? "true" : "" }>Name is secure</SecureMessage>}
+                       {touched.name && errors.name && <SecureMessage error={errors.name && touched.name ? "true" : "" }>Enter a valid Name</SecureMessage>}
                       </FormFieldConteiner>
                         
                       <FormFieldConteiner>
@@ -209,15 +209,9 @@ export default function Register() {
                   </FormFields>                    
                 </Form>
               )}
-            </Formik>
-            
+            </Formik>            
             <AuthorizationLink to="/login" >Already have an account? <AuthorizationLinkSpan>Login</AuthorizationLinkSpan></AuthorizationLink>
        
-
-
-
-
-
         </FormContainer>        
       </Container>
     </ContentContainer>

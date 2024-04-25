@@ -8,6 +8,10 @@ import desctopLoginDog from '../../img/loginAndRegister/DesctopLoginDog.jpg';
 import loginBlock from '../../img/loginAndRegister/loginBlock.jpg';
 import { useState } from 'react';
 import ButtonOrange from 'components/Buttons/ButtonOrange/ButtonOrange';
+import { logIn } from '../../redux/auth/operationsAuth';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const initialValues = {
   email: '',
@@ -22,19 +26,22 @@ const schema = Yup.object({
 export default function Login() {  
   const [showPassword, setShowPassword] = useState(false);  
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };  
   const handleSubmit = async (values) => {
     try {
-      // await dispatch(register(values)).unwrap();
-      // navigate('/dashboard');
+      await dispatch(logIn(values)).unwrap();
+      navigate('/profile');
     } catch (error) {
-      // if (error === "Request failed with status code 409") {
-      //   toast.error("User with this email already exists.");
-      // } else {
-      //   toast.error("Registration failed. Please try again later.");
-      // }
+      if (error === "Request failed with status code 409") {
+        toast.error("User with this email already exists.");
+      } else {
+        toast.error("Registration failed. Please try again later.");
+      }
     }
   }
   return (
