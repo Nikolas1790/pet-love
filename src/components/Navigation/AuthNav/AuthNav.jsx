@@ -1,5 +1,5 @@
-import { NavConteiner } from "./AuthNav.styled";
 import ButtonNav from "components/Buttons/ButtonNav/ButtonNav";
+import { NavConteiner } from "../Navigation.styled";
 
 export default function AuthNav() {
   return (

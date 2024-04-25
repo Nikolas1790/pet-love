@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
-export const NavConteiner = styled.nav`
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
-`
+// export const NavConteiner = styled.nav`
+//   display: flex;
+//   gap: 8px;
+//   margin-left: auto;
+// `
