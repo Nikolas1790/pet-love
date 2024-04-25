@@ -10,13 +10,26 @@ export const Container = styled.div`
   height: 686px;
   padding: 0  32px 32px 32px;  
 `
-
+///////////////// ing /////////////////////////////
+export const ImgContainer = styled.div`
+  position: relative;
+`
 export const PetImg = styled.img` 
   width: 592px;
   height: 654px;
   border-radius: 60px;
 `
+export const SmsImg = styled.img` 
+  position: absolute;
+  bottom: 97px;
+  left: 61px;
+  width: 294px;
+  height: 121px;
+  border-radius: 20px;
+`
 
+
+///////////////// ing /////////////////////////////
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column; /* Устанавливаем направление столбца */

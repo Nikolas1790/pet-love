@@ -1,13 +1,17 @@
 import {  Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { ContentContainer } from 'common/GiobalStyles';
-import desctopRegisterDog from '../../img/loginAndRegister/DesctopRegisterCat.jpg';
-import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, PetImg, SecureMessage, Text, Title, TopRightSvg } from './RegisterAndLogin.styled';
+import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, ImgContainer, PetImg, SecureMessage, SmsImg, Text, Title, TopRightSvg } from './RegisterAndLogin.styled';
 // import { useDispatch } from 'react-redux';
 import sprite from '../../img/sprite.svg';
 import { useState } from 'react';
 import ButtonOrange from 'components/Buttons/ButtonOrange/ButtonOrange';
 // import { toast } from 'react-toastify';
+
+
+
+import desctopRegisterDog from '../../img/loginAndRegister/DesctopRegisterCat.jpg';
+import registerBlock from '../../img/loginAndRegister/registerBlock.jpg';
 
 const initialValues = {
   userName: '',
@@ -53,7 +57,10 @@ export default function Register() {
   return (
     <ContentContainer>
       <Container>
-        <PetImg srcSet={desctopRegisterDog} alt="cat" />
+        <ImgContainer>
+          <PetImg srcSet={desctopRegisterDog} alt="cat" />
+          <SmsImg src={registerBlock} alt='message' />
+        </ImgContainer>
 
         <FormContainer>
           <Title>Registration</Title>          
@@ -206,22 +213,6 @@ export default function Register() {
             
             <AuthorizationLink to="/login" >Already have an account? <AuthorizationLinkSpan>Login</AuthorizationLinkSpan></AuthorizationLink>
        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
