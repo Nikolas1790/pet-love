@@ -151,7 +151,7 @@ export const AuthorizationLink = styled(NavLink)`
   font-weight: 700;
   line-height: 1.43;
   letter-spacing: -0.03em;
-  color: ${color.blackPrimaryTranslucent};
+  color: ${color.blackPrimaryFiftyPercebt};
 `;
 
 export const AuthorizationLinkSpan = styled.span`

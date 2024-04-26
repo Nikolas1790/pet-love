@@ -1,4 +1,4 @@
-import color from "common/GlobalColers";
+import color from "common/GlobalColors";
 import styled from "styled-components";
 
 export const Modal = styled.div`
@@ -10,7 +10,7 @@ export const Modal = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${color.blackColorSecondary};    //
+    background-color: ${color.blackPrimaryThirtyPercent};    //
     overflow: auto;
     z-index:5;
 
