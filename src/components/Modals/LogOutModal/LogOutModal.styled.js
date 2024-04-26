@@ -31,7 +31,11 @@ export const TitleLodOut = styled.h2`
 
 `;
 
-
+export const BtnsConteiner = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
 
 
 
