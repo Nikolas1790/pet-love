@@ -1,7 +1,9 @@
+import { ContentContainer } from "common/GiobalStyles";
+
 export default function Notices() {
   return (
-    <div>
+    <ContentContainer>
 Noticesss
-    </div>
+    </ContentContainer>
   );
 }  

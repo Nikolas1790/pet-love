@@ -1,7 +1,7 @@
 import {  Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { ContentContainer } from 'common/GiobalStyles';
-import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, ImgContainer, PetImg, SecureMessage, SmsImg, Text, Title, TopRightSvg } from './RegisterAndLogin.styled';
+import { ContentContainer, Title } from 'common/GiobalStyles';
+import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, ImgContainer, PetImg, SecureMessage, SmsImg, Text, TopRightSvg } from './RegisterAndLogin.styled';
 import { useDispatch } from 'react-redux';
 import sprite from '../../img/sprite.svg';
 import { useState } from 'react';

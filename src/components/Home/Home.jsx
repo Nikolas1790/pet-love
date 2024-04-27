@@ -1,8 +1,9 @@
+import { ContentContainer } from "common/GiobalStyles";
 
 export default function Home() {  
   return (
-    <div>
+    <ContentContainer>
       Homeee
-    </div>
+    </ContentContainer>
   );
 }

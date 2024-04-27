@@ -42,11 +42,10 @@ export const App = () => {
           <Route index element={<Navigate replace to="/login" />} />
           <Route path="/register" element={<RestrictedRoute redirectTo='/home' component={<Register/>} />} />
           <Route path="/login" element={<RestrictedRoute redirectTo="/home" component={<Login />} />} />
-          <Route path="/home" element={<RestrictedRoute redirectTo="/home" component={<Home />} />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/news" element={<News />} />
           <Route path="/notices" element={<Notices />} />
-          <Route path="/friends" element={<Friends />}  />
-          
+          <Route path="/friends" element={<Friends />}  />          
           <Route path="/profile" element={<PrivateRoute redirectTo="/profile" component={<Profile />} />} />
           <Route path="/add-pet" element={<PrivateRoute redirectTo="/add-pet" component={<AddPet />} />} />
           <Route path="*" element={<NotFoundPage />} />

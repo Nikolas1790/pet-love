@@ -1,7 +1,9 @@
+import { ContentContainer } from "common/GiobalStyles";
+
 export default function News() {
   return (
-    <div>
+    <ContentContainer>
       Newsss
-    </div>
+    </ContentContainer>
   );
 }  

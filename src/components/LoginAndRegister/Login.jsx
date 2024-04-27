@@ -1,7 +1,7 @@
 import {  Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { ContentContainer } from 'common/GiobalStyles';
-import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, ImgContainer, PetImg, SecureMessage, SmsImg, Text, Title, TopRightSvg } from './RegisterAndLogin.styled';
+import { ContentContainer, Title } from 'common/GiobalStyles';
+import { AuthorizationLink, AuthorizationLinkSpan, Container, EyeSvg, FormContainer, FormConteiner, FormField, FormFieldConteiner, FormFields, ImgContainer, PetImg, SecureMessage, SmsImg, Text, TopRightSvg } from './RegisterAndLogin.styled';
 import sprite from '../../img/sprite.svg';
 
 import desctopLoginDog from '../../img/loginAndRegister/DesctopLoginDog.jpg';

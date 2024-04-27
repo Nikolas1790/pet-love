@@ -107,9 +107,25 @@ html {
 }
 `;
 
-
 export const  ContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+export const  ContentBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 1280px;
+  padding: 64px 64px 80px 64px;  
+`
+
+export const Title = styled.h1`
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+ 
+
 `

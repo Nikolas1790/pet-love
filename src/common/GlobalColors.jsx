@@ -5,7 +5,6 @@ const color = {
   blackPrimaryLight: 'rgba(38, 38, 38, 0.15)',
   blackPrimarySuperLight: 'rgba(38, 38, 38, 0.05)',
 
-
   orangePrimary: 'rgb(246, 184, 61)',
   orangePrimaryActive: 'rgb(249, 176, 32)',
   orangeLight: 'rgb(255, 244, 223)',
