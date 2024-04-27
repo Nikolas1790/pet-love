@@ -43,9 +43,9 @@ export const App = () => {
           <Route path="/register" element={<RestrictedRoute redirectTo='/home' component={<Register/>} />} />
           <Route path="/login" element={<RestrictedRoute redirectTo="/home" component={<Login />} />} />
           <Route path="/home" element={<RestrictedRoute redirectTo="/home" component={<Home />} />} />
-          <Route path="/news" element={<RestrictedRoute redirectTo="/news" component={<News />} />} />
-          <Route path="/notices" element={<RestrictedRoute redirectTo="/notices" component={<Notices />} />} />
-          <Route path="/friends" element={<RestrictedRoute redirectTo="/friends" component={<Friends />} />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/notices" element={<Notices />} />
+          <Route path="/friends" element={<Friends />}  />
           
           <Route path="/profile" element={<PrivateRoute redirectTo="/profile" component={<Profile />} />} />
           <Route path="/add-pet" element={<PrivateRoute redirectTo="/add-pet" component={<AddPet />} />} />
