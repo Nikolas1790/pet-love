@@ -8,14 +8,16 @@ import FriendsItem from '../FriendsItem/FriendsItem';
 export default function FriendsList() {
   const dispatch = useDispatch();
   const friendsData = useSelector(selectFriendsInf);
+
   useEffect(() => {
     dispatch(friendsInf())
   }, [dispatch])
   console.log(friendsData)
+
   return (
     <FriendsListContainer>
-      {friendsData.map((friend, index) => (
-        <FriendsItem key={index} friend={friend}/>
+      {friendsData.map((friend) => (
+        <FriendsItem key={friend._id} friend={friend}/>
       ))}
     </FriendsListContainer>
   );

@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const FriendsListContainer = styled.ul`
   display: flex;
-  gap: 20px 28px;
+  flex-wrap: wrap;
+  gap: 28px 19px;
+ 
 
 `
