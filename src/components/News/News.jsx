@@ -1,4 +1,4 @@
-import { ContentContainer } from "common/GiobalStyles";
+import { ContentBlock, ContentContainer, Title } from "common/GiobalStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { selectNewsInf } from "../../redux/petLove/selector";
 import { newsInf } from "../../redux/petLove/operations";
@@ -14,7 +14,10 @@ export default function News() {
   console.log(orders)
   return (
     <ContentContainer>
-      Newsss
+      <ContentBlock>
+        <Title>News</Title>
+        Newsss
+      </ContentBlock>
     </ContentContainer>
   );
 }  

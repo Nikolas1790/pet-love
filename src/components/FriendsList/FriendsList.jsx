@@ -12,7 +12,7 @@ export default function FriendsList() {
   useEffect(() => {
     dispatch(friendsInf())
   }, [dispatch])
-  // console.log(friendsData)
+  console.log(friendsData)
 
   return (
     <FriendsListContainer>
