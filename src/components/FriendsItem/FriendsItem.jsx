@@ -1,21 +1,15 @@
 import { ImgContainer, ItemContacts, ItemContainer, ItemSpan, ItemTitle, LinkContact, TimeContainer } from "./FriendsItem.styled";
 
 export default function FriendsItem({friend}) {
-  console.log(friend?.workDays)
-
   function getWorkingHours(workDays) {
-    if (!workDays || !Array.isArray(workDays)) {
-      return "Day and night"; // або інше значення за замовчуванням, яке ви вважаєте за потрібне
-    }
     if (!workDays || !Array.isArray(workDays) || workDays.length === 0) {
       return "Day and night";
-    }
-
-     // Шукаємо перший об'єкт, де isOpen true
-  const openDay = workDays.find(day => day.isOpen);
+    };
+    const openDay = workDays.find(day => day.isOpen);
     
     return openDay ? `${openDay.from} - ${openDay.to}` : null;
-  }
+  };
+
   const workingHours = getWorkingHours(friend.workDays);
   
   return (
@@ -40,7 +34,6 @@ export default function FriendsItem({friend}) {
       </div>   
 
       <TimeContainer>
-        {/* <p>{friend?.workDays?.isOpen ? friend.workDays.from  : "Day and night" }</p> */}
         {workingHours}
       </TimeContainer>   
     </ItemContainer> 

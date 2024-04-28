@@ -11,7 +11,7 @@ export default function FriendsList() {
 
   useEffect(() => {
     dispatch(friendsInf())
-  }, [dispatch])
+  }, [dispatch]);
   console.log(friendsData)
 
   return (

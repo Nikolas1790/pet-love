@@ -1,22 +1,12 @@
 import { ContentBlock, ContentContainer, Title } from "common/GiobalStyles";
-import { useDispatch, useSelector } from "react-redux";
-import { selectNewsInf } from "../../redux/petLove/selector";
-import { newsInf } from "../../redux/petLove/operations";
-import { useEffect } from "react";
+import NewsList from "components/NewsList/NewsList";
 
 export default function News() {
-  const dispatch = useDispatch();
-  const orders = useSelector(selectNewsInf);  
-
-  useEffect(() => {
-    dispatch(newsInf({ page: 1, limit: 6, keyword: ''  }));
-  }, [dispatch]);
-  console.log(orders)
   return (
     <ContentContainer>
       <ContentBlock>
         <Title>News</Title>
-        Newsss
+        <NewsList />
       </ContentBlock>
     </ContentContainer>
   );
