@@ -25,12 +25,12 @@ export const ItemTitle = styled.h3`
 `
 
 export const ItemContacts = styled.p`
-width: 222px;
+  width: 222px;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  white-space: nowrap;        // Содержимое в одну строку без переносов
-  overflow: hidden;           // Скрыть содержимое, выходящее за пределы элемента
+  white-space: nowrap;        
+  overflow: hidden;         
   text-overflow: ellipsis; 
 
   &:not(:last-child) {
@@ -40,4 +40,11 @@ width: 222px;
 export const ItemSpan = styled.span`
   color: ${color.blackPrimaryFiftyPercebt};
 
+`
+
+export const LinkContact = styled.a`
+  transition: all 0.25s linear; 
+  &:hover {
+    color: ${color.orangePrimary};
+  }
 `
