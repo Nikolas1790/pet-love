@@ -1,6 +1,6 @@
 export const selectFriendsInf = (state) => state.pet.friendsData;
 
-// export const selectOrdersInf = (state) => state.pharmacy.ordersData;
+export const selectNewsInf = (state) => state.pet.newsData;
 
 // export const selectSuppliersInf = (state) => state.pharmacy.suppliersData;
 

@@ -54,14 +54,6 @@ export const Text = styled.p`
 
 
 
-
-
-// export const FormBlock = styled.div`
-//   @media (min-width: 768px) {
-//     width: 323px;
-//   }
-// `
-
 export const FormFields = styled.div`
   display: flex;
   flex-direction: column;
@@ -121,10 +113,6 @@ export const SecureMessage = styled.p`
 
 
 
-
-
-
-
 export const AuthorizationLink = styled(NavLink)`
   margin: 0 auto;
   font-size: 14px;
@@ -137,21 +125,3 @@ export const AuthorizationLink = styled(NavLink)`
 export const AuthorizationLinkSpan = styled.span`
   color: ${color.orangePrimary};
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
