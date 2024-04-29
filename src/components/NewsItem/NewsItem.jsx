@@ -1,4 +1,4 @@
-import { ArticleContainer, ImgContainer, LinkContainer, TextArticle, TitleArticle } from "./NewsItem.styled";
+import { ArticleContainer, DateArticle, ImgContainer, LinkContainer, LinkNewPageArticle, TextArticle, TitleArticle } from "./NewsItem.styled";
 
 export default function NewsItem({article}) {  
     // Функция для форматирования даты
@@ -16,8 +16,8 @@ export default function NewsItem({article}) {
       <TitleArticle>{article.title}</TitleArticle>
       <TextArticle>{article.text}</TextArticle>
       <LinkContainer>
-        <p>{formatDate(article.date)}</p>
-        <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
+        <DateArticle>{formatDate(article.date)}</DateArticle>
+        <LinkNewPageArticle href={article.url} target="_blank" rel="noopener noreferrer">Read more</LinkNewPageArticle>
       </LinkContainer>
     </ArticleContainer> 
   );
