@@ -10,7 +10,7 @@ export default function NewsList() {
   const newsData = useSelector(selectNewsInf);  
 
   useEffect(() => {
-    dispatch(newsInf({ page: 1, limit: 6, keyword: ''  }));
+    dispatch(newsInf({ page: 10, limit: 6, keyword: ''  }));
   }, [dispatch]);
   console.log(newsData?.results)
 
