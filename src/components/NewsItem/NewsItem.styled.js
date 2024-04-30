@@ -13,7 +13,7 @@ export const ImgContainer = styled.img`
   width: 361px;
   height: 226px;
   border-radius: 15px; 
-  background: pink;
+  background: ${color.orangePrimary};
   margin-bottom: 28px;
 `
 
