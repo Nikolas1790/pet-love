@@ -1,4 +1,4 @@
-import { PaginationButton, PaginationConteiner, PaginationSvg } from "./Pagination.styled";
+import { PaginationButton, PaginationConteiner, PaginationSvg, ThreeDots } from "./Pagination.styled";
 import sprite from '../../img/sprite.svg';
 
 export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
@@ -38,11 +38,11 @@ console.log(pages)
         </PaginationSvg>
       </PaginationButton>
       {pages.map(page => {
-        if (page < currentPage + 3 && page > currentPage - 2) {
+        if (page < currentPage + 2 && page > currentPage - 2) {
           return (
             <PaginationButton
               key={page}
-              disabled={currentPage === page}
+              dis={currentPage === page}
               onClick={() => onPageChange(page)}
             >
               {page}
@@ -52,7 +52,7 @@ console.log(pages)
           return null;
         }
       })}
-      {currentPage < totalPages && totalPages > maxPageNumberLimit && <span>...</span>}
+      {currentPage < totalPages && totalPages > maxPageNumberLimit && <ThreeDots>...</ThreeDots>}
       <PaginationButton disabled={currentPage === totalPages} onClick={handleNextBtn}>
          <PaginationSvg >
            <use href={`${sprite}#icon-slider-right`} />

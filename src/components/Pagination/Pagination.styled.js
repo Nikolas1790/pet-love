@@ -15,13 +15,14 @@ export const PaginationButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: ${({ disabled, current }) => (disabled && current ? 0 : 1)};
-  background: ${({disabled}) => disabled ? color.orangePrimary :  "transporent"}; /* Более тусклый фон для активной (отключенной) страницы */
-  margin-right:  ${({current }) => current === 'last' ? '0' : '17px'};
-  width: 18px;
-  height: ${({current }) => current ?  '14px' : '18px'};
-  border-radius: 4px;
-  color: ${color.blackPrimary};
+  /* opacity: ${({ disabled, current }) => (disabled && current ? 0 : 1)}; */
+  background: ${({dis}) => dis ? color.orangePrimary :  "transporent"}; 
+  margin-right:  ${({current }) => current === 'last' ? '0' : '10px'};
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: ${({dis}) => dis ? color.white : color.blackPrimary };
+  border: 1px solid rgba(38, 38, 38, 0.05);
 
   transition: all 0.25s linear;
   &:focus {
@@ -34,14 +35,26 @@ export const PaginationButton = styled.button`
   &:disabled {
     cursor: default;
     color: ${color.white};
-    scale: 1.25;
+    /* scale: 1.25; */
     box-shadow: none;
   }
 `;
 
+export const ThreeDots = styled.span`
+display: flex;
+align-items: center;
+justify-content: center;
+  margin-right:  10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  /* background: red; */
+  border: 1px solid rgba(38, 38, 38, 0.05);
+`
+
 export const PaginationSvg = styled.svg`
-  width: 16px;
-  height: 16px;
+  width: 44px;
+  height: 44px;
   stroke: ${color.blackColorSecondary};
 
   transition: all 0.25s linear;
