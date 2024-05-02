@@ -15,12 +15,12 @@ export const PaginationButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${({dis}) => dis ? color.orangePrimary :  "transporent"}; 
+  background: ${({dis}) =>( dis ? color.orangePrimary :  "transporent")}; 
   margin-right:  ${({current }) => current === 'last' ? '0' : '10px'};
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  color: ${({dis}) => dis ? color.white : color.blackPrimary };
+  color: ${({dis}) => (dis ? color.white : color.blackPrimary) };
   border: 1px solid rgba(38, 38, 38, 0.05);
   fill: ${color.blackPrimary};
   transition: all 0.25s linear;
@@ -28,7 +28,7 @@ export const PaginationButton = styled.button`
     outline: none;
   }
   &:hover {
-    box-shadow: ${({ isClicked }) => (isClicked ? 'none' : '0px 4px 8px rgba(0, 0, 0, 0.7)')};
+   scale: ${({ disabled }) => (disabled ? 'none' : 1.1)};
   }
 
   &:disabled {
@@ -48,7 +48,6 @@ justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  /* background: red; */
   border: 1px solid rgba(38, 38, 38, 0.05);
 `
 

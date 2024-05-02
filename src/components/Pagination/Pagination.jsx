@@ -40,7 +40,7 @@ export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       {visiblePages.map(page => (
         <PaginationButton
           key={page}
-          dis={currentPage === page}
+          dis={currentPage === page ? "true" : ''} 
           onClick={() => onPageChange(page)}
         >
           {page}
