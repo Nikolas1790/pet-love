@@ -15,7 +15,6 @@ export const PaginationButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* opacity: ${({ disabled, current }) => (disabled && current ? 0 : 1)}; */
   background: ${({dis}) => dis ? color.orangePrimary :  "transporent"}; 
   margin-right:  ${({current }) => current === 'last' ? '0' : '10px'};
   width: 44px;
@@ -23,7 +22,8 @@ export const PaginationButton = styled.button`
   border-radius: 50%;
   color: ${({dis}) => dis ? color.white : color.blackPrimary };
   border: 1px solid rgba(38, 38, 38, 0.05);
-
+  /* stroke: blue; */
+  fill: ${color.blackPrimary};
   transition: all 0.25s linear;
   &:focus {
     outline: none;
@@ -35,8 +35,9 @@ export const PaginationButton = styled.button`
   &:disabled {
     cursor: default;
     color: ${color.white};
-    /* scale: 1.25; */
     box-shadow: none;
+  fill: ${color.blackPrimaryFiftyPercebt};
+
   }
 `;
 
@@ -55,7 +56,6 @@ justify-content: center;
 export const PaginationSvg = styled.svg`
   width: 44px;
   height: 44px;
-  stroke: ${color.blackColorSecondary};
 
   transition: all 0.25s linear;
   &:focus,
