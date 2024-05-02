@@ -22,7 +22,6 @@ export const PaginationButton = styled.button`
   border-radius: 50%;
   color: ${({dis}) => dis ? color.white : color.blackPrimary };
   border: 1px solid rgba(38, 38, 38, 0.05);
-  /* stroke: blue; */
   fill: ${color.blackPrimary};
   transition: all 0.25s linear;
   &:focus {
