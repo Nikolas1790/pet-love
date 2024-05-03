@@ -16,7 +16,7 @@ export default function LogOut({ closeModals }) {
   const handleButtonClick = async () => {
     try {
       await dispatch(logOut()).unwrap();
-      navigate('/login');
+      navigate('/home');
     } catch (error) {
       toast.error("Log out failed. Something went wrong.");
     }

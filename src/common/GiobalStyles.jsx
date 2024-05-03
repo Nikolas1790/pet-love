@@ -126,6 +126,4 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
- 
-
 `
