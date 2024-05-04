@@ -7,7 +7,7 @@ export const HomeContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 1280px;
-  background: pink;
+  /* background: pink; */
   padding: 0 32px 16px 32px;
 `
 export const HomeTitleBlock = styled.div`

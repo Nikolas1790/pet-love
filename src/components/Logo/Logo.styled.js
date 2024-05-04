@@ -11,6 +11,6 @@ export const LogoLink = styled(NavLink)`
 
 export const LogoHeart = styled.span`
   margin: 0 2.3px;
-  fill: ${color.orangePrimary};
+  fill: ${({ isHome }) => isHome  ? color.white : color.orangePrimary};
 `; 
 

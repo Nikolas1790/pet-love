@@ -1,3 +1,4 @@
+import color from 'common/GlobalColors'
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
@@ -10,8 +11,14 @@ export const HeaderBlock = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  padding: 32px 64px; 
-  width: 1280px;
+  padding: 32px; 
+  width: 1216px;
+/* background: yellow;
+border-radius: 60px 60px 0 0;  */
+background: ${({ isHome }) => isHome ? color.orangePrimary : 'none'};
+  border-radius: ${({ isHome }) => isHome ? '60px 60px 0 0' : '0'};
+color: ${({ isHome }) => isHome ? color.white : color.blackPrimary};
+
 
   /* @media (min-width: 768px) {
     width: 768px;
