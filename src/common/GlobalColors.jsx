@@ -11,6 +11,7 @@ const color = {
   orangeDim: ' rgb(251, 231, 193)',
 
   white: 'rgb(255, 255, 255)',
+  whiteTransparencyZeroFour: 'rgba(255, 255, 255, 0.4)',
   mainBackground: ' rgb(249, 249, 249)',
 
   greenRight: 'rgb(8, 170, 131)',
