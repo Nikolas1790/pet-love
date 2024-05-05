@@ -13,7 +13,7 @@ export const NavBtn = styled(NavLink)`
   height: 50px;
   width: ${({ width }) => width || '100%'};
   border-radius: 30px;
-
+  border: 1px solid ${({ home }) => home  ? color.whiteTransparencyZeroFour : 'none'};
   color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
   background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeLight : color.orangePrimary};
 

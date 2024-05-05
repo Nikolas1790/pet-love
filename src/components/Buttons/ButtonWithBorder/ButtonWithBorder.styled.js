@@ -13,7 +13,7 @@ display: flex;
   height: 50px;
   width: ${({ width }) => width || '100%'};
   border-radius: 30px;
-  border: 1px solid ${color.blackPrimaryLight};
+  border: 1px solid ${({ home }) => home  ? color.whiteTransparencyZeroFour : color.blackPrimaryLight};
 
   transition: all 0.25s linear;
   &:focus {

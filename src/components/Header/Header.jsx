@@ -14,10 +14,10 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <HeaderBlock isHome={isHome}>
-        <Logo isHome={isHome} />
-        <Nav />   
-        { token ?  <UserNav /> :<AuthNav />}
+      <HeaderBlock home={isHome ? 'true' : ''}>
+        <Logo home={isHome ? 'true' : ''} />
+        <Nav home={isHome ? 'true' : ''} />   
+        { token ?  <UserNav /> :<AuthNav home={isHome ? 'true' : ''} />}
       </HeaderBlock> 
     </HeaderContainer>
   );

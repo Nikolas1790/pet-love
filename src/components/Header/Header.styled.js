@@ -15,9 +15,9 @@ export const HeaderBlock = styled.div`
   width: 1216px;
 /* background: yellow;
 border-radius: 60px 60px 0 0;  */
-background: ${({ isHome }) => isHome ? color.orangePrimary : 'none'};
-  border-radius: ${({ isHome }) => isHome ? '60px 60px 0 0' : '0'};
-color: ${({ isHome }) => isHome ? color.white : color.blackPrimary};
+  background: ${({ home }) => home ? color.orangePrimary : 'none'};
+  border-radius: ${({ home }) => home ? '60px 60px 0 0' : '0'};
+  color: ${({ home }) => home ? color.white : color.blackPrimary};
 
 
   /* @media (min-width: 768px) {
