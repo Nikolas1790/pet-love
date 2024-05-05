@@ -4,15 +4,14 @@ import PortalModal from "components/PortalModal/PortalModal";
 import LogOut from "components/Modals/LogOutModal/LogOutModal";
 import { useState } from "react";
 
-export default function UserNav() {
+export default function UserNav({home}) {
   const [openModal, setOpenModal] = useState(false);
   const handleLogout = () => {
-    // menu === "mob" && closeModal();    
     setOpenModal(true)
   };
   return (
       <NavConteiner>
-        <ButtonOrange label='LOG OUT' onClick={() => handleLogout()} width='136px' />
+        {!home && <ButtonOrange label='LOG OUT' onClick={() => handleLogout()} width='136px' />}
         <button>NAME</button>
 
         <PortalModal active={openModal} setActive={setOpenModal}>

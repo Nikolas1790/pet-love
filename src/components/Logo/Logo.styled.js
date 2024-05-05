@@ -7,6 +7,7 @@ export const LogoLink = styled(NavLink)`
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
+  padding: 11px 0;
 `; 
 
 export const LogoHeart = styled.span`

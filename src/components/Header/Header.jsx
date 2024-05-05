@@ -17,7 +17,7 @@ export default function Header() {
       <HeaderBlock home={isHome ? 'true' : ''}>
         <Logo home={isHome ? 'true' : ''} />
         <Nav home={isHome ? 'true' : ''} />   
-        { token ?  <UserNav /> :<AuthNav home={isHome ? 'true' : ''} />}
+        { token ?  <UserNav home={isHome ? 'true' : ''} /> :<AuthNav home={isHome ? 'true' : ''} />}
       </HeaderBlock> 
     </HeaderContainer>
   );
