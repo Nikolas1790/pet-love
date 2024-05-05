@@ -1,0 +1,9 @@
+import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
+
+export const ProfilNav = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+`

@@ -25,21 +25,19 @@ export const HomeTitleBlock = styled.div`
 
 export const HomeTitle = styled.h1`
   width: 760px;
-  font-size: 90px;
+  font-size: 88px;
   font-weight: 700;
   line-height: 0.97;
   letter-spacing: -0.03em;
   color: ${color.white};
 `
-
 export const TranslucentWord = styled.span`
   color: ${color.whiteTransparencyZeroFour};
 `
 
-
 export const HomeText = styled.p`
-  width: 256px;
-  font-size: 18px;
+  width: 257px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.22;
   letter-spacing: -0.02em;
