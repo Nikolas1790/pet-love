@@ -11,10 +11,9 @@ export const HeaderBlock = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  padding: 32px; 
+  padding: ${({ home }) => home ? '32px 64px' : '32px'} ;
   width: 1216px;
-/* background: yellow;
-border-radius: 60px 60px 0 0;  */
+
   background: ${({ home }) => home ? color.orangePrimary : 'none'};
   border-radius: ${({ home }) => home ? '60px 60px 0 0' : '0'};
   color: ${({ home }) => home ? color.white : color.blackPrimary};
