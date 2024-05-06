@@ -52,8 +52,6 @@ export const Text = styled.p`
   margin-top: 16px;
 `
 
-
-
 export const FormFields = styled.div`
   display: flex;
   flex-direction: column;
@@ -97,7 +95,6 @@ export const EyeSvg = styled.svg`
 export const TopRightSvg = styled.svg`
   position: absolute;
   top: 15px;
-  /* right: 15px; */
   right: ${({right}) => (right || '15px' )};
   width: 22px;
   height: 22px;
@@ -110,7 +107,6 @@ export const SecureMessage = styled.p`
   color: ${({error}) => (error ? color.redWrong : color.greenRight )};
   padding: 4px 0px 0px 16px;
 `;
-
 
 
 export const AuthorizationLink = styled(NavLink)`

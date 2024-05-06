@@ -10,10 +10,8 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../../redux/auth/operationsAuth';
 
-
 import desctopRegisterDog from '../../img/loginAndRegister/DesctopRegisterCat.jpg';
 import registerBlock from '../../img/loginAndRegister/registerBlock.jpg';
-
 
 const initialValues = {
   name: '',

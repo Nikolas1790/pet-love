@@ -9,8 +9,8 @@ import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const token = useSelector(selectToken);
-  const location = useLocation(); // Получаем текущий путь
-  const isHome = location.pathname === '/home'; // Проверяем, является ли путь /home
+  const location = useLocation(); 
+  const isHome = location.pathname === '/home'; 
 
   return (
     <HeaderContainer>

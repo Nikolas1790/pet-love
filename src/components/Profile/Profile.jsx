@@ -1,7 +1,9 @@
+import { ContentContainer } from "common/GiobalStyles";
+
 export default function Profile() {
   return (
-    <div>
+    <ContentContainer>
       Profileee
-    </div>
+    </ContentContainer>
   );
 }  
