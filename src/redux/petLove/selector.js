@@ -2,7 +2,7 @@ export const selectFriendsInf = (state) => state.pet.friendsData;
 
 export const selectNewsInf = (state) => state.pet.newsData;
 
-// export const selectSuppliersInf = (state) => state.pharmacy.suppliersData;
+export const selectNoticesInf = (state) => state.pet.noticesData;
 
 // export const selectProductsInf = (state) => state.pharmacy.productsData;
 

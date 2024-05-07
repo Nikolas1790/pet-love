@@ -22,3 +22,15 @@ export const friendsInf = createAsyncThunk(
     }
   }
 );
+
+export const noticesInf = createAsyncThunk(
+  "notices",
+  async ({ byDate = true, page = 1, limit = 6 }, thunkAPI) => {
+    try {
+      const response = await axios.get(`/notices?byDate=${byDate}&page=${page}&limit=${limit}`);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
