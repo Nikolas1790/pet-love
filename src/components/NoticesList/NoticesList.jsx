@@ -1,20 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { noticesInf } from "../../redux/petLove/operations";
-import { selectNoticesInf } from "../../redux/petLove/selector";
+import NoticesItem from "components/NoticesItem/NoticesItem"
+import { NoticesListContainer } from "./NoticesList.styled"
 
-export default function NoticesList(){
-  const dispatch = useDispatch();
-  const noticesData = useSelector(selectNoticesInf);  
-
-  useEffect(() => {
-    dispatch(noticesInf({ byDate: true, page: 1, limit: 6  }));
-  }, [dispatch]);
-  console.log(noticesData)
+export default function NoticesList({noticesData}){
+  // console.log(noticesData)
 
   return (
-    <div>
-      aoaaaa
-    </div>
+    <NoticesListContainer>
+      {Array.isArray(noticesData.results) && noticesData.results.map((card) => (
+        <NoticesItem key={card._id} card={card}/>
+      ))}
+    </NoticesListContainer>
   )
 }
