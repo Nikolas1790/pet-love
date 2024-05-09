@@ -5,15 +5,21 @@ import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem"
 export default function NoticesItem({card}) {  
   console.log(card)
 
-
+  // Функція для форматування дати
+  const formatDate = (dateString) => {
+    const dateParts = dateString.split("-");
+    return `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
+  };
   // Створюємо масив об'єктів з label та value
   const petDetailsData = [
     { label: "Name", value: card.name },
-    { label: "Birthday", value: card.birthday },
+    { label: "Birthday", value: formatDate(card.birthday) },
     { label: "Sex", value: card.sex },
     { label: "Species", value: card.species },
     { label: "Category", value: card.category }
   ];
+
+
   return (
     <CardContainer>
       <ImgCard src={card.imgURL} alt='pet' />

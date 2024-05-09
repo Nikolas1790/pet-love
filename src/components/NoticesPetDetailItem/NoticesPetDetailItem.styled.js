@@ -6,6 +6,7 @@ export const DetailTitle = styled.h5`
   font-size: 10px;
   line-height: 1.4;
   letter-spacing: -0.02em;
+  margin-bottom: 2px;
 `
 
 export const DetailValues = styled.p`
