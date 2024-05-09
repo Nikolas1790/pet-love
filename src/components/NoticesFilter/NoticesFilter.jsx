@@ -2,7 +2,7 @@
 export default function NoticesFilter (){
   return (
     <div>
-      fffffffffffffffffffffffffffffffffff
+      filters
     </div>
   )
 }

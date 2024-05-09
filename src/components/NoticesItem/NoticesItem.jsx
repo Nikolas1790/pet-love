@@ -1,4 +1,4 @@
-import { CardContainer, ImgCard, PetDetails, PopularityContainer, PopularityIndicators, TitleCard } from "./NoticesItem.styled";
+import { CardContainer, ImgCard, PetComments, PetDetails, PopularityContainer, PopularityIndicators, TitleCard } from "./NoticesItem.styled";
 import sprite from '../../img/sprite.svg';
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 
@@ -39,6 +39,7 @@ export default function NoticesItem({card}) {
             <PetDetailItem key={detail.label} label={detail.label} value={detail.value} />
           ))}
         </PetDetails>
+        <PetComments>{card.comment}</PetComments>
         dffdf
       </div>
     </CardContainer> 

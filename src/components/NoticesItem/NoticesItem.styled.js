@@ -47,3 +47,8 @@ export const PetDetails = styled.ul`
   gap: 20px; 
   margin-bottom: 16px; 
 `
+
+export const PetComments = styled.p`
+  color: ${color.blackPrimaryCard};
+  font-size: 14px;
+`
