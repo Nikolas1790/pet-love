@@ -24,23 +24,29 @@ export default function NoticesItem({card}) {
     <CardContainer>
       <ImgCard src={card.imgURL} alt='pet' />
       <div>
-        <PopularityIndicators>
-          <TitleCard>{card.title}</TitleCard>
+        <div>
+          <PopularityIndicators>
+            <TitleCard>{card.title}</TitleCard>
 
-          <PopularityContainer>
-            <svg width={16} height={16}>
-              <use href={`${sprite}#icon-star`} />
-            </svg>
-            <p>{card.popularity}</p>
-          </PopularityContainer>        
-        </PopularityIndicators>
-        <PetDetails>
-          {petDetailsData.map((detail) => (
-            <PetDetailItem key={detail.label} label={detail.label} value={detail.value} />
-          ))}
-        </PetDetails>
-        <PetComments>{card.comment}</PetComments>
-        dffdf
+            <PopularityContainer>
+              <svg width={16} height={16}>
+                <use href={`${sprite}#icon-star`} />
+              </svg>
+              <p>{card.popularity}</p>
+            </PopularityContainer>        
+          </PopularityIndicators>
+          <PetDetails>
+            {petDetailsData.map((detail) => (
+              <PetDetailItem key={detail.label} label={detail.label} value={detail.value} />
+            ))}
+          </PetDetails>
+          <PetComments>{card.comment}</PetComments>
+        </div>
+
+        <div>
+          <button>hhhhhhhhhhhhhhhhhhhh</button>
+          <button>ffffffff</button>
+        </div>
       </div>
     </CardContainer> 
   );
