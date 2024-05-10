@@ -1,4 +1,4 @@
-import { CardContainer, ImgCard, PetComments, PetDetails, PopularityContainer, PopularityIndicators, TitleCard } from "./NoticesItem.styled";
+import { CardContainer, ImgCard, InfMainContainer, NavCard, PetComments, PetDetails, PopularityContainer, PopularityIndicators, TitleCard } from "./NoticesItem.styled";
 import sprite from '../../img/sprite.svg';
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 
@@ -23,7 +23,7 @@ export default function NoticesItem({card}) {
   return (
     <CardContainer>
       <ImgCard src={card.imgURL} alt='pet' />
-      <div>
+      <InfMainContainer>
         <div>
           <PopularityIndicators>
             <TitleCard>{card.title}</TitleCard>
@@ -43,11 +43,11 @@ export default function NoticesItem({card}) {
           <PetComments>{card.comment}</PetComments>
         </div>
 
-        <div>
-          <button>hhhhhhhhhhhhhhhhhhhh</button>
+        <NavCard>
+          <button>Learn more</button>
           <button>ffffffff</button>
-        </div>
-      </div>
+        </NavCard>
+      </InfMainContainer>
     </CardContainer> 
   );
 }  

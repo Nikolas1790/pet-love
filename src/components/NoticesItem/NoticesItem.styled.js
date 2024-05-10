@@ -20,6 +20,12 @@ export const ImgCard = styled.img`
    object-fit: cover; /* Додаємо object-fit для обрізання зображення */
   /* margin-bottom: 28px; */
 `
+export const InfMainContainer = styled.div`
+ min-height: 194px; /* Пример минимальной высоты */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
 
 export const PopularityIndicators = styled.div`
   display: flex;
@@ -51,4 +57,10 @@ export const PetDetails = styled.ul`
 export const PetComments = styled.p`
   color: ${color.blackPrimaryCard};
   font-size: 14px;
+`
+
+export const NavCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 `
