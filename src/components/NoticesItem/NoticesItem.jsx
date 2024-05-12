@@ -1,6 +1,7 @@
 import { CardContainer, ImgCard, InfMainContainer, NavCard, PetComments, PetDetails, PopularityContainer, PopularityIndicators, TitleCard } from "./NoticesItem.styled";
 import sprite from '../../img/sprite.svg';
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
+import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 
 export default function NoticesItem({card}) {  
   console.log(card)
@@ -10,9 +11,13 @@ export default function NoticesItem({card}) {
     const dateParts = dateString.split("-");
     return `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
   };
+  const getFirstName = (fullName) => {
+    return fullName.split(" ")[0]; // Разделяем строку по пробелу и берем первое слово
+  };
+
   // Створюємо масив об'єктів з label та value
   const petDetailsData = [
-    { label: "Name", value: card.name },
+    { label: "Name", value: getFirstName(card.name) },
     { label: "Birthday", value: formatDate(card.birthday) },
     { label: "Sex", value: card.sex },
     { label: "Species", value: card.species },
@@ -44,8 +49,12 @@ export default function NoticesItem({card}) {
         </div>
 
         <NavCard>
-          <button>Learn more</button>
-          <button>ffffffff</button>
+          <ButtonOrange label='Learn more' />
+          <button>
+            <svg width={48} height={48}>
+                <use href={`${sprite}#icon-favorite`} />
+              </svg>
+          </button>
         </NavCard>
       </InfMainContainer>
     </CardContainer> 
