@@ -2,8 +2,12 @@ import { CardContainer, ImgCard, InfMainContainer, NavCard, PetComments, PetDeta
 import sprite from '../../img/sprite.svg';
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
+import PortalModal from "components/PortalModal/PortalModal";
+import { useState } from "react";
+import ModalAtentions from "components/Modals/ModalAttention/ModalAttention";
 
 export default function NoticesItem({card}) {  
+  const [openModal, setOpenModal] = useState(false);
   console.log(card)
 
   // Функція для форматування дати
@@ -49,14 +53,19 @@ export default function NoticesItem({card}) {
         </div>
 
         <NavCard>
-          <ButtonOrange label='Learn more' />
-          <button>
+          <ButtonOrange label='Learn more'  onClick={() => setOpenModal(true)} />
+          <button  onClick={() => setOpenModal(true)}>
             <svg width={48} height={48}>
                 <use href={`${sprite}#icon-favorite`} />
               </svg>
           </button>
         </NavCard>
       </InfMainContainer>
+
+      
+      <PortalModal active={openModal} setActive={setOpenModal}>
+        <ModalAtentions closeModals={() => setOpenModal()} />
+      </PortalModal>
     </CardContainer> 
   );
 }  

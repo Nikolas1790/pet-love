@@ -1,5 +1,4 @@
-import { BtnsConteiner, Cat, ClosingSymbol, Modal, TitleLodOut } from "./LogOutModal.styled";
-import sprite from '../../../img/sprite.svg';
+import { BtnsConteiner, Cat, Modal, TitleLodOut } from "./LogOutModal.styled";
 
 import catInCercle from '../../../img/PetInCircle/CatInСircle.png';
 import ButtonNav from "components/Buttons/ButtonNav/ButtonNav";
@@ -8,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { logOut } from "../../../redux/auth/operationsAuth";
 import { toast } from "react-toastify";
 import ButtonGrayUniversal from "components/Buttons/ButtonGrayUniversal/ButtonGrayUniversal";
+import XButton from "components/XButton/XButton";
 
 export default function LogOut({ closeModals }) {
   const dispatch = useDispatch();
@@ -30,11 +30,12 @@ export default function LogOut({ closeModals }) {
         <ButtonGrayUniversal label='Cancel' onClick={closeModals} width='140px' />
       </BtnsConteiner>
 
-      <ClosingSymbol onClick={closeModals}>
+      <XButton closeModals={closeModals} />
+      {/* <ClosingSymbol onClick={closeModals}>
         <svg width={24} height={24}>
           <use href={`${sprite}#icon-x`} />
         </svg>   
-      </ClosingSymbol>
+      </ClosingSymbol> */}
     </Modal>    
   );
 };
