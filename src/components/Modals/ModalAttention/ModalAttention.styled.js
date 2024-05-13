@@ -10,9 +10,32 @@ export const AtentionsModal = styled.div`
   min-height: 434px;
   background: ${color.white};
   border-radius: 30px;
-  padding: 80px ;
+  padding: 60px ;
 
   /* @media (min-width: 768px) {
     width: 536px;
   } */
+`;
+
+
+export const TitleAttention = styled.h2`
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.29;
+  margin-bottom: 20px;
+  color: ${color.orangePrimary};
+`;
+
+export const TextAttention = styled.p`
+text-align: center;
+  font-size: 14px;
+  line-height: 1.17;
+  margin-bottom: 28px;
+  color: ${color.blackPrimaryCard};
+  letter-spacing: -0.02em;
+`;
+
+export const NavContainer = styled.div`
+  display: flex;
+  gap: 8px;
 `;
