@@ -12,9 +12,7 @@ export const AtentionsModal = styled.div`
   border-radius: 30px;
   padding: 60px ;
 
-  /* @media (min-width: 768px) {
-    width: 536px;
-  } */
+
 `;
 
 
