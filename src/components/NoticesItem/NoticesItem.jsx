@@ -8,7 +8,7 @@ import ModalAtentions from "components/Modals/ModalAttention/ModalAttention";
 
 export default function NoticesItem({card}) {  
   const [openModal, setOpenModal] = useState(false);
-  console.log(card)
+  // console.log(card)
 
   // Функція для форматування дати
   const formatDate = (dateString) => {
