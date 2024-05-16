@@ -7,7 +7,7 @@ export const DogSilhouette = styled.img`
   margin-bottom: 20px;
 `;
 
-export const AtentionsModal = styled.div`
+export const AttentionsModal = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;

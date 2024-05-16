@@ -1,11 +1,11 @@
 import XButton from "components/XButton/XButton";
-import { AtentionsModal, DogSilhouette, NavContainer, TextAttention, TitleAttention } from "./ModalAttention.styled";
+import { AttentionsModal, DogSilhouette, NavContainer, TextAttention, TitleAttention } from "./ModalAttention.styled";
 import ButtonNav from "components/Buttons/ButtonNav/ButtonNav";
 import dogImg from '../../../img/PetInCircle/DogInСircle.png';
 
-export default function ModalAtentions({ closeModals }) {
+export default function ModalAttentions({ closeModals }) {
   return (           
-    <AtentionsModal>
+    <AttentionsModal>
       <DogSilhouette src={dogImg} alt="dog silhouette" />
 
       <TitleAttention>Attention</TitleAttention>
@@ -17,8 +17,6 @@ export default function ModalAtentions({ closeModals }) {
       </NavContainer>
 
       <XButton closeModals={closeModals} />
-    </AtentionsModal>
+    </AttentionsModal>
   );
 };
-
-

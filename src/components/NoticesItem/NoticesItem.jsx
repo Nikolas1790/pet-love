@@ -4,7 +4,7 @@ import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem"
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 import PortalModal from "components/PortalModal/PortalModal";
 import { useState } from "react";
-import ModalAtentions from "components/Modals/ModalAttention/ModalAttention";
+import ModalAttentions from "components/Modals/ModalAttention/ModalAttention";
 
 export default function NoticesItem({card}) {  
   const [openModal, setOpenModal] = useState(false);
@@ -64,7 +64,7 @@ export default function NoticesItem({card}) {
 
       
       <PortalModal active={openModal} setActive={setOpenModal}>
-        <ModalAtentions closeModals={() => setOpenModal()} />
+        <ModalAttentions closeModals={() => setOpenModal()} />
       </PortalModal>
     </CardContainer> 
   );
