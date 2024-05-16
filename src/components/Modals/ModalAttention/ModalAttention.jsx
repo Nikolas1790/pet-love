@@ -1,14 +1,12 @@
 import XButton from "components/XButton/XButton";
-import { AtentionsModal, NavContainer, TextAttention, TitleAttention } from "./ModalAttention.styled";
-import sprite from '../../../img/sprite.svg';
+import { AtentionsModal, DogSilhouette, NavContainer, TextAttention, TitleAttention } from "./ModalAttention.styled";
 import ButtonNav from "components/Buttons/ButtonNav/ButtonNav";
+import dogImg from '../../../img/PetInCircle/DogInСircle.png';
 
 export default function ModalAtentions({ closeModals }) {
   return (           
     <AtentionsModal>
-      <svg width={80} height={80}>
-        <use href={`${sprite}#icon-x`} />
-      </svg>  
+      <DogSilhouette src={dogImg} alt="dog silhouette" />
 
       <TitleAttention>Attention</TitleAttention>
       <TextAttention>We would like to remind you that certain functionality is available only to authorized users.If you have an account, please log in with your credentials. If you do not already have an account, you must register to access these features.</TextAttention>

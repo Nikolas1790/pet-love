@@ -1,6 +1,12 @@
 import color from "common/GlobalColors";
 import styled from "styled-components";
 
+export const DogSilhouette = styled.img`
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+`;
+
 export const AtentionsModal = styled.div`
   position: relative;
   display: flex;
@@ -11,10 +17,7 @@ export const AtentionsModal = styled.div`
   background: ${color.white};
   border-radius: 30px;
   padding: 60px ;
-
-
 `;
-
 
 export const TitleAttention = styled.h2`
   font-size: 24px;
