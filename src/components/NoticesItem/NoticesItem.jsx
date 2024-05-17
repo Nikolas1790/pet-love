@@ -6,10 +6,14 @@ import PortalModal from "components/PortalModal/PortalModal";
 import { useState } from "react";
 import ModalAttentions from "components/Modals/ModalAttention/ModalAttention";
 import ModalNotice from "components/Modals/ModalNotice/ModalNotice";
+import { selectToken } from "../../redux/auth/selectorAuth";
+import { useSelector } from "react-redux";
 
 export default function NoticesItem({card}) {  
   const [openModal, setOpenModal] = useState(false);
   const [openModalNotice, setOpenModalNotice] = useState(false);
+
+  const token = useSelector(selectToken);
 
   // console.log(card)
 
@@ -31,6 +35,13 @@ export default function NoticesItem({card}) {
     { label: "Category", value: card.category }
   ];
 
+  const handleButtonClick = () => {
+    if (token) {
+      setOpenModalNotice(true); // Если токен есть, открываем первую модалку
+    } else {
+      setOpenModal(true); // Если токена нет, открываем вторую модалку
+    }
+  };
 
   return (
     <CardContainer>
@@ -56,8 +67,8 @@ export default function NoticesItem({card}) {
         </div>
 
         <NavCard>
-          <ButtonOrange label='Learn more'  onClick={() => setOpenModal(true)} />
-          <button  onClick={() => setOpenModal(true)}>
+          <ButtonOrange label='Learn more'  onClick={handleButtonClick} />
+          <button  onClick={handleButtonClick} >
             <svg width={48} height={48}>
                 <use href={`${sprite}#icon-favorite`} />
               </svg>
