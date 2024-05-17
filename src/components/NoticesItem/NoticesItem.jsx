@@ -78,7 +78,7 @@ export default function NoticesItem({card}) {
 
       
       <PortalModal active={openModalNotice} setActive={setOpenModalNotice}>
-        <ModalNotice closeModals={() => setOpenModalNotice()} card={card} />
+        <ModalNotice closeModals={() => setOpenModalNotice()} card={card} petDetailsData={petDetailsData} />
       </PortalModal>
       <PortalModal active={openModal} setActive={setOpenModal}>
         <ModalAttentions closeModals={() => setOpenModal()} />
