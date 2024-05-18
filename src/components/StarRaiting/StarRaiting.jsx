@@ -7,7 +7,7 @@ const StarRating = ({ rating }) => {
   return (
     <div>
       {[...Array(totalStars)].map((_, index) => (
-        <Star key={index} filled={index < rating}>
+        <Star key={index} filled={index < rating ? "true" : ''}>
           <use href={`${sprite}#icon-star`} />
         </Star>
       ))}

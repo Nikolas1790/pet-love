@@ -5,7 +5,7 @@ import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem"
 import StarRating from "components/StarRaiting/StarRaiting";
 
 export default function ModalNotice({ closeModals, card, petDetailsData }) {
-  console.log(card)
+  // console.log(card)
   // console.log(petDetailsData)
 
   return (           
