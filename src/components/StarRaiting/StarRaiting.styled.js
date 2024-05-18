@@ -5,5 +5,4 @@ export const Star = styled.svg`
   width: 16px;
   height: 16px;
   fill: ${({ filled }) => (filled ? color.orangePrimary : color.blackPrimarySuperLight)};
-  /* stroke: ${({ filled }) => (filled ? color.orangePrimary : color.blackPrimarySuperLight)}; */
 `;
