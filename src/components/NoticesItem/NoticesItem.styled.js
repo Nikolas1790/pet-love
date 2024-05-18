@@ -39,13 +39,14 @@ export const TitleCard = styled.h3`
   font-weight: 700;
   line-height: 1.33;
   letter-spacing: 1;
+
+  margin-bottom: ${({ margin }) => (margin || '0px')};
 `
 
 
 export const PopularityContainer = styled.div`
   display: flex;
   gap: 4px; 
-  // justify-content: space-between;
 `
 
 export const PetDetails = styled.ul`

@@ -19,3 +19,9 @@ export const PetImg = styled.img`
   border-radius: 50%;
   margin-bottom: 16px;
 `;
+
+export const ReitingContainer = styled.div`
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+`;
