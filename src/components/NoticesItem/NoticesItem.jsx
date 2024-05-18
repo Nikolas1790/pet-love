@@ -8,6 +8,7 @@ import ModalAttentions from "components/Modals/ModalAttention/ModalAttention";
 import ModalNotice from "components/Modals/ModalNotice/ModalNotice";
 import { selectToken } from "../../redux/auth/selectorAuth";
 import { useSelector } from "react-redux";
+import { Star } from "components/StarRaiting/StarRaiting.styled";
 
 export default function NoticesItem({card}) {  
   const [openModal, setOpenModal] = useState(false);
@@ -52,9 +53,9 @@ export default function NoticesItem({card}) {
             <TitleCard>{card.title}</TitleCard>
 
             <PopularityContainer>
-              <svg width={16} height={16}>
+              <Star filled="true">
                 <use href={`${sprite}#icon-star`} />
-              </svg>
+              </Star>
               <p>{card.popularity}</p>
             </PopularityContainer>        
           </PopularityIndicators>

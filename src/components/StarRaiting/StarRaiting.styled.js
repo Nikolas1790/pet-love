@@ -4,5 +4,6 @@ import color from "common/GlobalColors";
 export const Star = styled.svg`
   width: 16px;
   height: 16px;
-  fill: ${({ filled }) => (filled ? color.gold : color.grey)};
+  fill: ${({ filled }) => (filled ? color.orangePrimary : color.blackPrimarySuperLight)};
+  /* stroke: ${({ filled }) => (filled ? color.orangePrimary : color.blackPrimarySuperLight)}; */
 `;

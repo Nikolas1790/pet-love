@@ -3,6 +3,8 @@ const color = {
   blackPrimaryFiftyPercebt: 'rgba(38, 38, 38, 0.5)',
   blackPrimaryThirtyPercent: 'rgba(38, 38, 38, 0.3)',
   blackPrimaryLight: 'rgba(38, 38, 38, 0.15)',
+  blackPrimarySuperLight: 'rgba(38, 38, 38, 0.05)',
+
 
   blackPrimaryCard:' rgb(43, 43, 42)',
 
