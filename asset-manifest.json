@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/pet-love/static/css/main.b09bb6a4.css",
-    "main.js": "/pet-love/static/js/main.1b1871b7.js",
+    "main.js": "/pet-love/static/js/main.b3bb22ea.js",
     "static/js/47.543bd972.chunk.js": "/pet-love/static/js/47.543bd972.chunk.js",
     "static/js/882.0f330605.chunk.js": "/pet-love/static/js/882.0f330605.chunk.js",
     "static/js/574.6a4fe706.chunk.js": "/pet-love/static/js/574.6a4fe706.chunk.js",
-    "static/js/15.57dd29ac.chunk.js": "/pet-love/static/js/15.57dd29ac.chunk.js",
+    "static/js/15.8eabf9f1.chunk.js": "/pet-love/static/js/15.8eabf9f1.chunk.js",
     "static/js/143.228eeb37.chunk.js": "/pet-love/static/js/143.228eeb37.chunk.js",
     "static/js/131.a774941d.chunk.js": "/pet-love/static/js/131.a774941d.chunk.js",
     "static/js/537.9c20ede9.chunk.js": "/pet-love/static/js/537.9c20ede9.chunk.js",
@@ -26,11 +26,11 @@
     "static/media/DesctopLoginDog.jpg": "/pet-love/static/media/DesctopLoginDog.4e1ff534c9159b51aa68.jpg",
     "index.html": "/pet-love/index.html",
     "main.b09bb6a4.css.map": "/pet-love/static/css/main.b09bb6a4.css.map",
-    "main.1b1871b7.js.map": "/pet-love/static/js/main.1b1871b7.js.map",
+    "main.b3bb22ea.js.map": "/pet-love/static/js/main.b3bb22ea.js.map",
     "47.543bd972.chunk.js.map": "/pet-love/static/js/47.543bd972.chunk.js.map",
     "882.0f330605.chunk.js.map": "/pet-love/static/js/882.0f330605.chunk.js.map",
     "574.6a4fe706.chunk.js.map": "/pet-love/static/js/574.6a4fe706.chunk.js.map",
-    "15.57dd29ac.chunk.js.map": "/pet-love/static/js/15.57dd29ac.chunk.js.map",
+    "15.8eabf9f1.chunk.js.map": "/pet-love/static/js/15.8eabf9f1.chunk.js.map",
     "143.228eeb37.chunk.js.map": "/pet-love/static/js/143.228eeb37.chunk.js.map",
     "131.a774941d.chunk.js.map": "/pet-love/static/js/131.a774941d.chunk.js.map",
     "537.9c20ede9.chunk.js.map": "/pet-love/static/js/537.9c20ede9.chunk.js.map",
@@ -40,6 +40,6 @@
   },
   "entrypoints": [
     "static/css/main.b09bb6a4.css",
-    "static/js/main.1b1871b7.js"
+    "static/js/main.b3bb22ea.js"
   ]
 }
