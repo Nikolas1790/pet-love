@@ -52,7 +52,7 @@ export const PopularityContainer = styled.div`
 export const PetDetails = styled.ul`
   display: flex;
   gap: 20px; 
-  margin-bottom: 16px; 
+  margin-bottom: ${({margin}) => margin || '16px'}; 
 `
 
 export const PetComments = styled.p`
