@@ -21,8 +21,8 @@ export const LightBtn = styled.button`
     outline: none;
   }
   &:hover {
-    background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeDim : color.orangePrimaryActive};
-    color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
+    background: ${color.orangeDim };
+    /* color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white}; */
     outline: none;
   }
 `

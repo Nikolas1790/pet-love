@@ -1,5 +1,5 @@
 import XButton from "components/XButton/XButton";
-import { NoticeModal, PetImg, ReitingContainer } from "./ModalNotice.styled";
+import { BtnContainer, NoticeModal, PetImg, ReitingContainer } from "./ModalNotice.styled";
 import { PetComments, PetDetails, TitleCard } from "components/NoticesItem/NoticesItem.styled";
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 import StarRating from "components/StarRaiting/StarRaiting";
@@ -26,10 +26,10 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
       </PetDetails>
       <PetComments>{card.comment}</PetComments>
 
-      <div>
+      <BtnContainer>
         <ButtonOrange label='Add to'  width='160px' />
         <ButtonLightOrange label='Contact'  width='160px' />
-      </div>
+      </BtnContainer>
 
       <XButton closeModals={closeModals} />
     </NoticeModal>
