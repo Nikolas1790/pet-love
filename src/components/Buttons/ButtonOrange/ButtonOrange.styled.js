@@ -13,7 +13,7 @@ export const OrangeBtn = styled.button`
   color: ${color.white};
 
   /* border: 1px solid ${color.blackPrimaryLight}; */
-background: ${color.orangePrimary};
+  background: ${color.orangePrimary};
 
 
   transition: all 0.25s linear;
@@ -26,4 +26,12 @@ background: ${color.orangePrimary};
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     outline: none;
   }
+`
+
+export const Heart = styled.svg`
+  width: 18px;
+  height: 18px;
+  /* fill: transparent;
+  stroke: ${color.white}; */
+  margin-left: 8px;
 `

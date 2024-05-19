@@ -71,8 +71,8 @@ export default function NoticesItem({card}) {
           <ButtonOrange label='Learn more'  onClick={handleButtonClick} />
           <button  onClick={handleButtonClick} >
             <svg width={48} height={48}>
-                <use href={`${sprite}#icon-favorite`} />
-              </svg>
+              <use href={`${sprite}#icon-favorite`} />
+            </svg>
           </button>
         </NavCard>
       </InfMainContainer>

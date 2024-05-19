@@ -3,6 +3,7 @@ import { NoticeModal, PetImg, ReitingContainer } from "./ModalNotice.styled";
 import { PetComments, PetDetails, TitleCard } from "components/NoticesItem/NoticesItem.styled";
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 import StarRating from "components/StarRaiting/StarRaiting";
+import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 
 export default function ModalNotice({ closeModals, card, petDetailsData }) {
   // console.log(card)
@@ -15,10 +16,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
       <ReitingContainer>
         <StarRating rating={Math.min(card.popularity, 5)} />
         <p>{card.popularity}</p>
-      </ReitingContainer>     
-      
-
-      
+      </ReitingContainer>             
       
       <PetDetails margin="18px">
         {petDetailsData.slice(0, 4).map((detail) => (
@@ -26,6 +24,11 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
         ))}
       </PetDetails>
       <PetComments>{card.comment}</PetComments>
+
+      <div>
+        <ButtonOrange label='Add to'  width='160px' />
+
+      </div>
 
       <XButton closeModals={closeModals} />
     </NoticeModal>
