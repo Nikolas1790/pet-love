@@ -4,6 +4,7 @@ import { PetComments, PetDetails, TitleCard } from "components/NoticesItem/Notic
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 import StarRating from "components/StarRaiting/StarRaiting";
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
+import ButtonLightOrange from "components/Buttons/ButtonLightOrange/ButtonLightOrange";
 
 export default function ModalNotice({ closeModals, card, petDetailsData }) {
   // console.log(card)
@@ -27,7 +28,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
 
       <div>
         <ButtonOrange label='Add to'  width='160px' />
-
+        <ButtonLightOrange label='Contact'  width='160px' />
       </div>
 
       <XButton closeModals={closeModals} />

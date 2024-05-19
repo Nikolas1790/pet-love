@@ -6,9 +6,9 @@ export default function ButtonOrange({ className, label, onClick, width }) {
     <OrangeBtn className={className} onClick={onClick} type="submit" width={width} >
       {label}
 
-      <Heart>
+      {label === 'Add to' && <Heart>
         <use href={`${sprite}#icon-heart-add`} />
-      </Heart>
+      </Heart>}
     </OrangeBtn>    
   )
 }
