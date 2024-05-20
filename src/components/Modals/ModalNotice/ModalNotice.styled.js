@@ -29,4 +29,5 @@ export const ReitingContainer = styled.div`
 export const BtnContainer = styled.div`
   display: flex;
   gap: 10px;
+  margin-top: auto;
 `;
