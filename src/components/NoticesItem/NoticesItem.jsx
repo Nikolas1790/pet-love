@@ -16,7 +16,7 @@ export default function NoticesItem({card}) {
   const [openModalNotice, setOpenModalNotice] = useState(false);
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
-  console.log(card)
+  // console.log(card)
 
   // Функція для форматування дати
   const formatDate = (dateString) => {
