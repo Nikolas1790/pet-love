@@ -20,8 +20,13 @@ export default function NoticesItem({card}) {
 
   // Функція для форматування дати
   const formatDate = (dateString) => {
-    const dateParts = dateString.split("-");
-    return `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
+    if(card.birthday) {
+      const dateParts = dateString.split("-");
+      return `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
+    } else{
+      return 'unknown';
+    }
+
   };
   const getFirstName = (fullName) => {
     return fullName.split(" ")[0]; // Разделяем строку по пробелу и берем первое слово
@@ -38,15 +43,23 @@ export default function NoticesItem({card}) {
 
   const handleButtonClick = () => {
     if (token) {
-      // setOpenModalNotice(true);
+      setOpenModalNotice(true);
 
+      // dispatch(noticesFavorite(card._id));
+
+    } else {
+      setOpenModal(true); // Если токена нет, открываем вторую модалку
+    }
+  };
+  const handleButtonFavorite = () => {
+    if (token) {
+      // setOpenModalNotice(true);
       dispatch(noticesFavorite(card._id));
 
     } else {
       setOpenModal(true); // Если токена нет, открываем вторую модалку
     }
   };
-
   return (
     <CardContainer>
       <ImgCard src={card.imgURL} alt='pet' />
@@ -72,7 +85,7 @@ export default function NoticesItem({card}) {
 
         <NavCard>
           <ButtonOrange label='Learn more'  onClick={handleButtonClick} />
-          <button  onClick={handleButtonClick} >
+          <button  onClick={handleButtonFavorite} >
             <svg width={48} height={48}>
               <use href={`${sprite}#icon-favorite`} />
             </svg>

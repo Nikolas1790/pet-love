@@ -14,7 +14,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
   // console.log(card)
   // console.log(card.comment)
   const waa = useSelector(selectFavoritePets);
-  // console.log( waa)
+  console.log( waa)
   
   const handleAddToFavorite = (item) => {
     // console.log(item)
