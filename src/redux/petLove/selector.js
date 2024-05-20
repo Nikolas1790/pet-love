@@ -4,6 +4,6 @@ export const selectNewsInf = (state) => state.pet.newsData;
 
 export const selectNoticesInf = (state) => state.pet.noticesData;
 
-// export const selectProductsInf = (state) => state.pharmacy.productsData;
+export const selectFavoritePets = (state) => state.pet.favoritsPets;
 
 // export const selectCustomersInf = (state) => state.pharmacy.customersData;

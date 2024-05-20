@@ -5,11 +5,21 @@ import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem"
 import StarRating from "components/StarRaiting/StarRaiting";
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 import ButtonLightOrange from "components/Buttons/ButtonLightOrange/ButtonLightOrange";
+import { useDispatch, useSelector, } from "react-redux";
+import { noticesFavorite } from "../../../redux/petLove/operations";
+import { selectFavoritePets } from "../../../redux/petLove/selector";
 
 export default function ModalNotice({ closeModals, card, petDetailsData }) {
+  const dispatch = useDispatch();
   // console.log(card)
   // console.log(card.comment)
-
+  const waa = useSelector(selectFavoritePets);
+  console.log( waa)
+  
+  const handleAddToFavorite = (item) => {
+    console.log(item)
+    dispatch(noticesFavorite(item));
+  };
   return (           
     <NoticeModal>      
       <PetImg src={card.imgURL} alt="pet" />
@@ -27,7 +37,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
       <PetComments>{card.comment}</PetComments>
 
       <BtnContainer>
-        <ButtonOrange label='Add to'  width='160px' />
+        <ButtonOrange label='Add to' width='160px' onClick={() => handleAddToFavorite(card._id)} />
         <ButtonLightOrange label='Contact'  width='160px' />
       </BtnContainer>
 
