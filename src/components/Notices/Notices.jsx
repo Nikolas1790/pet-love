@@ -29,13 +29,14 @@ export default function Notices() {
 
         <NoticesFilter />
 
-        <NoticesList noticesData={noticesData} />        
-
-        <Pagination
+        <div>
+          <NoticesList noticesData={noticesData} />    
+          <Pagination
             currentPage={noticesData.page}
             totalPages={noticesData.totalPages}
             onPageChange={handlePageChange}
           />
+        </div>
       </NoticesContainer>
     </ContentContainer>
   );
