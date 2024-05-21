@@ -13,9 +13,11 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
   const dispatch = useDispatch();
   // console.log(card)
   // console.log(card.comment)
-  const waa = useSelector(selectFavoritePets);
-  console.log( waa)
-  
+  const favoritePets = useSelector(selectFavoritePets);
+  console.log( favoritePets)
+  const isFavorite = favoritePets.includes(card._id);
+
+
   const handleAddToFavorite = (item) => {
     // console.log(item)
     dispatch(noticesFavorite(item));
@@ -37,7 +39,12 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
       <PetComments>{card.comment}</PetComments>
 
       <BtnContainer>
-        <ButtonOrange label='Add to' width='160px' onClick={() => handleAddToFavorite(card._id)} />
+        <ButtonOrange 
+          label='Add to' 
+          width='160px' 
+          onClick={() => handleAddToFavorite(card._id)} 
+          isFavorite={isFavorite}
+        />
         <ButtonLightOrange label='Contact'  width='160px' />
       </BtnContainer>
 

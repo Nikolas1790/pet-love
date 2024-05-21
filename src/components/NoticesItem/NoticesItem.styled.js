@@ -65,3 +65,34 @@ export const NavCard = styled.div`
   justify-content: space-between;
   gap: 10px;
 `
+
+export const FavoritBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: ${color.orangeLight};
+  :hover,
+  :focus {
+    background: red;
+  }
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: transparent;
+    stroke: ${color.orangePrimary};
+    /* pointer-events: none; */
+  }
+
+  /* fill: transparent;
+  stroke: ${color.orangePrimary};
+
+  :active{
+    fill: ${color.white};
+    stroke: ${color.blackPrimary};
+  } */
+
+`

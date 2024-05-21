@@ -34,4 +34,7 @@ export const Heart = styled.svg`
   /* fill: transparent;
   stroke: ${color.white}; */
   margin-left: 8px;
+
+  fill: ${props => (props.isFavorite ? 'red' : 'transparent')};
+  stroke: ${props => (props.isFavorite ? 'red' : 'white')};
 `

@@ -1,4 +1,4 @@
-import { CardContainer, ImgCard, InfMainContainer, NavCard, PetComments, PetDetails, PopularityContainer, PopularityIndicators, TitleCard } from "./NoticesItem.styled";
+import { CardContainer, FavoritBtn, ImgCard, InfMainContainer, NavCard, PetComments, PetDetails, PopularityContainer, PopularityIndicators, TitleCard } from "./NoticesItem.styled";
 import sprite from '../../img/sprite.svg';
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
@@ -60,6 +60,8 @@ export default function NoticesItem({card}) {
       setOpenModal(true); // Если токена нет, открываем вторую модалку
     }
   };
+
+  
   return (
     <CardContainer>
       <ImgCard src={card.imgURL} alt='pet' />
@@ -85,11 +87,11 @@ export default function NoticesItem({card}) {
 
         <NavCard>
           <ButtonOrange label='Learn more'  onClick={handleButtonClick} />
-          <button  onClick={handleButtonFavorite} >
-            <svg width={48} height={48}>
-              <use href={`${sprite}#icon-favorite`} />
+          <FavoritBtn  onClick={handleButtonFavorite} >
+            <svg >
+              <use href={`${sprite}#icon-heart-add`} />
             </svg>
-          </button>
+          </FavoritBtn>
         </NavCard>
       </InfMainContainer>
 
