@@ -21,7 +21,6 @@ export const OrangeBtn = styled.button`
     outline: none;
   }
   &:hover {
-    /* border: 1px solid ${color.orangePrimary}; */
     background: ${color.orangePrimaryActive};
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     outline: none;
@@ -33,10 +32,8 @@ export const Heart = styled.svg.withConfig({
 })`
   width: 18px;
   height: 18px;
-  /* fill: transparent;
-  stroke: ${color.white}; */
   margin-left: 8px;
 
-  fill: ${props => (props.isFavorite ? 'red' : 'transparent')};
-  stroke: ${props => (props.isFavorite ? 'red' : 'white')};
+  fill: ${({isFavorite}) => (isFavorite ? color.white : 'transparent')};
+  stroke: ${color.white};
 `

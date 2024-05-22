@@ -16,7 +16,6 @@ export default function NoticesItem({card}) {
   const [openModalNotice, setOpenModalNotice] = useState(false);
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
-  // console.log(card)
 
   // Функція для форматування дати
   const formatDate = (dateString) => {
@@ -26,8 +25,8 @@ export default function NoticesItem({card}) {
     } else{
       return 'unknown';
     }
-
   };
+
   const getFirstName = (fullName) => {
     return fullName.split(" ")[0]; // Разделяем строку по пробелу и берем первое слово
   };
@@ -44,23 +43,17 @@ export default function NoticesItem({card}) {
   const handleButtonClick = () => {
     if (token) {
       setOpenModalNotice(true);
-
-      // dispatch(noticesFavorite(card._id));
-
     } else {
       setOpenModal(true); // Если токена нет, открываем вторую модалку
     }
   };
   const handleButtonFavorite = () => {
     if (token) {
-      // setOpenModalNotice(true);
       dispatch(noticesFavorite(card._id));
-
     } else {
       setOpenModal(true); // Если токена нет, открываем вторую модалку
     }
   };
-
   
   return (
     <CardContainer>

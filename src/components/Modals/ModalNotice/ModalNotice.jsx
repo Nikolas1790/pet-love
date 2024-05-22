@@ -6,33 +6,35 @@ import StarRating from "components/StarRaiting/StarRaiting";
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 import ButtonLightOrange from "components/Buttons/ButtonLightOrange/ButtonLightOrange";
 import { useDispatch, useSelector, } from "react-redux";
-import { noticesFavorite } from "../../../redux/petLove/operations";
-// import { selectFavoritePets } from "../../../redux/petLove/selector";
+import {  noticesFavorite, noticesFavoriteDell } from "../../../redux/petLove/operations";
 import { useEffect } from "react";
 import { currentFull } from "../../../redux/auth/operationsAuth";
 import { selectToken, selectUser } from "../../../redux/auth/selectorAuth";
+import { selectFavoritePets } from "../../../redux/petLove/selector";
 
 export default function ModalNotice({ closeModals, card, petDetailsData }) {
   const dispatch = useDispatch();
-  // console.log(card)
-  // console.log(card.comment)
-  // let favoritePets = useSelector(selectFavoritePets);
   let user = useSelector(selectUser);
   const token = useSelector(selectToken);
-
   let favoritesAll = useSelector(selectUser);
+  let favoritesList = useSelector(selectFavoritePets);
 
+  const isFavorite = favoritesAll.noticesFavorites.some(i => i._id === card._id) || favoritesList.includes(card._id);
+  console.log( favoritesList )
 
-  const isFavorite = favoritesAll.noticesFavorites.some(i => i._id === card._id);
-  console.log( isFavorite )
   useEffect(() => {
     if (token && !user.name) {
       dispatch(currentFull());
     }
-  }, [dispatch, token, user.name]);
+  }, [dispatch, token, user.name, favoritesList]);
 
   const handleAddToFavorite = (item) => {
-    dispatch(noticesFavorite(item));
+    // dispatch(noticesFavorite(item));
+    if(!isFavorite){
+      dispatch(noticesFavorite(item));
+    } else{
+      dispatch(noticesFavoriteDell(item));
+    }
   };
 
   return (           
