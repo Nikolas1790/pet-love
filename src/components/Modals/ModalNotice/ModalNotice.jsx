@@ -8,22 +8,33 @@ import ButtonLightOrange from "components/Buttons/ButtonLightOrange/ButtonLightO
 import { useDispatch, useSelector, } from "react-redux";
 import { noticesFavorite } from "../../../redux/petLove/operations";
 import { selectFavoritePets } from "../../../redux/petLove/selector";
-// import { useEffect } from "react";
+import { useEffect } from "react";
+import { currentFull } from "../../../redux/auth/operationsAuth";
+import { selectToken, selectUser } from "../../../redux/auth/selectorAuth";
 
 export default function ModalNotice({ closeModals, card, petDetailsData }) {
   const dispatch = useDispatch();
   // console.log(card)
   // console.log(card.comment)
   let favoritePets = useSelector(selectFavoritePets);
-  console.log( favoritePets)
-  const isFavorite = favoritePets.includes(card._id) || '';
-// useEffect(() => {
-//   dispatch(noticesFavorite());
-// }, [])
+  let user = useSelector(selectUser);
+  const token = useSelector(selectToken);
+
+  let favoritesAll = useSelector(selectUser);
+
+  console.log( favoritesAll)
+  const isFavorite = favoritePets.includes(card._id);
+
+  useEffect(() => {
+    if (token && !user.name) {
+      dispatch(currentFull());
+    }
+  }, [dispatch, token, user.name]);
+
   const handleAddToFavorite = (item) => {
-    // console.log(item)
     dispatch(noticesFavorite(item));
   };
+
   return (           
     <NoticeModal>      
       <PetImg src={card.imgURL} alt="pet" />
