@@ -8,16 +8,18 @@ import ButtonLightOrange from "components/Buttons/ButtonLightOrange/ButtonLightO
 import { useDispatch, useSelector, } from "react-redux";
 import { noticesFavorite } from "../../../redux/petLove/operations";
 import { selectFavoritePets } from "../../../redux/petLove/selector";
+// import { useEffect } from "react";
 
 export default function ModalNotice({ closeModals, card, petDetailsData }) {
   const dispatch = useDispatch();
   // console.log(card)
   // console.log(card.comment)
-  const favoritePets = useSelector(selectFavoritePets);
+  let favoritePets = useSelector(selectFavoritePets);
   console.log( favoritePets)
-  const isFavorite = favoritePets.includes(card._id);
-
-
+  const isFavorite = favoritePets.includes(card._id) || '';
+// useEffect(() => {
+//   dispatch(noticesFavorite());
+// }, [])
   const handleAddToFavorite = (item) => {
     // console.log(item)
     dispatch(noticesFavorite(item));

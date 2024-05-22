@@ -28,7 +28,9 @@ export const OrangeBtn = styled.button`
   }
 `
 
-export const Heart = styled.svg`
+export const Heart = styled.svg.withConfig({
+  shouldForwardProp: (prop) => !['isFavorite'].includes(prop),
+})`
   width: 18px;
   height: 18px;
   /* fill: transparent;
