@@ -44,3 +44,15 @@ export const noticesFavorite = createAsyncThunk( "/notices/favorites/add",
     }
   }
 );
+
+export const noticesFavoriteDell = createAsyncThunk( "/notices/favorites/remove",
+  async ( item , thunkAPI) => {
+    try {
+      console.log(item)
+      const response = await axios.post(`/notices/favorites/remove/${item}`);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

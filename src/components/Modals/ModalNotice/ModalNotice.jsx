@@ -22,9 +22,9 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
 
   let favoritesAll = useSelector(selectUser);
 
-  console.log( favoritesAll.noticesFavorites.some(i => i._id === card._id) )
-  const isFavorite = favoritesAll.noticesFavorites.some(i => i._id === card._id);
 
+  const isFavorite = favoritesAll.noticesFavorites.some(i => i._id === card._id);
+  console.log( isFavorite )
   useEffect(() => {
     if (token && !user.name) {
       dispatch(currentFull());

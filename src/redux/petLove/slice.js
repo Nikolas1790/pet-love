@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {  friendsInf, newsInf, noticesFavorite, noticesInf } from "./operations";
+import {  friendsInf, newsInf, noticesFavorite, noticesFavoriteDell, noticesInf } from "./operations";
 
 const petLoveSlice = createSlice({
   name: "pet",
@@ -67,6 +67,21 @@ const petLoveSlice = createSlice({
         state.error = action.error.message;
       })
 
+
+      .addCase(noticesFavoriteDell.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(noticesFavoriteDell.fulfilled, (state, action) => {
+        state.loading = false;
+        state.favoritsPets = state.favoritsPets.filter(
+          (pet) => pet._id !== action.payload
+        );
+      })
+      .addCase(noticesFavoriteDell.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
   },
 });
 export const { resetStatusOperation } = petLoveSlice.actions;
