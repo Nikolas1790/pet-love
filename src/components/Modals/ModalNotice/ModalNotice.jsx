@@ -7,7 +7,7 @@ import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 import ButtonLightOrange from "components/Buttons/ButtonLightOrange/ButtonLightOrange";
 import { useDispatch, useSelector, } from "react-redux";
 import { noticesFavorite } from "../../../redux/petLove/operations";
-import { selectFavoritePets } from "../../../redux/petLove/selector";
+// import { selectFavoritePets } from "../../../redux/petLove/selector";
 import { useEffect } from "react";
 import { currentFull } from "../../../redux/auth/operationsAuth";
 import { selectToken, selectUser } from "../../../redux/auth/selectorAuth";
@@ -16,14 +16,14 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
   const dispatch = useDispatch();
   // console.log(card)
   // console.log(card.comment)
-  let favoritePets = useSelector(selectFavoritePets);
+  // let favoritePets = useSelector(selectFavoritePets);
   let user = useSelector(selectUser);
   const token = useSelector(selectToken);
 
   let favoritesAll = useSelector(selectUser);
 
-  console.log( favoritesAll)
-  const isFavorite = favoritePets.includes(card._id);
+  console.log( favoritesAll.noticesFavorites.some(i => i._id === card._id) )
+  const isFavorite = favoritesAll.noticesFavorites.some(i => i._id === card._id);
 
   useEffect(() => {
     if (token && !user.name) {
