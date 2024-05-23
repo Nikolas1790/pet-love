@@ -18,18 +18,18 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
   const token = useSelector(selectToken);
   let favoritesAll = useSelector(selectUser);
   let favoritesList = useSelector(selectFavoritePets);
+  console.log( card )
 
-  const isFavorite = favoritesAll.noticesFavorites.some(i => i._id === card._id) || favoritesList.includes(card._id);
-  console.log( isFavorite )
+  const isFavorite = favoritesList.includes(card._id) || favoritesAll.noticesFavorites.some(i => i._id === card._id) ;
+  // console.log( isFavorite )
 
   useEffect(() => {
-    if (token && !user.name) {
+    if (token && !user.name ) {
       dispatch(currentFull());
     }
-  }, [dispatch, token, user.name, favoritesList]);
+  }, [dispatch, token, user.name, isFavorite]);
 
   const handleAddToFavorite = (item) => {
-    // dispatch(noticesFavorite(item));
     if(!isFavorite){
       dispatch(noticesFavorite(item));
     } else{
@@ -55,7 +55,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
 
       <BtnContainer>
         <ButtonOrange 
-          label='Add to' 
+          label={isFavorite ?  "Remove" : 'Add to'} 
           width='160px' 
           onClick={() => handleAddToFavorite(card._id)} 
           isFavorite={isFavorite}
