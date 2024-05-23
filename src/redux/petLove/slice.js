@@ -75,9 +75,11 @@ const petLoveSlice = createSlice({
       .addCase(noticesFavoriteDell.fulfilled, (state, action) => {
         state.loading = false;
         console.log(action.payload)
-        state.favoritsPets = state.favoritsPets.filter(
-          (pet) => pet._id !== action.payload
-        );
+        state.favoritsPets = action.payload;
+
+        // state.favoritsPets = state.favoritsPets.filter(
+        //   (pet) => pet._id !== action.payload
+        // );
       })
       .addCase(noticesFavoriteDell.rejected, (state, action) => {
         state.loading = false;

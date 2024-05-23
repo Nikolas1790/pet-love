@@ -48,8 +48,10 @@ export const noticesFavorite = createAsyncThunk( "/notices/favorites/add",
 export const noticesFavoriteDell = createAsyncThunk( "/notices/favorites/remove/",
   async ( item , thunkAPI) => {
     try {
-      console.log(item)
-      const response = await axios.post(`/notices/favorites/remove/${item}`);
+      // console.log(item)
+      const response = await axios.delete(`/notices/favorites/remove/${item}`);
+      console.log(response.data)
+
       return response.data;
       
     } catch (error) {

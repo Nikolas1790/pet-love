@@ -20,7 +20,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData }) {
   let favoritesList = useSelector(selectFavoritePets);
 
   const isFavorite = favoritesAll.noticesFavorites.some(i => i._id === card._id) || favoritesList.includes(card._id);
-  console.log( favoritesList )
+  console.log( isFavorite )
 
   useEffect(() => {
     if (token && !user.name) {
