@@ -14,16 +14,16 @@ export const NavBtn = styled(NavLink)`
   width: ${({ width }) => width || '100%'};
   border-radius: 30px;
   border: 1px solid ${({ home }) => home  ? color.whiteTransparencyZeroFour : 'none'};
-  color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
-  background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeLight : color.orangePrimary};
+  color: ${({ label }) =>label === 'LOG IN' ? color.white : color.orangePrimary};
+  background: ${({ label }) =>label === 'LOG IN' ? color.orangePrimary: color.orangeLight};
 
   transition: all 0.25s linear;
   &:focus {
     outline: none;
   }
   &:hover {
-    background: ${({ label }) =>label === 'REGISTRATION' ? color.orangeDim : color.orangePrimaryActive};
-    color: ${({ label }) =>label === 'REGISTRATION' ? color.orangePrimary : color.white};
+    background: ${({ label }) =>label === 'LOG IN' ? color.orangePrimaryActive : color.orangeDim};
+    color: ${({ label }) =>label === 'LOG IN' ? color.white : color.orangePrimary};
     outline: none;
   }
 `

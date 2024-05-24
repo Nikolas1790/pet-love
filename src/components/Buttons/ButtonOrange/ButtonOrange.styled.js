@@ -1,7 +1,7 @@
 import color from 'common/GlobalColors'
 import styled from 'styled-components'
 
-export const OrangeBtn = styled.button`
+export const OrangeBtn = styled.nav`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;
