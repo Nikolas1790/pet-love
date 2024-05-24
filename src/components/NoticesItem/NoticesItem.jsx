@@ -24,7 +24,7 @@ export default function NoticesItem({card}) {
   let favoritesList = useSelector(selectFavoritePets);
   // console.log( card )
 
-  const isFavorite = favoritesList.includes(card._id) || favoritesAll.noticesFavorites.some(i => i._id === card._id);
+  const isFavorite = favoritesList.includes(card._id) || favoritesAll?.noticesFavorites?.some(i => i._id === card._id);
 
   useEffect(() => {
     if (token && !user.name ) {

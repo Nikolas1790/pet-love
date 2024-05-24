@@ -1,7 +1,10 @@
 import color from 'common/GlobalColors'
 import styled from 'styled-components'
 
-export const OrangeBtn = styled.nav`
+export const OrangeBtn = styled.button`
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;

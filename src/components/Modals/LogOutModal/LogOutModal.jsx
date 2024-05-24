@@ -31,11 +31,6 @@ export default function LogOut({ closeModals }) {
       </BtnsConteiner>
 
       <XButton closeModals={closeModals} />
-      {/* <ClosingSymbol onClick={closeModals}>
-        <svg width={24} height={24}>
-          <use href={`${sprite}#icon-x`} />
-        </svg>   
-      </ClosingSymbol> */}
     </Modal>    
   );
 };

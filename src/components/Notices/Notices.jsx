@@ -21,7 +21,7 @@ export default function Notices() {
     setCurrentPage(page);
   };
 
-  console.log(noticesData)
+  // console.log(noticesData)
   return (
     <ContentContainer>
       <NoticesContainer>
