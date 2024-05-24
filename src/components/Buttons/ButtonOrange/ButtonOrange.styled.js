@@ -11,10 +11,7 @@ export const OrangeBtn = styled.button`
   border-radius: 30px;
 
   color: ${color.white};
-
-  /* border: 1px solid ${color.blackPrimaryLight}; */
   background: ${color.orangePrimary};
-
 
   transition: all 0.25s linear;
   &:focus {

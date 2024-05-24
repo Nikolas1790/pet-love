@@ -66,7 +66,9 @@ export const NavCard = styled.div`
   gap: 10px;
 `
 
-export const FavoritBtn = styled.button`
+export const FavoritBtn = styled.button.withConfig({
+  shouldForwardProp: (prop) => !['isFavorite'].includes(prop),
+})`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,9 +84,6 @@ export const FavoritBtn = styled.button`
   svg {
     width: 18px;
     height: 18px;
-    /* fill: transparent; */
-    /* stroke: ${color.orangePrimary}; */
-    /* pointer-events: none; */
 
     fill: ${({isFavorite}) => (isFavorite ? color.orangePrimary : 'transparent')};
     stroke: ${color.orangePrimary};

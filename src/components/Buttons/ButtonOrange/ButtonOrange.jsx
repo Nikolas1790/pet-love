@@ -6,7 +6,7 @@ export default function ButtonOrange({ className, label, onClick, width, isFavor
     <OrangeBtn className={className} onClick={onClick} type="submit" width={width} >
       {label}
 
-      {(label === 'Add to' || label === 'Remove')   && (
+      {(label === 'Add to' || label === 'Remove') && (
         <Heart isFavorite={isFavorite}>
           <use href={`${sprite}#icon-heart-add`} />
         </Heart>

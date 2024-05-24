@@ -11,7 +11,6 @@ import {  noticesFavorite, noticesFavoriteDell } from "../../../redux/petLove/op
 export default function ModalNotice({ closeModals, card, petDetailsData, isFavorite }) {
   const dispatch = useDispatch();
 
-  // console.log( card )
   const handleAddToFavorite = (item) => {
     if(!isFavorite){
       dispatch(noticesFavorite(item));
@@ -20,6 +19,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData, isFavor
     }
   };
 
+  // console.log( card )
   return (           
     <NoticeModal>      
       <PetImg src={card.imgURL} alt="pet" />

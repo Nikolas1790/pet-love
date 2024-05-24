@@ -62,7 +62,7 @@ export default function NoticesItem({card}) {
       setOpenModal(true); // Если токена нет, открываем вторую модалку
     }
   };
-  
+
   const handleButtonFavorite = (i) => {
     if (token) {
       if(!isFavorite){
@@ -107,7 +107,6 @@ export default function NoticesItem({card}) {
           </FavoritBtn>
         </NavCard>
       </InfMainContainer>
-
       
       <PortalModal active={openModalNotice} setActive={setOpenModalNotice}>
         <ModalNotice closeModals={() => setOpenModalNotice()} card={card} petDetailsData={petDetailsData} isFavorite={isFavorite} />
