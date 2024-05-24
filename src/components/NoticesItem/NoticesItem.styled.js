@@ -77,14 +77,17 @@ export const FavoritBtn = styled.button`
   background: ${color.orangeLight};
   :hover,
   :focus {
-    background: red;
+    /* background: red; */
   }
   svg {
     width: 18px;
     height: 18px;
-    fill: transparent;
-    stroke: ${color.orangePrimary};
+    /* fill: transparent; */
+    /* stroke: ${color.orangePrimary}; */
     /* pointer-events: none; */
+
+    fill: ${({isFavorite}) => (isFavorite ? color.orangePrimary : 'transparent')};
+    stroke: ${color.orangePrimary};
   }
 
   /* fill: transparent;

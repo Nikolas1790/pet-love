@@ -3,19 +3,34 @@ import sprite from '../../img/sprite.svg';
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 import PortalModal from "components/PortalModal/PortalModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalAttentions from "components/Modals/ModalAttention/ModalAttention";
 import ModalNotice from "components/Modals/ModalNotice/ModalNotice";
-import { selectToken } from "../../redux/auth/selectorAuth";
+import { selectToken, selectUser } from "../../redux/auth/selectorAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { Star } from "components/StarRaiting/StarRaiting.styled";
-import { noticesFavorite } from "../../redux/petLove/operations";
+import { noticesFavorite, noticesFavoriteDell } from "../../redux/petLove/operations";
+import { selectFavoritePets } from "../../redux/petLove/selector";
+import { currentFull } from "../../redux/auth/operationsAuth";
 
 export default function NoticesItem({card}) {  
   const [openModal, setOpenModal] = useState(false);
   const [openModalNotice, setOpenModalNotice] = useState(false);
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
+
+  let user = useSelector(selectUser);
+  let favoritesAll = useSelector(selectUser);
+  let favoritesList = useSelector(selectFavoritePets);
+  // console.log( card )
+
+  const isFavorite = favoritesList.includes(card._id) || favoritesAll.noticesFavorites.some(i => i._id === card._id);
+
+  useEffect(() => {
+    if (token && !user.name ) {
+      dispatch(currentFull());
+    }
+  }, [dispatch, token, user.name, isFavorite]);
 
   // Функція для форматування дати
   const formatDate = (dateString) => {
@@ -47,9 +62,14 @@ export default function NoticesItem({card}) {
       setOpenModal(true); // Если токена нет, открываем вторую модалку
     }
   };
-  const handleButtonFavorite = () => {
+  
+  const handleButtonFavorite = (i) => {
     if (token) {
-      dispatch(noticesFavorite(card._id));
+      if(!isFavorite){
+        dispatch(noticesFavorite(i));
+      } else{
+        dispatch(noticesFavoriteDell(i));
+      }
     } else {
       setOpenModal(true); // Если токена нет, открываем вторую модалку
     }
@@ -80,7 +100,7 @@ export default function NoticesItem({card}) {
 
         <NavCard>
           <ButtonOrange label='Learn more'  onClick={handleButtonClick} />
-          <FavoritBtn  onClick={handleButtonFavorite} >
+          <FavoritBtn  onClick={() => handleButtonFavorite(card._id)} isFavorite={isFavorite}  >
             <svg >
               <use href={`${sprite}#icon-heart-add`} />
             </svg>
@@ -90,7 +110,7 @@ export default function NoticesItem({card}) {
 
       
       <PortalModal active={openModalNotice} setActive={setOpenModalNotice}>
-        <ModalNotice closeModals={() => setOpenModalNotice()} card={card} petDetailsData={petDetailsData} />
+        <ModalNotice closeModals={() => setOpenModalNotice()} card={card} petDetailsData={petDetailsData} isFavorite={isFavorite} />
       </PortalModal>
       <PortalModal active={openModal} setActive={setOpenModal}>
         <ModalAttentions closeModals={() => setOpenModal()} />
