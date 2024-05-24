@@ -77,10 +77,12 @@ export const FavoritBtn = styled.button.withConfig({
   border-radius: 50%;
   border: none;
   background: ${color.orangeLight};
+  
   :hover,
   :focus {
     /* background: red; */
   }
+
   svg {
     width: 18px;
     height: 18px;
