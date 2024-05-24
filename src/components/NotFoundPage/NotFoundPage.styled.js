@@ -26,19 +26,17 @@ export const NotFoundContainer = styled.div`
 `;
 
 export const NotFoundImageStyled = styled.img`
-  width: 280px;  // Укажите нужный размер
-  height: 280px; // Укажите нужный размер
+  width: 280px; 
+  height: 280px;
   border-radius: 50%;
-  /* margin: 0 20px;  */
 `;
 
 export const FourText = styled.h1`
-  font-size: 300px; // Укажите нужный размер
+  font-size: 300px; 
   font-weight: 800;
   line-height: 1;
   color: ${color.white};
 `;
-
 
 export const WrongMainText = styled.p`
   margin-bottom: 20px;
