@@ -10,24 +10,27 @@ import { Pagination } from "components/Pagination/Pagination";
 
 export default function Notices() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [keyWord, setKeyWord] = useState('');
   const dispatch = useDispatch();
   const noticesData = useSelector(selectNoticesInf);  
 
   useEffect(() => {
-    dispatch(noticesInf({ byDate: true, page: currentPage, limit: 6  }));
-  }, [dispatch, currentPage]);
+  console.log(keyWord)
+
+    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6  }));
+  }, [dispatch, currentPage, keyWord]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
-  // console.log(noticesData)
+  // console.log(keyWord)
   return (
     <ContentContainer>
       <NoticesContainer>
         <Title>Find your favorite pet</Title>
 
-        <NoticesFilter />
+        <NoticesFilter setCurrentPage={setCurrentPage} setKeyWord={setKeyWord} />
 
         <div>
           <NoticesList noticesData={noticesData} />    

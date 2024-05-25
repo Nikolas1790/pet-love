@@ -19,7 +19,7 @@ export default function ModalNotice({ closeModals, card, petDetailsData, isFavor
     }
   };
 
-  console.log( card )
+  // console.log( card )
   return (           
     <NoticeModal>  
       <ImgContainer>

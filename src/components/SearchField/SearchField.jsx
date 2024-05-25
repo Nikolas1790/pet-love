@@ -26,13 +26,13 @@ export default function SearchField({ onSearch }) {
         />
         {input && (
           <ClearButton onClick={handleClear} type="button">
-            <svg width={18} height={16}>
+            <svg width={18} height={18}>
               <use href={`${sprite}#icon-x`} />
             </svg>
           </ClearButton>
         )}
         <SearchButton type="submit">
-        <svg width={18} height={16}>
+          <svg width={18} height={18}>
             <use href={`${sprite}#icon-search-1`} />
           </svg>
         </SearchButton>
