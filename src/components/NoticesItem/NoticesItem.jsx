@@ -20,11 +20,12 @@ export default function NoticesItem({card}) {
   const dispatch = useDispatch();
 
   let user = useSelector(selectUser);
-  let favoritesAll = useSelector(selectUser);
+  // let favoritesAll = useSelector(selectUser);
   let favoritesList = useSelector(selectFavoritePets);
-  // console.log( card )
+  console.log(user )
+  // console.log( favoritesAll )
 
-  const isFavorite = favoritesList.includes(card._id) || favoritesAll?.noticesFavorites?.some(i => i._id === card._id);
+  const isFavorite = favoritesList.includes(card._id) || user?.noticesFavorites?.some(i => i._id === card._id);
 
   useEffect(() => {
     if (token && !user.name ) {

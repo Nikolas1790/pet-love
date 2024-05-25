@@ -53,7 +53,6 @@ const petLoveSlice = createSlice({
         state.error = action.error.message;
       })
 
-
       .addCase(noticesFavorite.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -67,16 +66,14 @@ const petLoveSlice = createSlice({
         state.error = action.error.message;
       })
 
-
       .addCase(noticesFavoriteDell.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addCase(noticesFavoriteDell.fulfilled, (state, action) => {
         state.loading = false;
-        console.log(action.payload)
+        // console.log(action.payload)
         state.favoritsPets = action.payload;
-
         // state.favoritsPets = state.favoritsPets.filter(
         //   (pet) => pet._id !== action.payload
         // );

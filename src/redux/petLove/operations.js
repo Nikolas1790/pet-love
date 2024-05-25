@@ -36,7 +36,7 @@ export const noticesInf = createAsyncThunk( "/notices",
 export const noticesFavorite = createAsyncThunk( "/notices/favorites/add",
   async ( item , thunkAPI) => {
     try {
-      console.log(item)
+      // console.log(item)
       const response = await axios.post(`/notices/favorites/add/${item}`);
       return response.data;
     } catch (error) {
@@ -50,12 +50,12 @@ export const noticesFavoriteDell = createAsyncThunk( "/notices/favorites/remove/
     try {
       // console.log(item)
       const response = await axios.delete(`/notices/favorites/remove/${item}`);
-      console.log(response.data)
+      // console.log(response.data)
 
       return response.data;
       
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       return thunkAPI.rejectWithValue(error.message);
     }
   }

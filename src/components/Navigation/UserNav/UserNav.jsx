@@ -4,10 +4,15 @@ import PortalModal from "components/PortalModal/PortalModal";
 import LogOut from "components/Modals/LogOutModal/LogOutModal";
 import { useState } from "react";
 import sprite from '../../../img/sprite.svg';
-import { ProfilNav } from "./UserNav.styled";
+import { ProfilName, ProfilNav } from "./UserNav.styled";
+import { selectUser } from "../../../redux/auth/selectorAuth";
+import { useSelector } from "react-redux";
 
 export default function UserNav({home}) {
   const [openModal, setOpenModal] = useState(false);
+  let user = useSelector(selectUser);
+  console.log(user.name )
+
   const handleLogout = () => {
     setOpenModal(true)
   };
@@ -18,7 +23,7 @@ export default function UserNav({home}) {
           <svg width={50} height={50}>
             <use href={`${sprite}#icon-user-without-photo`} />
           </svg>
-          NAME
+          <ProfilName>{user.name}</ProfilName>
         </ProfilNav>
 
         <PortalModal active={openModal} setActive={setOpenModal}>
