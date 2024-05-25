@@ -1,5 +1,5 @@
 import XButton from "components/XButton/XButton";
-import { BtnContainer, NoticeModal, PetImg, ReitingContainer } from "./ModalNotice.styled";
+import { BtnContainer, CategoryBlock, ImgContainer, NoticeModal, PetCategory, PetImg, ReitingContainer } from "./ModalNotice.styled";
 import { PetComments, PetDetails, TitleCard } from "components/NoticesItem/NoticesItem.styled";
 import PetDetailItem from "components/NoticesPetDetailItem/NoticesPetDetailItem";
 import StarRating from "components/StarRaiting/StarRaiting";
@@ -19,10 +19,16 @@ export default function ModalNotice({ closeModals, card, petDetailsData, isFavor
     }
   };
 
-  // console.log( card )
+  console.log( card )
   return (           
-    <NoticeModal>      
-      <PetImg src={card.imgURL} alt="pet" />
+    <NoticeModal>  
+      <ImgContainer>
+        <PetImg src={card.imgURL} alt="pet" />
+        <CategoryBlock>
+          <PetCategory>{card.category}</PetCategory>
+        </CategoryBlock>
+      </ImgContainer>    
+
       <TitleCard margin="10px">{card.title}</TitleCard>
       <ReitingContainer>
         <StarRating rating={Math.min(card.popularity, 5)} />
