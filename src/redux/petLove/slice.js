@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {  friendsInf, newsInf, noticesFavorite, noticesFavoriteDell, noticesInf } from "./operations";
+import {  categoriesInf, friendsInf, newsInf, noticesFavorite, noticesFavoriteDell, noticesInf } from "./operations";
 
 const petLoveSlice = createSlice({
   name: "pet",
@@ -8,6 +8,7 @@ const petLoveSlice = createSlice({
     newsData:[],
     noticesData:[],
     favoritsPets: [],
+    categoriesList:[],
     loading: false,
     error: null
   },
@@ -79,6 +80,20 @@ const petLoveSlice = createSlice({
         // );
       })
       .addCase(noticesFavoriteDell.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+
+
+      .addCase(categoriesInf.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(categoriesInf.fulfilled, (state, action) => {
+        state.loading = false;
+        state.categoriesList = action.payload;
+      })
+      .addCase(categoriesInf.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })

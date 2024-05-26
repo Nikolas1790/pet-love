@@ -61,3 +61,15 @@ export const noticesFavoriteDell = createAsyncThunk( "/notices/favorites/remove/
     }
   }
 );
+
+
+export const categoriesInf = createAsyncThunk( "/notices/categories",
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get("/notices/categories");
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
