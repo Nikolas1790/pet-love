@@ -15,8 +15,6 @@ export default function Notices() {
   const noticesData = useSelector(selectNoticesInf);  
 
   useEffect(() => {
-  console.log(keyWord)
-
     dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6  }));
   }, [dispatch, currentPage, keyWord]);
 

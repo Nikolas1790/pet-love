@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ClearButton, SearchButton, SearchContainer, SearchInput } from './SearchField.styled';
 import sprite from '../../img/sprite.svg';
 
-export default function SearchField({ onSearch }) {
+export default function SearchField({ onSearch, width, border }) {
   const [input, setInput] = useState('');
 
   const handleSubmit = (event) => {
@@ -23,6 +23,8 @@ export default function SearchField({ onSearch }) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Search"
+          border={border}
+          width={width}
         />
         {input && (
           <ClearButton onClick={handleClear} type="button">
