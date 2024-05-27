@@ -6,6 +6,7 @@ import { selectCategoriesList } from '../../redux/petLove/selector';
 import { categoriesInf } from '../../redux/petLove/operations';
 
 export default function Selector (){
+  const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
   const dispatch = useDispatch();
@@ -15,7 +16,8 @@ export default function Selector (){
     dispatch(categoriesInf())
   }, [dispatch]);
 
-
+  // Добавляем "Show all" к списку категорий
+  const extendedCategories = ["Show all", ...categories];
 
 
   const toggleDropdown = () => setDropdownArticle(!dropdownArticle);
@@ -25,7 +27,7 @@ export default function Selector (){
 
   const handleItemClick = (category) => {
     console.log(category)
-    // setSelectedCategory(category);
+    setSelectedArticle(category);
     // formik.setFieldValue(fieldName, category); 
     // toggleDropdown();
   };
@@ -41,11 +43,11 @@ export default function Selector (){
         // haserror={hasError} 
         // defaultname={!selectedCategory && !reservName? "true" : ''}
       >
-        "dff"
+        {selectedArticle || "Category"}
       </DropdownButton>  
       <DropdownList open={dropdownArticle}>
         <StyledSimpleBar style={{ maxHeight: 126 }}>
-          {categories.map((category, index) => (
+          {extendedCategories.map((category, index) => (
             <DropdownItem key={index} onClick={() => handleItemClick(category)}>
               {category}
             </DropdownItem>

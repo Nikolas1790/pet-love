@@ -33,10 +33,10 @@ export const Dropdown = styled.div`
 
 export const DropdownSvg = styled.svg`
   position: absolute;
-  top: 14px;
+  top: 15px;
   right: 14px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   cursor: pointer;
   stroke: ${color.blackPrimary};
   fill: none;
@@ -44,50 +44,58 @@ export const DropdownSvg = styled.svg`
 
 export const DropdownButton = styled.button`
   display: flex;
-  font-weight: 400;
-  font-size: 12px;
-  height: 44px;
-  border-radius: 60px; 
-  border: 1px solid ${color.blackPrimarySecondary};
+  font-weight: 500;
+  font-size: 16px;
+  height: 48px;
+  border-radius: 30px; 
+  border: none;
   outline: none;
   cursor: pointer;
   background-color: ${color.white};
-  padding: 13px 18px;
+  padding: 14px;
 
-  width: 295px;
-  color: ${({ defaultname }) => defaultname ? color.blackColorSecondary : color.blackModalColr};
-  border-color: ${({ haserror }) => haserror ? color.red : color.blackPrimarySecondary};
-
-  @media (min-width: 768px) {
+  width: 200px;
+  color: ${color.blackPrimary};
+ 
+  /* @media (min-width: 768px) {
     width: 224px;
-  }
+  } */
 `;
 
 export const DropdownList = styled.ul`
   position: absolute;
   z-index: 1;
-  top: 112%;
+  top: 52px;
   left: 0;
-  background-color: ${color.greenLight};
+  background-color: ${color.white};
 
   display: ${({ open }) => (open ? 'block' : 'none')};
-  max-height: 140px; 
-  padding: 13px 18px;
-  margin: 0;
+  height: 160px; 
+  /* max-height: 160px;  */
+
+  padding: 14px;
+  /* margin: 0; */
   width: 100%;
   border-radius: 15px;
 `;
 
 export const DropdownItem = styled.li`
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: ${color.whiterTranslucent};
-  padding:  3px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: ${color.blackPrimarySixtyPercebt};
+  /* padding:  3px 0; */
   cursor: pointer;  
 
   &:hover {
-    color: ${color.white};
+    color: ${color.orangePrimary};
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  &:first-letter {
+    text-transform: uppercase;
   }
 `;
 

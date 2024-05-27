@@ -1,5 +1,7 @@
 const color = {
   blackPrimary: 'rgb(38, 38, 38)',
+  blackPrimarySixtyPercebt: 'rgba(38, 38, 38, 0.6)',
+
   blackPrimaryFiftyPercebt: 'rgba(38, 38, 38, 0.5)',
   blackPrimaryThirtyPercent: 'rgba(38, 38, 38, 0.3)',
   blackPrimaryLight: 'rgba(38, 38, 38, 0.15)',
