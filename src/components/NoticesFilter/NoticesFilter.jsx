@@ -1,6 +1,6 @@
 import SearchField from "components/SearchField/SearchField";
 import { FilterContainer } from "./NoticesFilter.styled";
-import Selector from "components/Selector/Selector";
+import SelectorCategory from "components/Selectors/Selector/SelectorCategory";
 
 export default function NoticesFilter ({ setCurrentPage, setKeyWord }){
 
@@ -13,7 +13,7 @@ export default function NoticesFilter ({ setCurrentPage, setKeyWord }){
   return (
     <FilterContainer>
       <SearchField onSearch={handleSearch} width="265px" border="none" />
-      <Selector />
+      <SelectorCategory />
     </FilterContainer>
   )
 }

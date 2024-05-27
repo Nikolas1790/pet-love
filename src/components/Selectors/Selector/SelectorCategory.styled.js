@@ -1,30 +1,30 @@
 import color from "common/GlobalColors";
 import styled from "styled-components";
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
-// import DatePicker from 'react-datepicker';
-// import 'react-datepicker/dist/react-datepicker.css';
 
-export const StyledSimpleBar = styled(SimpleBar)`
-  .simplebar-scrollbar {
-    background: rgba(255, 255, 255, 0.4) !important;
-    width: 6px !important;
-    border-radius: 12px !important;
-  }
+// import SimpleBar from 'simplebar-react';
+// import 'simplebar/dist/simplebar.min.css';
 
-  .simplebar-track.simplebar-vertical {
-    width: 6px !important;
-    right: -10px !important;
-  }
 
-  .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
-    background-color: #dcdcdc;
-  }
+// export const StyledSimpleBar = styled(SimpleBar)`
+//   .simplebar-scrollbar {
+//     background: rgba(255, 255, 255, 0.4) !important;
+//     width: 6px !important;
+//     border-radius: 12px !important;
+//   }
 
-  .simplebar-track.simplebar-vertical .simplebar-scrollbar:hover:before {
-    background-color: #bcbcbc;
-  }
-`;
+//   .simplebar-track.simplebar-vertical {
+//     width: 6px !important;
+//     right: -10px !important;
+//   }
+
+//   .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+//     background-color: #dcdcdc;
+//   }
+
+//   .simplebar-track.simplebar-vertical .simplebar-scrollbar:hover:before {
+//     background-color: #bcbcbc;
+//   }
+// `;
 
 
 export const Dropdown = styled.div`
@@ -57,6 +57,9 @@ export const DropdownButton = styled.button`
   width: 200px;
   color: ${color.blackPrimary};
  
+  /* &:first-letter {
+    text-transform: uppercase;
+  } */
   /* @media (min-width: 768px) {
     width: 224px;
   } */

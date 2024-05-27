@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import sprite from '../../img/sprite.svg';
-import { Dropdown, DropdownButton, DropdownItem, DropdownList, DropdownSvg, StyledSimpleBar } from './Selector.styled';
+import sprite from '../../../img/sprite.svg';
+import { Dropdown, DropdownButton, DropdownItem, DropdownList, DropdownSvg } from './SelectorCategory.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCategoriesList } from '../../redux/petLove/selector';
-import { categoriesInf } from '../../redux/petLove/operations';
+import { selectCategoriesList } from '../../../redux/petLove/selector';
+import { categoriesInf } from '../../../redux/petLove/operations';
 
-export default function Selector (){
+export default function SelectorCategory (){
   const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
@@ -16,9 +16,17 @@ export default function Selector (){
     dispatch(categoriesInf())
   }, [dispatch]);
 
-  // Добавляем "Show all" к списку категорий
-  const extendedCategories = ["Show all", ...categories];
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownArticle(false); 
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, [setDropdownArticle]); 
 
+  const extendedCategories = ["Show all", ...categories];
 
   const toggleDropdown = () => setDropdownArticle(!dropdownArticle);
   const handleDropdownButtonClick = (event) => {
@@ -28,8 +36,7 @@ export default function Selector (){
   const handleItemClick = (category) => {
     console.log(category)
     setSelectedArticle(category);
-    // formik.setFieldValue(fieldName, category); 
-    // toggleDropdown();
+    toggleDropdown();
   };
 
   return (
@@ -40,19 +47,15 @@ export default function Selector (){
       <DropdownButton
         type="button" 
         onClick={handleDropdownButtonClick} 
-        // haserror={hasError} 
-        // defaultname={!selectedCategory && !reservName? "true" : ''}
       >
         {selectedArticle || "Category"}
       </DropdownButton>  
       <DropdownList open={dropdownArticle}>
-        <StyledSimpleBar style={{ maxHeight: 126 }}>
           {extendedCategories.map((category, index) => (
             <DropdownItem key={index} onClick={() => handleItemClick(category)}>
               {category}
             </DropdownItem>
           ))}
-        </StyledSimpleBar>
       </DropdownList>                      
     </Dropdown>
   )
