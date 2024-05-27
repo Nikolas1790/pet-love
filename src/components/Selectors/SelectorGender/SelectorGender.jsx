@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import sprite from '../../../img/sprite.svg';
 import { Dropdown, DropdownButton, DropdownItem, DropdownList, DropdownSvg } from './SelectorGender.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCategoriesList, selectSexList } from '../../../redux/petLove/selector';
-import { categoriesInf, gendersInf } from '../../../redux/petLove/operations';
+import { selectSexList } from '../../../redux/petLove/selector';
+import { gendersInf } from '../../../redux/petLove/operations';
 
 export default function SelectorGender (){
   const [selectedArticle, setSelectedArticle] = useState("");

@@ -84,3 +84,14 @@ export const gendersInf = createAsyncThunk( "/notices/sex",
     }
   }
 );
+
+export const typesInf = createAsyncThunk( "/notices/species",
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get("/notices/species");
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
