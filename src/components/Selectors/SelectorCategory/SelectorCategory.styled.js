@@ -102,8 +102,8 @@ export const DropdownItem = styled.li`
   }
 `;
 
-export const BtnConteiner = styled.div`
-  display: flex;
-  gap: 8px;
-  margin-top: 40px;
-`;
+// export const BtnConteiner = styled.div`
+//   display: flex;
+//   gap: 8px;
+//   margin-top: 40px;
+// `;
