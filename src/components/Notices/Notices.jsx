@@ -10,6 +10,7 @@ import { Pagination } from "components/Pagination/Pagination";
 
 export default function Notices() {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedType, setSelectedType] = useState("");
   
   // const [selectedArticle, setSelectedArticle] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,8 +29,10 @@ export default function Notices() {
 
   useEffect(() => {
     const category = getCategory(selectedCategory);
-    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species:'' }));
-  }, [dispatch, currentPage, keyWord, selectedCategory]);
+    const species = getCategory(selectedType);
+
+    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species }));
+  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -45,6 +48,7 @@ export default function Notices() {
           setCurrentPage={setCurrentPage} 
           setKeyWord={setKeyWord} 
           setSelectedCategory={setSelectedCategory}
+          setSelectedType={setSelectedType}
         />
 
         <div>
