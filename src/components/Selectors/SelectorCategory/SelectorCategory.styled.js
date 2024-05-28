@@ -1,32 +1,6 @@
 import color from "common/GlobalColors";
 import styled from "styled-components";
 
-// import SimpleBar from 'simplebar-react';
-// import 'simplebar/dist/simplebar.min.css';
-
-
-// export const StyledSimpleBar = styled(SimpleBar)`
-//   .simplebar-scrollbar {
-//     background: rgba(255, 255, 255, 0.4) !important;
-//     width: 6px !important;
-//     border-radius: 12px !important;
-//   }
-
-//   .simplebar-track.simplebar-vertical {
-//     width: 6px !important;
-//     right: -10px !important;
-//   }
-
-//   .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
-//     background-color: #dcdcdc;
-//   }
-
-//   .simplebar-track.simplebar-vertical .simplebar-scrollbar:hover:before {
-//     background-color: #bcbcbc;
-//   }
-// `;
-
-
 export const Dropdown = styled.div`
   position: relative;
 `;
@@ -46,6 +20,7 @@ export const DropdownButton = styled.button`
   display: flex;
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.25;
   height: 48px;
   border-radius: 30px; 
   border: none;

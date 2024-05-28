@@ -44,8 +44,12 @@ export const DropdownSvg = styled.svg`
 
 export const DropdownButton = styled.button`
   display: flex;
+  /* align-self: center; */
+  /* justify-content: center; */
+  /* text-align: center; */
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.25;
   height: 48px;
   border-radius: 30px; 
   border: none;
@@ -56,13 +60,7 @@ export const DropdownButton = styled.button`
 
   width: 190px;
   color: ${color.blackPrimary};
- 
-  /* &:first-letter {
-    text-transform: uppercase;
-  } */
-  /* @media (min-width: 768px) {
-    width: 224px;
-  } */
+
 `;
 
 export const DropdownList = styled.ul`

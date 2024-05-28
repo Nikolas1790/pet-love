@@ -20,6 +20,7 @@ export const DropdownButton = styled.button`
   display: flex;
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.25;
   height: 48px;
   border-radius: 30px; 
   border: none;
