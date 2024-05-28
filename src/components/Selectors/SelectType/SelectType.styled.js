@@ -101,9 +101,3 @@ export const DropdownItem = styled.li`
     text-transform: uppercase;
   }
 `;
-
-// export const BtnConteiner = styled.div`
-//   display: flex;
-//   gap: 8px;
-//   margin-top: 40px;
-// `;

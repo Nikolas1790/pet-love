@@ -9,3 +9,8 @@ export const FilterContainer = styled.div`
   background: ${color.orangeLight};
   padding: 40px;  
 `
+
+export const DataEntryContainer = styled.div`
+  display: flex;
+  gap: 16px;
+`

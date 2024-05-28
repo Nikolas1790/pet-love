@@ -32,10 +32,13 @@ export default function SelectorCategory (){
   const handleDropdownButtonClick = (event) => {
     toggleDropdown();
   };
-
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
   const handleItemClick = (category) => {
     console.log(category)
-    setSelectedArticle(category);
+    const capitalizedCategory = capitalizeFirstLetter(category);
+    setSelectedArticle(capitalizedCategory);
     toggleDropdown();
   };
 

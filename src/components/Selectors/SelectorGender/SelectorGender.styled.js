@@ -28,7 +28,7 @@ export const DropdownButton = styled.button`
   background-color: ${color.white};
   padding: 14px;
 
-  width: 200px;
+  width: 190px;
   color: ${color.blackPrimary};
  
   /* &:first-letter {
