@@ -11,8 +11,9 @@ import { Pagination } from "components/Pagination/Pagination";
 export default function Notices() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedType, setSelectedType] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
   
-  // const [selectedArticle, setSelectedArticle] = useState("");
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [keyWord, setKeyWord] = useState('');
   const dispatch = useDispatch();
@@ -30,9 +31,11 @@ export default function Notices() {
   useEffect(() => {
     const category = getCategory(selectedCategory);
     const species = getCategory(selectedType);
+    const sex = getCategory(selectedGender);
 
-    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species }));
-  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType]);
+
+    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species, sex }));
+  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType, selectedGender]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -49,6 +52,7 @@ export default function Notices() {
           setKeyWord={setKeyWord} 
           setSelectedCategory={setSelectedCategory}
           setSelectedType={setSelectedType}
+          setSelectedGender={setSelectedGender}
         />
 
         <div>

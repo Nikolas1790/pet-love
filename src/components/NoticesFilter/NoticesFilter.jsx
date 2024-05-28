@@ -3,8 +3,9 @@ import { DataEntryContainer, FilterContainer } from "./NoticesFilter.styled";
 import SelectorCategory from "components/Selectors/SelectorCategory/SelectorCategory";
 import SelectorGender from "components/Selectors/SelectorGender/SelectorGender";
 import SelectorType from "components/Selectors/SelectType/SelectType";
+import SearchLocality from "components/SearchLocality/SearchLocality";
 
-export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelectedCategory, setSelectedType }){
+export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelectedCategory, setSelectedType, setSelectedGender }){
 
   const handleSearch = (searchTerm) => {
     setKeyWord(searchTerm);
@@ -16,8 +17,9 @@ export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelected
       <DataEntryContainer>
         <SearchField onSearch={handleSearch} width="265px" border="none" />
         <SelectorCategory setSelectedCategory={setSelectedCategory} />
-        <SelectorGender />
+        <SelectorGender setSelectedGender={setSelectedGender}/>
         <SelectorType setSelectedType={setSelectedType} />
+        <SearchLocality />
       </DataEntryContainer>
     </FilterContainer>
   )

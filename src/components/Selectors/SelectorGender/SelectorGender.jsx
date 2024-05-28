@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectSexList } from '../../../redux/petLove/selector';
 import { gendersInf } from '../../../redux/petLove/operations';
 
-export default function SelectorGender (){
+export default function SelectorGender ({setSelectedGender}){
   const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
@@ -39,6 +39,7 @@ export default function SelectorGender (){
     console.log(category)
     const capitalizedCategory = capitalizeFirstLetter(category);
     setSelectedArticle(capitalizedCategory);
+    setSelectedGender(category)
     toggleDropdown();
   };
 

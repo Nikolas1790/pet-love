@@ -23,10 +23,10 @@ export const friendsInf = createAsyncThunk( "/friends",
 );
 
 export const noticesInf = createAsyncThunk( "/notices",
-  async ({ keyWord ="", byDate = true, page = 1, limit = 6, category='', species='' }, thunkAPI) => {
+  async ({ keyWord ="", byDate = true, page = 1, limit = 6, category='', species='', sex='' }, thunkAPI) => {
     try {
-      console.log(keyWord)
-      const response = await axios.get(`/notices?&keyword=${keyWord}&byDate=${byDate}&page=${page}&limit=${limit}&category=${category}&species=${species}`);
+      console.log(sex)
+      const response = await axios.get(`/notices?&keyword=${keyWord}&byDate=${byDate}&page=${page}&limit=${limit}&category=${category}&species=${species}&gender=${sex}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
