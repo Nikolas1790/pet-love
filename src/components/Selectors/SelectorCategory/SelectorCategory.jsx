@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCategoriesList } from '../../../redux/petLove/selector';
 import { categoriesInf } from '../../../redux/petLove/operations';
 
-export default function SelectorCategory (){
-  const [selectedArticle, setSelectedArticle] = useState("");
+export default function SelectorCategory ({selectedArticle, setSelectedArticle }){
+  // const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
   const dispatch = useDispatch();

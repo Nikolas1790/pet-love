@@ -44,9 +44,6 @@ export const DropdownSvg = styled.svg`
 
 export const DropdownButton = styled.button`
   display: flex;
-  /* align-self: center; */
-  /* justify-content: center; */
-  /* text-align: center; */
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
@@ -60,7 +57,6 @@ export const DropdownButton = styled.button`
 
   width: 190px;
   color: ${color.blackPrimary};
-
 `;
 
 export const DropdownList = styled.ul`
@@ -72,10 +68,7 @@ export const DropdownList = styled.ul`
 
   display: ${({ open }) => (open ? 'block' : 'none')};
   height: 216px; 
-  /* max-height: 160px;  */
-
   padding: 14px;
-  /* margin: 0; */
   width: 100%;
   border-radius: 15px;
 `;

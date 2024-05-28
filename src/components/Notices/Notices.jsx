@@ -9,14 +9,25 @@ import { selectNoticesInf } from "../../redux/petLove/selector";
 import { Pagination } from "components/Pagination/Pagination";
 
 export default function Notices() {
+  const [selectedArticle, setSelectedArticle] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [keyWord, setKeyWord] = useState('');
   const dispatch = useDispatch();
   const noticesData = useSelector(selectNoticesInf);  
 
+
+  const getCategory = (article) => {
+    if (article === "Show all") {
+      return '';
+    }
+    return article.toLowerCase();
+  };
+
+
   useEffect(() => {
-    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6  }));
-  }, [dispatch, currentPage, keyWord]);
+    const category = getCategory(selectedArticle);
+    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species:'' }));
+  }, [dispatch, currentPage, keyWord, selectedArticle]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -28,7 +39,13 @@ export default function Notices() {
       <NoticesContainer>
         <Title>Find your favorite pet</Title>
 
-        <NoticesFilter setCurrentPage={setCurrentPage} setKeyWord={setKeyWord} />
+        <NoticesFilter 
+          setCurrentPage={setCurrentPage} 
+          setKeyWord={setKeyWord} 
+          selectedArticle={selectedArticle}
+          setSelectedArticle={setSelectedArticle}
+           
+        />
 
         <div>
           <NoticesList noticesData={noticesData} />    
