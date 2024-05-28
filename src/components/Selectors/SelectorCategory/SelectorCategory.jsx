@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCategoriesList } from '../../../redux/petLove/selector';
 import { categoriesInf } from '../../../redux/petLove/operations';
 
-export default function SelectorCategory ({selectedArticle, setSelectedArticle }){
-  // const [selectedArticle, setSelectedArticle] = useState("");
+export default function SelectorCategory ({ setSelectedCategory }){
+  const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
   const dispatch = useDispatch();
@@ -39,6 +39,7 @@ export default function SelectorCategory ({selectedArticle, setSelectedArticle }
     console.log(category)
     const capitalizedCategory = capitalizeFirstLetter(category);
     setSelectedArticle(capitalizedCategory);
+    setSelectedCategory(category)
     toggleDropdown();
   };
 

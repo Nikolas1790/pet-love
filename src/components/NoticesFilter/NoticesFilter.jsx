@@ -4,7 +4,7 @@ import SelectorCategory from "components/Selectors/SelectorCategory/SelectorCate
 import SelectorGender from "components/Selectors/SelectorGender/SelectorGender";
 import SelectorType from "components/Selectors/SelectType/SelectType";
 
-export default function NoticesFilter ({ setCurrentPage, setKeyWord, selectedArticle, setSelectedArticle }){
+export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelectedCategory }){
 
   const handleSearch = (searchTerm) => {
     setKeyWord(searchTerm);
@@ -15,7 +15,7 @@ export default function NoticesFilter ({ setCurrentPage, setKeyWord, selectedArt
     <FilterContainer>
       <DataEntryContainer>
         <SearchField onSearch={handleSearch} width="265px" border="none" />
-        <SelectorCategory selectedArticle={selectedArticle} setSelectedArticle={setSelectedArticle} />
+        <SelectorCategory setSelectedCategory={setSelectedCategory} />
         <SelectorGender />
         <SelectorType />
       </DataEntryContainer>

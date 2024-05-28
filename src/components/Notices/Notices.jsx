@@ -9,7 +9,9 @@ import { selectNoticesInf } from "../../redux/petLove/selector";
 import { Pagination } from "components/Pagination/Pagination";
 
 export default function Notices() {
-  const [selectedArticle, setSelectedArticle] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  
+  // const [selectedArticle, setSelectedArticle] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [keyWord, setKeyWord] = useState('');
   const dispatch = useDispatch();
@@ -25,9 +27,9 @@ export default function Notices() {
 
 
   useEffect(() => {
-    const category = getCategory(selectedArticle);
+    const category = getCategory(selectedCategory);
     dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species:'' }));
-  }, [dispatch, currentPage, keyWord, selectedArticle]);
+  }, [dispatch, currentPage, keyWord, selectedCategory]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -42,9 +44,7 @@ export default function Notices() {
         <NoticesFilter 
           setCurrentPage={setCurrentPage} 
           setKeyWord={setKeyWord} 
-          selectedArticle={selectedArticle}
-          setSelectedArticle={setSelectedArticle}
-           
+          setSelectedCategory={setSelectedCategory}
         />
 
         <div>
