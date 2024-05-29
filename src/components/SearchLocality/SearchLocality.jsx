@@ -1,44 +1,46 @@
-import React, { useState } from 'react';
-import { ClearButton, SearchButton, SearchContainer, SearchInput } from './SearchLocality.styled';
-import sprite from '../../img/sprite.svg';
+import React, { useState, useEffect } from 'react';
+import Select from 'react-select';
+import axios from 'axios';
 
-export default function SearchLocality({ onSearch, width, border }) {
-  const [input, setInput] = useState('');
+export default function SearchLocality({  onLocationChange  }) {
+  const [inputValue, setInputValue] = useState('');
+  const [options, setOptions] = useState([]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSearch(input);
+  const fetchLocations = async (input) => {
+    try {
+      const response = await axios.get(`/api/locations?search=${input}`);
+      setOptions(response.data.locations.map((location) => ({
+        value: location.id,
+        label: location.name,
+      })));
+    } catch (error) {
+      console.error('Error fetching locations:', error);
+    }
   };
 
-  const handleClear = () => {
-    setInput('');
-    onSearch('');
+  useEffect(() => {
+    if (inputValue) {
+      fetchLocations(inputValue);
+    }
+  }, [inputValue]);
+
+  const handleInputChange = (input) => {
+    setInputValue(input);
+  };
+
+  const handleChange = (selectedOption) => {
+    onLocationChange(selectedOption);
   };
 
   return (
-    <SearchContainer>
-      <form onSubmit={handleSubmit}>
-        <SearchInput
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Search"
-          border={border}
-          width={width}
-        />
-        {input && (
-          <ClearButton onClick={handleClear} type="button">
-            <svg width={18} height={18}>
-              <use href={`${sprite}#icon-x`} />
-            </svg>
-          </ClearButton>
-        )}
-        <SearchButton type="submit">
-          <svg width={18} height={18}>
-            <use href={`${sprite}#icon-search-1`} />
-          </svg>
-        </SearchButton>
-      </form>
-    </SearchContainer>
+    <Select
+      value={null}
+      inputValue={inputValue}
+      onInputChange={handleInputChange}
+      onChange={handleChange}
+      options={options}
+      placeholder="Search for a location"
+      isClearable
+    />
   );
 };
