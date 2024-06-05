@@ -17,7 +17,6 @@ export default function SearchLocality({  onLocationChange  }) {
 
   useEffect(() => {
     if (inputValue) {
-      // console.log(citiesData)
       const filteredOptions = citiesData.filter(city =>{
         // console.log(city.cityEn)
          return city.cityEn.toLowerCase().includes(inputValue.toLowerCase())}
