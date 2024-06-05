@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {  categoriesInf, friendsInf, gendersInf, newsInf, noticesFavorite, noticesFavoriteDell, noticesInf, typesInf } from "./operations";
+import {  categoriesInf, citiesInf, friendsInf, gendersInf, newsInf, noticesFavorite, noticesFavoriteDell, noticesInf, typesInf } from "./operations";
 
 const petLoveSlice = createSlice({
   name: "pet",
@@ -11,6 +11,7 @@ const petLoveSlice = createSlice({
     categoriesList:[],
     sex: [],
     species: [],
+    cities: [],
     loading: false,
     error: null
   },
@@ -122,6 +123,22 @@ const petLoveSlice = createSlice({
         state.species = action.payload;
       })
       .addCase(typesInf.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+
+
+
+
+      .addCase(citiesInf.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(citiesInf.fulfilled, (state, action) => {
+        state.loading = false;
+        state.cities = action.payload;
+      })
+      .addCase(citiesInf.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })

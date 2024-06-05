@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { citiesInf } from '../../redux/petLove/operations';
 
 export default function SearchLocality({  onLocationChange  }) {
+
   const [inputValue, setInputValue] = useState('');
   const [options, setOptions] = useState([]);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(citiesInf());
+  }, [dispatch]);
+  
   const fetchLocations = async (input) => {
     try {
       const response = await axios.get(`/api/locations?search=${input}`);

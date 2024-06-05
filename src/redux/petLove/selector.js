@@ -12,3 +12,6 @@ export const selectSexList = (state) => state.pet.sex;
 
 export const selectSpeciesList = (state) => state.pet.species;
 
+export const selectCitiesList = (state) => state.pet.cities;
+
+

@@ -95,3 +95,14 @@ export const typesInf = createAsyncThunk( "/notices/species",
     }
   }
 );
+
+export const citiesInf = createAsyncThunk( "/cities",
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get("/cities");
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
