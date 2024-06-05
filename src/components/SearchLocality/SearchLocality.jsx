@@ -1,36 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { citiesInf } from '../../redux/petLove/operations';
+import { selectCitiesList } from '../../redux/petLove/selector';
 
 export default function SearchLocality({  onLocationChange  }) {
-
   const [inputValue, setInputValue] = useState('');
   const [options, setOptions] = useState([]);
   const dispatch = useDispatch();
+  const citiesData = useSelector(selectCitiesList);  
 
   useEffect(() => {
     dispatch(citiesInf());
   }, [dispatch]);
-  
-  const fetchLocations = async (input) => {
-    try {
-      const response = await axios.get(`/api/locations?search=${input}`);
-      setOptions(response.data.locations.map((location) => ({
-        value: location.id,
-        label: location.name,
-      })));
-    } catch (error) {
-      console.error('Error fetching locations:', error);
-    }
-  };
+  // console.log(citiesData)
 
   useEffect(() => {
     if (inputValue) {
-      fetchLocations(inputValue);
+      // console.log(citiesData)
+      const filteredOptions = citiesData.filter(city =>{
+        // console.log(city.cityEn)
+         return city.cityEn.toLowerCase().includes(inputValue.toLowerCase())}
+      ).map(city => {
+        console.log(city)
+        return ({ value: city.cityEn , label: city.cityEn })});
+      setOptions(filteredOptions);
+    } else {
+      setOptions([]);
     }
-  }, [inputValue]);
+  }, [inputValue, citiesData]);
 
   const handleInputChange = (input) => {
     setInputValue(input);
@@ -49,6 +47,20 @@ export default function SearchLocality({  onLocationChange  }) {
       options={options}
       placeholder="Search for a location"
       isClearable
+      // styles={{
+      //   control: (base) => ({
+      //     ...base,
+      //     border: '1px solid #ccc',
+      //     boxShadow: 'none',
+      //     '&:hover': {
+      //       border: '1px solid #aaa',
+      //     },
+      //   }),
+      //   menu: (base) => ({
+      //     ...base,
+      //     zIndex: 9999,
+      //   }),
+      // }}
     />
   );
 };

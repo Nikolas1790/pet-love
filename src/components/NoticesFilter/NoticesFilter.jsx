@@ -12,6 +12,11 @@ export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelected
     setCurrentPage(1);
   };
 
+  const handleLocationChange = (selectedLocation) => {
+    // Handle location change if needed
+    console.log('Selected location:', selectedLocation);
+  };
+  
   return (
     <FilterContainer>
       <DataEntryContainer>
@@ -19,7 +24,7 @@ export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelected
         <SelectorCategory setSelectedCategory={setSelectedCategory} />
         <SelectorGender setSelectedGender={setSelectedGender}/>
         <SelectorType setSelectedType={setSelectedType} />
-        <SearchLocality />
+        <SearchLocality onLocationChange={handleLocationChange} />
       </DataEntryContainer>
     </FilterContainer>
   )
