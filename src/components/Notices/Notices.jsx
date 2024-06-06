@@ -12,7 +12,7 @@ export default function Notices() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
-  
+  const [locationId, setLocationId] = useState("");
   
   const [currentPage, setCurrentPage] = useState(1);
   const [keyWord, setKeyWord] = useState('');
@@ -34,13 +34,19 @@ export default function Notices() {
     const sex = getCategory(selectedGender);
 
 
-    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species, sex }));
-  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType, selectedGender]);
+    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species, sex, locationId }));
+  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType, selectedGender, locationId]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
+
+  const handleLocationChange = (selectedLocation) => {
+    // Handle location change if needed
+    setLocationId(selectedLocation.id)
+    console.log('Selected location:', selectedLocation.id);
+  };
   // console.log(keyWord)
   return (
     <ContentContainer>
@@ -53,6 +59,7 @@ export default function Notices() {
           setSelectedCategory={setSelectedCategory}
           setSelectedType={setSelectedType}
           setSelectedGender={setSelectedGender}
+          onLocationChange={handleLocationChange}
         />
 
         <div>

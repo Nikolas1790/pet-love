@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 export default function UserNav({home}) {
   const [openModal, setOpenModal] = useState(false);
   let user = useSelector(selectUser);
-  console.log(user.name )
+  // console.log(user.name )
 
   const handleLogout = () => {
     setOpenModal(true)
