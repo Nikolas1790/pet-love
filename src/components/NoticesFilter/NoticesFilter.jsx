@@ -1,5 +1,5 @@
 import SearchField from "components/SearchField/SearchField";
-import { DataEntryContainer, FilterContainer } from "./NoticesFilter.styled";
+import { DataEntryContainer, FilterContainer, SeparatingContainer } from "./NoticesFilter.styled";
 import SelectorCategory from "components/Selectors/SelectorCategory/SelectorCategory";
 import SelectorGender from "components/Selectors/SelectorGender/SelectorGender";
 import SelectorType from "components/Selectors/SelectType/SelectType";
@@ -21,6 +21,9 @@ export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelected
         <SelectorType setSelectedType={setSelectedType} />
         <SearchLocality onLocationChange={onLocationChange} />
       </DataEntryContainer>
+
+      <SeparatingContainer />
+
     </FilterContainer>
   )
 }
