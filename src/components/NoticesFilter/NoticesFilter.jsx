@@ -4,9 +4,12 @@ import SelectorCategory from "components/Selectors/SelectorCategory/SelectorCate
 import SelectorGender from "components/Selectors/SelectorGender/SelectorGender";
 import SelectorType from "components/Selectors/SelectType/SelectType";
 import SearchLocality from "components/SearchLocality/SearchLocality";
+import RadioButtons from "components/RadioButtons/RadioButtons";
+import { useState } from "react";
 
 export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelectedCategory, setSelectedType, setSelectedGender, onLocationChange }){
-
+  const [sortCriteria, setSortCriteria] = useState({ group1: '', group2: '' });
+  console.log(sortCriteria)
   const handleSearch = (searchTerm) => {
     setKeyWord(searchTerm);
     setCurrentPage(1);
@@ -24,6 +27,7 @@ export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelected
 
       <SeparatingContainer />
 
+      <RadioButtons setSortCriteria={setSortCriteria} />
     </FilterContainer>
   )
 }
