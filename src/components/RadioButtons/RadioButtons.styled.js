@@ -27,8 +27,8 @@ export const Label = styled.label`
   /* border: 1px solid #ccc; */
   border-radius: 30px;
   cursor: pointer;
-  background-color: ${({ checked }) => (checked ? '#ff0000' : '#fff')};
-  color: ${({ checked }) => (checked ? '#fff' : '#000')};
+  background-color: ${({ checked }) => (checked ? color.orangePrimary : color.white)};
+  color: ${({ checked }) => (checked ? color.white : '#000')};
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
@@ -44,4 +44,11 @@ export const StyledRadioButton = styled.input`
     background-color: #007bff;
     color: #fff;
   } */
+`;
+
+export const SvgX = styled.svg`
+width: 18px;
+height: 18px;
+  stroke: ${color.white};
+  margin-left: 8px;
 `;

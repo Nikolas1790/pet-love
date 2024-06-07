@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { RadioGroup, RadioContainer, Label, StyledRadioButton } from './RadioButtons.styled';
+import { RadioGroup, RadioContainer, Label, StyledRadioButton, SvgX } from './RadioButtons.styled';
+import sprite from '../../img/sprite.svg';
 
 export default function RadioButtons({ setSortCriteria }) {
   const [selectedOptionGroup1, setSelectedOptionGroup1] = useState('');
@@ -27,6 +28,11 @@ export default function RadioButtons({ setSortCriteria }) {
             onChange={handleOptionChangeGroup1}
           />
           Popular
+          {selectedOptionGroup1 === 'Popular' && (
+            <SvgX >
+              <use href={`${sprite}#icon-x`} />
+            </SvgX>
+          )}
         </Label>
         <Label checked={selectedOptionGroup1 === 'Unpopular'}>
           <StyledRadioButton
@@ -36,6 +42,11 @@ export default function RadioButtons({ setSortCriteria }) {
             onChange={handleOptionChangeGroup1}
           />
           Unpopular
+          {selectedOptionGroup1 === 'Unpopular' && (
+            <SvgX >
+              <use href={`${sprite}#icon-x`} />
+            </SvgX>
+          )}
         </Label>
       </RadioGroup>
       
@@ -48,6 +59,11 @@ export default function RadioButtons({ setSortCriteria }) {
             onChange={handleOptionChangeGroup2}
           />
           Cheap
+          {selectedOptionGroup2 === 'Cheap' && (
+            <SvgX >
+              <use href={`${sprite}#icon-x`} />
+            </SvgX>
+          )}
         </Label>
         <Label checked={selectedOptionGroup2 === 'Expensive'}>
           <StyledRadioButton
@@ -57,6 +73,11 @@ export default function RadioButtons({ setSortCriteria }) {
             onChange={handleOptionChangeGroup2}
           />
           Expensive
+          {selectedOptionGroup2 === 'Expensive' && (
+            <SvgX >
+              <use href={`${sprite}#icon-x`} />
+            </SvgX>
+          )}
         </Label>
       </RadioGroup>
     </RadioContainer>
