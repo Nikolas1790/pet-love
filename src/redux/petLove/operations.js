@@ -23,7 +23,7 @@ export const friendsInf = createAsyncThunk( "/friends",
 );
 
 export const noticesInf = createAsyncThunk( "/notices",
-  async ({ keyWord ="", byDate = true, page = 1, limit = 6, category='', species='', sex='', locationId='', byPrice='', byPopularity='' }, thunkAPI) => {
+  async ({ keyWord ="", byDate = true, page = 1, limit = 6, category='', species='', sex='', locationId='', byPrice=null, byPopularity=null }, thunkAPI) => {
     try {
       // console.log(sex)
       const response = await axios.get(`/notices?&keyword=${keyWord}&byDate=${byDate}&page=${page}&limit=${limit}&category=${category}&species=${species}&gender=${sex}&locationId=${locationId}&byPrice=${byPrice}&byPopularity=${byPopularity}`);

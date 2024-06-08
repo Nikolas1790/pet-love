@@ -1,80 +1,173 @@
+// import React, { useState } from 'react';
+// import { RadioGroup, RadioContainer, Label, StyledRadioButton, SvgX } from './RadioButtons.styled';
+// import sprite from '../../img/sprite.svg';
+
+// export default function RadioButtons({ setSortCriteria }) {
+//   const [selectedPopularGroup, setSelectedPopularGroup] = useState('');
+//   const [selectedPriceGroup, setSelectedPriceGroup] = useState('');
+
+//   const handleOptionChangeGroup1 = (event) => {
+//     setSelectedPopularGroup(event.target.value);
+//     setSortCriteria((prev) => ({ ...prev, group1: event.target.value }));
+//   };
+
+//   const handleOptionChangeGroup2 = (event) => {
+//     setSelectedPriceGroup(event.target.value);
+//     setSortCriteria((prev) => ({ ...prev, group2: event.target.value }));
+//   };
+
+//   return (
+//     <RadioContainer>
+      
+//       <RadioGroup>
+//         <Label  checked={selectedPopularGroup === 'Popular'}>
+//           <StyledRadioButton
+//             type="radio"
+//             value="Popular"
+//             checked={selectedPopularGroup === 'Popular'}
+//             onChange={handleOptionChangeGroup1}
+//           />
+//           Popular
+//           {selectedPopularGroup === 'Popular' && (
+//             <SvgX >
+//               <use href={`${sprite}#icon-x`} />
+//             </SvgX>
+//           )}
+//         </Label>
+//         <Label checked={selectedPopularGroup === 'Unpopular'}>
+//           <StyledRadioButton
+//             type="radio"
+//             value="Unpopular"
+//             checked={selectedPopularGroup === 'Unpopular'}
+//             onChange={handleOptionChangeGroup1}
+//           />
+//           Unpopular
+//           {selectedPopularGroup === 'Unpopular' && (
+//             <SvgX >
+//               <use href={`${sprite}#icon-x`} />
+//             </SvgX>
+//           )}
+//         </Label>
+//       </RadioGroup>
+      
+//       <RadioGroup>
+//         <Label checked={selectedPriceGroup === 'Cheap'}>
+//           <StyledRadioButton
+//             type="radio"
+//             value="Cheap"
+//             checked={selectedPriceGroup === 'Cheap'}
+//             onChange={handleOptionChangeGroup2}
+//           />
+//           Cheap
+//           {selectedPriceGroup === 'Cheap' && (
+//             <SvgX >
+//               <use href={`${sprite}#icon-x`} />
+//             </SvgX>
+//           )}
+//         </Label>
+//         <Label checked={selectedPriceGroup === 'Expensive'}>
+//           <StyledRadioButton
+//             type="radio"
+//             value="Expensive"
+//             checked={selectedPriceGroup === 'Expensive'}
+//             onChange={handleOptionChangeGroup2}
+//           />
+//           Expensive
+//           {selectedPriceGroup === 'Expensive' && (
+//             <SvgX >
+//               <use href={`${sprite}#icon-x`} />
+//             </SvgX>
+//           )}
+//         </Label>
+//       </RadioGroup>
+//     </RadioContainer>
+//   );
+// }
+
+
+
 import React, { useState } from 'react';
 import { RadioGroup, RadioContainer, Label, StyledRadioButton, SvgX } from './RadioButtons.styled';
 import sprite from '../../img/sprite.svg';
 
 export default function RadioButtons({ setSortCriteria }) {
-  const [selectedOptionGroup1, setSelectedOptionGroup1] = useState('');
-  const [selectedOptionGroup2, setSelectedOptionGroup2] = useState('');
+  const [isPopular, setIsPopular] = useState(null); // true for Popular, false for Unpopular
+  const [isExpensive, setIsExpensive] = useState(null); // true for Expensive, false for Cheap
 
-  const handleOptionChangeGroup1 = (event) => {
-    setSelectedOptionGroup1(event.target.value);
-    setSortCriteria((prev) => ({ ...prev, group1: event.target.value }));
+  const handlePopularChange = () => {
+    setIsPopular(true);
+    setSortCriteria((prev) => ({ ...prev, popular: true }));
   };
 
-  const handleOptionChangeGroup2 = (event) => {
-    setSelectedOptionGroup2(event.target.value);
-    setSortCriteria((prev) => ({ ...prev, group2: event.target.value }));
+  const handleUnpopularChange = () => {
+    setIsPopular(false);
+    setSortCriteria((prev) => ({ ...prev, popular: false }));
+  };
+
+  const handleCheapChange = () => {
+    setIsExpensive(false);
+    setSortCriteria((prev) => ({ ...prev, price: false }));
+  };
+
+  const handleExpensiveChange = () => {
+    setIsExpensive(true);
+    setSortCriteria((prev) => ({ ...prev, price: true }));
   };
 
   return (
     <RadioContainer>
-      
       <RadioGroup>
-        <Label  checked={selectedOptionGroup1 === 'Popular'}>
+        <Label checked={isPopular === true}>
           <StyledRadioButton
             type="radio"
-            value="Popular"
-            checked={selectedOptionGroup1 === 'Popular'}
-            onChange={handleOptionChangeGroup1}
+            checked={isPopular === true}
+            onChange={handlePopularChange}
           />
           Popular
-          {selectedOptionGroup1 === 'Popular' && (
-            <SvgX >
+          {isPopular === true && (
+            <SvgX>
               <use href={`${sprite}#icon-x`} />
             </SvgX>
           )}
         </Label>
-        <Label checked={selectedOptionGroup1 === 'Unpopular'}>
+        <Label checked={isPopular === false}>
           <StyledRadioButton
             type="radio"
-            value="Unpopular"
-            checked={selectedOptionGroup1 === 'Unpopular'}
-            onChange={handleOptionChangeGroup1}
+            checked={isPopular === false}
+            onChange={handleUnpopularChange}
           />
           Unpopular
-          {selectedOptionGroup1 === 'Unpopular' && (
-            <SvgX >
+          {isPopular === false && (
+            <SvgX>
               <use href={`${sprite}#icon-x`} />
             </SvgX>
           )}
         </Label>
       </RadioGroup>
-      
+
       <RadioGroup>
-        <Label checked={selectedOptionGroup2 === 'Cheap'}>
+        <Label checked={isExpensive === false}>
           <StyledRadioButton
             type="radio"
-            value="Cheap"
-            checked={selectedOptionGroup2 === 'Cheap'}
-            onChange={handleOptionChangeGroup2}
+            checked={isExpensive === false}
+            onChange={handleCheapChange}
           />
           Cheap
-          {selectedOptionGroup2 === 'Cheap' && (
-            <SvgX >
+          {isExpensive === false && (
+            <SvgX>
               <use href={`${sprite}#icon-x`} />
             </SvgX>
           )}
         </Label>
-        <Label checked={selectedOptionGroup2 === 'Expensive'}>
+        <Label checked={isExpensive === true}>
           <StyledRadioButton
             type="radio"
-            value="Expensive"
-            checked={selectedOptionGroup2 === 'Expensive'}
-            onChange={handleOptionChangeGroup2}
+            checked={isExpensive === true}
+            onChange={handleExpensiveChange}
           />
           Expensive
-          {selectedOptionGroup2 === 'Expensive' && (
-            <SvgX >
+          {isExpensive === true && (
+            <SvgX>
               <use href={`${sprite}#icon-x`} />
             </SvgX>
           )}

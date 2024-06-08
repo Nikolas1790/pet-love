@@ -13,7 +13,9 @@ export default function Notices() {
   const [selectedType, setSelectedType] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
   const [locationId, setLocationId] = useState("");
-  
+  const [sortCriteria, setSortCriteria] = useState({ popular: null, price: null });
+  console.log(sortCriteria)
+
   const [currentPage, setCurrentPage] = useState(1);
   const [keyWord, setKeyWord] = useState('');
   const dispatch = useDispatch();
@@ -34,8 +36,8 @@ export default function Notices() {
     const sex = getCategory(selectedGender);
 
 
-    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species, sex, locationId }));
-  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType, selectedGender, locationId]);
+    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species, sex, locationId, byPrice:sortCriteria.price, byPopularity:sortCriteria.popular }));
+  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType, selectedGender, locationId, sortCriteria.price, sortCriteria.popular]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -60,6 +62,7 @@ export default function Notices() {
           setSelectedType={setSelectedType}
           setSelectedGender={setSelectedGender}
           onLocationChange={handleLocationChange}
+          setSortCriteria={setSortCriteria}
         />
 
         <div>
