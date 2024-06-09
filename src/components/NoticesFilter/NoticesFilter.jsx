@@ -6,10 +6,10 @@ import SelectorType from "components/Selectors/SelectType/SelectType";
 import SearchLocality from "components/SearchLocality/SearchLocality";
 import RadioButtons from "components/RadioButtons/RadioButtons";
 
-export default function NoticesFilter ({ setCurrentPage, setKeyWord, setSelectedCategory, setSelectedType, setSelectedGender, onLocationChange, setSortCriteria }){
+export default function NoticesFilter ({ setCurrentPage, setKeyword, setSelectedCategory, setSelectedType, setSelectedGender, onLocationChange, setSortCriteria }){
 
   const handleSearch = (searchTerm) => {
-    setKeyWord(searchTerm);
+    setKeyword(searchTerm);
     setCurrentPage(1);
   };
   

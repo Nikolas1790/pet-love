@@ -17,7 +17,7 @@ export default function Notices() {
   console.log(sortCriteria)
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [keyWord, setKeyWord] = useState('');
+  const [keyword, setKeyword] = useState('');
   const dispatch = useDispatch();
   const noticesData = useSelector(selectNoticesInf);  
 
@@ -35,9 +35,19 @@ export default function Notices() {
     const species = getCategory(selectedType);
     const sex = getCategory(selectedGender);
 
-
-    dispatch(noticesInf({keyWord,  byDate: true, page: currentPage, limit: 6, category, species, sex, locationId, byPrice:sortCriteria.price, byPopularity:sortCriteria.popular }));
-  }, [dispatch, currentPage, keyWord, selectedCategory, selectedType, selectedGender, locationId, sortCriteria.price, sortCriteria.popular]);
+    dispatch(noticesInf({
+      keyword, 
+      byDate: true, 
+      page: currentPage, 
+      limit: 6, 
+      category, 
+      species, 
+      sex, 
+      locationId, 
+      byPrice: sortCriteria.price, 
+      byPopularity: sortCriteria.popular
+    }));
+  }, [dispatch, currentPage, keyword, selectedCategory, selectedType, selectedGender, locationId, sortCriteria.price, sortCriteria.popular]);
 
   useEffect(() => {
     console.log('noticesData', noticesData);
@@ -53,7 +63,7 @@ export default function Notices() {
     setLocationId(selectedLocation.id)
     console.log('Selected location:', selectedLocation.id);
   };
-  // console.log(keyWord)
+  
   return (
     <ContentContainer>
       <NoticesContainer>
@@ -61,7 +71,7 @@ export default function Notices() {
 
         <NoticesFilter 
           setCurrentPage={setCurrentPage} 
-          setKeyWord={setKeyWord} 
+          setKeyword={setKeyword} 
           setSelectedCategory={setSelectedCategory}
           setSelectedType={setSelectedType}
           setSelectedGender={setSelectedGender}
