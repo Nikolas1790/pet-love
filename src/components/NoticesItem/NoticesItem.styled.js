@@ -16,8 +16,8 @@ export const ImgCard = styled.img`
   width: 315px;
   height: 178px;
   border-radius: 16px; 
-  background: ${color.orangePrimary};
-   object-fit: cover; /* Додаємо object-fit для обрізання зображення */
+  background: ${color.orangeLight};
+  object-fit: cover; /* Додаємо object-fit для обрізання зображення */
   /* margin-bottom: 28px; */
 `
 export const InfMainContainer = styled.div`

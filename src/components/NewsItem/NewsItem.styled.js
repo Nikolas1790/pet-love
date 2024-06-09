@@ -13,7 +13,7 @@ export const ImgContainer = styled.img`
   width: 361px;
   height: 226px;
   border-radius: 15px; 
-  background: ${color.orangePrimary};
+  background: ${color.orangeLight};
   margin-bottom: 28px;
    object-fit: cover; /* Додаємо object-fit для обрізання зображення */
 `
