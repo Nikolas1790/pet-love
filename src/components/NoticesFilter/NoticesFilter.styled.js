@@ -21,3 +21,8 @@ export const SeparatingContainer = styled.div`
   border: 1px solid rgba(38, 38, 38, 0.1);
   margin: 20px 0;
 `
+
+export const BottomContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`

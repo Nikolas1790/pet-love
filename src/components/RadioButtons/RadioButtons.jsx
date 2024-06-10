@@ -126,7 +126,7 @@ export default function RadioButtons({ setSortCriteria }) {
           Popular
           {isPopular === true && (
             <SvgX>
-              <use href={`${sprite}#icon-x`} />
+              <use href={`${sprite}#icon-heart-add`} />
             </SvgX>
           )}
         </Label>
@@ -139,7 +139,7 @@ export default function RadioButtons({ setSortCriteria }) {
           Unpopular
           {isPopular === false && (
             <SvgX>
-              <use href={`${sprite}#icon-x`} />
+              <use href={`${sprite}#icon-heart-add`} />
             </SvgX>
           )}
         </Label>
@@ -155,7 +155,7 @@ export default function RadioButtons({ setSortCriteria }) {
           Cheap
           {isExpensive === false && (
             <SvgX>
-              <use href={`${sprite}#icon-x`} />
+              <use href={`${sprite}#icon-heart-add`} />
             </SvgX>
           )}
         </Label>
@@ -168,7 +168,7 @@ export default function RadioButtons({ setSortCriteria }) {
           Expensive
           {isExpensive === true && (
             <SvgX>
-              <use href={`${sprite}#icon-x`} />
+              <use href={`${sprite}#icon-heart-add`} />
             </SvgX>
           )}
         </Label>

@@ -41,5 +41,6 @@ export const SvgX = styled.svg`
   width: 18px;
   height: 18px;
   stroke: ${color.white};
+  fill: transparent;
   margin-left: 8px;
 `;
