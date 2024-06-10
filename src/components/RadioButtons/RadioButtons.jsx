@@ -1,81 +1,89 @@
+
+
+
 // import React, { useState } from 'react';
 // import { RadioGroup, RadioContainer, Label, StyledRadioButton, SvgX } from './RadioButtons.styled';
 // import sprite from '../../img/sprite.svg';
 
 // export default function RadioButtons({ setSortCriteria }) {
-//   const [selectedPopularGroup, setSelectedPopularGroup] = useState('');
-//   const [selectedPriceGroup, setSelectedPriceGroup] = useState('');
+//   const [isPopular, setIsPopular] = useState(null); // true for Popular, false for Unpopular
+//   const [isExpensive, setIsExpensive] = useState(null); // true for Expensive, false for Cheap
 
-//   const handleOptionChangeGroup1 = (event) => {
-//     setSelectedPopularGroup(event.target.value);
-//     setSortCriteria((prev) => ({ ...prev, group1: event.target.value }));
+//   const handlePopularChange = () => {
+//     setIsPopular(true);
+//     setSortCriteria((prev) => ({ ...prev, popular: false }));
 //   };
 
-//   const handleOptionChangeGroup2 = (event) => {
-//     setSelectedPriceGroup(event.target.value);
-//     setSortCriteria((prev) => ({ ...prev, group2: event.target.value }));
+//   const handleUnpopularChange = () => {
+//     setIsPopular(false);
+//     setSortCriteria((prev) => ({ ...prev, popular: true }));
+//   };
+
+//   const handleCheapChange = () => {
+//     setIsExpensive(false);
+//     setSortCriteria((prev) => ({ ...prev, price: false }));
+//   };
+
+//   const handleExpensiveChange = () => {
+//     setIsExpensive(true);
+//     setSortCriteria((prev) => ({ ...prev, price: true }));
 //   };
 
 //   return (
 //     <RadioContainer>
-      
 //       <RadioGroup>
-//         <Label  checked={selectedPopularGroup === 'Popular'}>
+//         <Label checked={isPopular === true}>
 //           <StyledRadioButton
 //             type="radio"
-//             value="Popular"
-//             checked={selectedPopularGroup === 'Popular'}
-//             onChange={handleOptionChangeGroup1}
+//             checked={isPopular === true}
+//             onChange={handlePopularChange}
 //           />
 //           Popular
-//           {selectedPopularGroup === 'Popular' && (
-//             <SvgX >
-//               <use href={`${sprite}#icon-x`} />
+//           {isPopular === true && (
+//             <SvgX>
+//               <use href={`${sprite}#icon-heart-add`} />
 //             </SvgX>
 //           )}
 //         </Label>
-//         <Label checked={selectedPopularGroup === 'Unpopular'}>
+//         <Label checked={isPopular === false}>
 //           <StyledRadioButton
 //             type="radio"
-//             value="Unpopular"
-//             checked={selectedPopularGroup === 'Unpopular'}
-//             onChange={handleOptionChangeGroup1}
+//             checked={isPopular === false}
+//             onChange={handleUnpopularChange}
 //           />
 //           Unpopular
-//           {selectedPopularGroup === 'Unpopular' && (
-//             <SvgX >
-//               <use href={`${sprite}#icon-x`} />
+//           {isPopular === false && (
+//             <SvgX>
+//               <use href={`${sprite}#icon-heart-add`} />
 //             </SvgX>
 //           )}
 //         </Label>
 //       </RadioGroup>
-      
+
 //       <RadioGroup>
-//         <Label checked={selectedPriceGroup === 'Cheap'}>
+//         <Label checked={isExpensive === false}>
 //           <StyledRadioButton
 //             type="radio"
-//             value="Cheap"
-//             checked={selectedPriceGroup === 'Cheap'}
-//             onChange={handleOptionChangeGroup2}
+//             checked={isExpensive === false}
+//             onChange={handleCheapChange}
 //           />
 //           Cheap
-//           {selectedPriceGroup === 'Cheap' && (
-//             <SvgX >
-//               <use href={`${sprite}#icon-x`} />
+//           {isExpensive === false && (
+//             <SvgX>
+//               <use href={`${sprite}#icon-heart-add`} />
 //             </SvgX>
 //           )}
 //         </Label>
-//         <Label checked={selectedPriceGroup === 'Expensive'}>
+//         <Label checked={isExpensive === true}>
 //           <StyledRadioButton
 //             type="radio"
-//             value="Expensive"
-//             checked={selectedPriceGroup === 'Expensive'}
-//             onChange={handleOptionChangeGroup2}
+//             checked={isExpensive === true}
+//             onChange={handleExpensiveChange}
 //           />
 //           Expensive
-//           {selectedPriceGroup === 'Expensive' && (
-//             <SvgX >
-//               <use href={`${sprite}#icon-x`} />
+//           {isExpensive === true && (
+//             <SvgX>
+//               <use href={`${sprite}#icon-heart-add`} />
 //             </SvgX>
 //           )}
 //         </Label>
@@ -86,22 +94,22 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RadioGroup, RadioContainer, Label, StyledRadioButton, SvgX } from './RadioButtons.styled';
 import sprite from '../../img/sprite.svg';
 
-export default function RadioButtons({ setSortCriteria }) {
+export default function RadioButtons({ setSortCriteria, resetSignal }) {
   const [isPopular, setIsPopular] = useState(null); // true for Popular, false for Unpopular
   const [isExpensive, setIsExpensive] = useState(null); // true for Expensive, false for Cheap
 
   const handlePopularChange = () => {
     setIsPopular(true);
-    setSortCriteria((prev) => ({ ...prev, popular: false }));
+    setSortCriteria((prev) => ({ ...prev, popular: true }));
   };
 
   const handleUnpopularChange = () => {
     setIsPopular(false);
-    setSortCriteria((prev) => ({ ...prev, popular: true }));
+    setSortCriteria((prev) => ({ ...prev, popular: false }));
   };
 
   const handleCheapChange = () => {
@@ -113,6 +121,19 @@ export default function RadioButtons({ setSortCriteria }) {
     setIsExpensive(true);
     setSortCriteria((prev) => ({ ...prev, price: true }));
   };
+
+  const resetRadioButtons = () => {
+    setIsPopular(null);
+    setIsExpensive(null);
+    setSortCriteria({ popular: null, price: null });
+  };
+
+  // Trigger reset when resetSignal changes
+  useEffect(() => {
+    if (resetSignal) {
+      resetRadioButtons();
+    }
+  }, [resetSignal ]);
 
   return (
     <RadioContainer>
