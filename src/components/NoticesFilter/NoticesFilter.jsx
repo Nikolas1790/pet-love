@@ -6,6 +6,7 @@ import SelectorType from "components/Selectors/SelectType/SelectType";
 import SearchLocality from "components/SearchLocality/SearchLocality";
 import RadioButtons from "components/RadioButtons/RadioButtons";
 import { useState } from "react";
+import ButtonGrayUniversal from "components/Buttons/ButtonGrayUniversal/ButtonGrayUniversal";
 
 export default function NoticesFilter ({ setCurrentPage, setKeyword, setSelectedCategory, setSelectedType, setSelectedGender, onLocationChange, setSortCriteria, anyFilterSelected, handleResetFilters }){
   const [resetSignal, setResetSignal] = useState(false);
@@ -19,28 +20,6 @@ export default function NoticesFilter ({ setCurrentPage, setKeyword, setSelected
     handleResetFilters();
     setResetSignal(prev => !prev);  // Toggle the signal
   };
-
-//   return (
-//     <FilterContainer>
-//       <DataEntryContainer>
-//         <SearchField onSearch={handleSearch} width="265px" border="none" />
-//         <SelectorCategory setSelectedCategory={setSelectedCategory} />
-//         <SelectorGender setSelectedGender={setSelectedGender}/>
-//         <SelectorType setSelectedType={setSelectedType} />
-//         <SearchLocality onLocationChange={onLocationChange} />
-//       </DataEntryContainer>
-
-//       <SeparatingContainer />
-
-//       <BottomContainer>
-//         <RadioButtons setSortCriteria={setSortCriteria} />
-//         {anyFilterSelected && (
-//           <button onClick={handleResetFilters}>Reset Filters</button>
-//         )}
-//       </BottomContainer>
-//     </FilterContainer>
-//   )
-// }
 
 return (
   <FilterContainer>
@@ -57,7 +36,7 @@ return (
     <BottomContainer>
       <RadioButtons setSortCriteria={setSortCriteria} resetSignal={resetSignal} />
       {anyFilterSelected && (
-        <button onClick={handleResetFiltersWithSignal}>Reset Filters</button>
+        <ButtonGrayUniversal label='Reset Filters' onClick={handleResetFiltersWithSignal} width='148px' />
       )}
     </BottomContainer>
   </FilterContainer>

@@ -104,12 +104,12 @@ export default function RadioButtons({ setSortCriteria, resetSignal }) {
 
   const handlePopularChange = () => {
     setIsPopular(true);
-    setSortCriteria((prev) => ({ ...prev, popular: true }));
+    setSortCriteria((prev) => ({ ...prev, popular: false }));
   };
 
   const handleUnpopularChange = () => {
     setIsPopular(false);
-    setSortCriteria((prev) => ({ ...prev, popular: false }));
+    setSortCriteria((prev) => ({ ...prev, popular: true }));
   };
 
   const handleCheapChange = () => {
