@@ -130,7 +130,7 @@ export default function RadioButtons({ setSortCriteria, resetSignal }) {
 
   // Trigger reset when resetSignal changes
   useEffect(() => {
-      resetRadioButtons();
+    resetRadioButtons();
   }, [resetSignal, resetRadioButtons ]);
 
   return (

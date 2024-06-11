@@ -9,14 +9,11 @@ import { selectNoticesInf } from "../../redux/petLove/selector";
 import { Pagination } from "components/Pagination/Pagination";
 
 export default function Notices() {
-  // const [sendingRequesty, setSendingRequesty] = useState("");
-
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
   const [locationId, setLocationId] = useState("");
   const [sortCriteria, setSortCriteria] = useState({ popular: null, price: null });
-  console.log(sortCriteria)
   const [keyword, setKeyword] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 

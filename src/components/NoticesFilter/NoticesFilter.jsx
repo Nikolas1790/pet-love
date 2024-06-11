@@ -24,7 +24,7 @@ export default function NoticesFilter ({ setCurrentPage, setKeyword, setSelected
 return (
   <FilterContainer>
     <DataEntryContainer>
-      <SearchField onSearch={handleSearch} width="265px" border="none" />
+      <SearchField onSearch={handleSearch} width="265px" border="none" resetSignal={resetSignal} />
       <SelectorCategory setSelectedCategory={setSelectedCategory} />
       <SelectorGender setSelectedGender={setSelectedGender}/>
       <SelectorType setSelectedType={setSelectedType} />

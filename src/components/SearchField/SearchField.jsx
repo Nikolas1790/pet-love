@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { ClearButton, SearchButton, SearchContainer, SearchInput } from './SearchField.styled';
 import sprite from '../../img/sprite.svg';
 
-export default function SearchField({ onSearch, width, border }) {
+export default function SearchField({ onSearch, width, border, resetSignal }) {
   const [input, setInput] = useState('');
 
   const handleSubmit = (event) => {
@@ -14,6 +14,15 @@ export default function SearchField({ onSearch, width, border }) {
     setInput('');
     onSearch('');
   };
+
+  const resetSearchField = useCallback(() => {
+    setInput('');
+  }, [setInput]);
+
+    // Trigger reset when resetSignal changes
+    useEffect(() => {
+      resetSearchField();
+    }, [resetSignal, resetSearchField ]);
 
   return (
     <SearchContainer>
