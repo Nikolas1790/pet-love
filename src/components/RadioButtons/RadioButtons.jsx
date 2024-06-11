@@ -94,7 +94,7 @@
 
 
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { RadioGroup, RadioContainer, Label, StyledRadioButton, SvgX } from './RadioButtons.styled';
 import sprite from '../../img/sprite.svg';
 
@@ -122,18 +122,16 @@ export default function RadioButtons({ setSortCriteria, resetSignal }) {
     setSortCriteria((prev) => ({ ...prev, price: true }));
   };
 
-  const resetRadioButtons = () => {
+  const resetRadioButtons = useCallback(() => {
     setIsPopular(null);
     setIsExpensive(null);
     setSortCriteria({ popular: null, price: null });
-  };
+  }, [setSortCriteria]);
 
   // Trigger reset when resetSignal changes
   useEffect(() => {
-    if (resetSignal) {
       resetRadioButtons();
-    }
-  }, [resetSignal ]);
+  }, [resetSignal, resetRadioButtons ]);
 
   return (
     <RadioContainer>
