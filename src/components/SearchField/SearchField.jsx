@@ -19,10 +19,10 @@ export default function SearchField({ onSearch, width, border, resetSignal }) {
     setInput('');
   }, [setInput]);
 
-    // Trigger reset when resetSignal changes
-    useEffect(() => {
-      resetSearchField();
-    }, [resetSignal, resetSearchField ]);
+  // Trigger reset when resetSignal changes
+  useEffect(() => {
+    resetSearchField();
+  }, [resetSignal, resetSearchField ]);
 
   return (
     <SearchContainer>

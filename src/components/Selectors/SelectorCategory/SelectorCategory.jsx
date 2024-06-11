@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import sprite from '../../../img/sprite.svg';
 import { Dropdown, DropdownButton, DropdownItem, DropdownList, DropdownSvg } from './SelectorCategory.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCategoriesList } from '../../../redux/petLove/selector';
 import { categoriesInf } from '../../../redux/petLove/operations';
 
-export default function SelectorCategory ({ setSelectedCategory }){
+export default function SelectorCategory ({ setSelectedCategory, resetSignal }){
   const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
@@ -42,6 +42,17 @@ export default function SelectorCategory ({ setSelectedCategory }){
     setSelectedCategory(category)
     toggleDropdown();
   };
+
+
+  const resetSelectorCategory = useCallback(() => {
+    setSelectedArticle('');
+  }, [setSelectedArticle]);
+
+  // Trigger reset when resetSignal changes
+  useEffect(() => {
+    resetSelectorCategory();
+  }, [resetSignal, resetSelectorCategory ]);
+
 
   return (
     <Dropdown ref={dropdownRef}>
