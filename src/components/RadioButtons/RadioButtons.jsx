@@ -6,6 +6,19 @@ export default function RadioButtons({ setSortCriteria, resetSignal }) {
   const [isPopular, setIsPopular] = useState(null); // true for Popular, false for Unpopular
   const [isExpensive, setIsExpensive] = useState(null); // true for Expensive, false for Cheap
 
+  const resetRadioButtons = useCallback(() => {
+    setIsPopular(null);
+    setIsExpensive(null);
+    setSortCriteria({ popular: null, price: null });
+  }, [setSortCriteria]);
+
+  // Trigger reset when resetSignal changes
+  useEffect(() => {
+    resetRadioButtons();
+  }, [resetSignal, resetRadioButtons ]);
+
+
+  
   const handlePopularChange = () => {
     setIsPopular(true);
     setSortCriteria((prev) => ({ ...prev, popular: false }));
@@ -26,16 +39,7 @@ export default function RadioButtons({ setSortCriteria, resetSignal }) {
     setSortCriteria((prev) => ({ ...prev, price: true }));
   };
 
-  const resetRadioButtons = useCallback(() => {
-    setIsPopular(null);
-    setIsExpensive(null);
-    setSortCriteria({ popular: null, price: null });
-  }, [setSortCriteria]);
 
-  // Trigger reset when resetSignal changes
-  useEffect(() => {
-    resetRadioButtons();
-  }, [resetSignal, resetRadioButtons ]);
 
   return (
     <RadioContainer>

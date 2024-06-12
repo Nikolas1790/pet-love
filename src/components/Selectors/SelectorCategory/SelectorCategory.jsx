@@ -26,6 +26,19 @@ export default function SelectorCategory ({ setSelectedCategory, resetSignal }){
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, [setDropdownArticle]); 
 
+  const resetSelectorCategory = useCallback(() => {
+    setSelectedArticle('');
+  }, [setSelectedArticle]);
+
+  // Trigger reset when resetSignal changes
+  useEffect(() => {
+    resetSelectorCategory();
+  }, [resetSignal, resetSelectorCategory ]);
+
+
+
+
+  
   const extendedCategories = ["Show all", ...categories];
 
   const toggleDropdown = () => setDropdownArticle(!dropdownArticle);
@@ -44,14 +57,7 @@ export default function SelectorCategory ({ setSelectedCategory, resetSignal }){
   };
 
 
-  const resetSelectorCategory = useCallback(() => {
-    setSelectedArticle('');
-  }, [setSelectedArticle]);
 
-  // Trigger reset when resetSignal changes
-  useEffect(() => {
-    resetSelectorCategory();
-  }, [resetSignal, resetSelectorCategory ]);
 
 
   return (
