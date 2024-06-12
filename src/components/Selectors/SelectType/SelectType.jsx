@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import sprite from '../../../img/sprite.svg';
 import { Dropdown, DropdownButton, DropdownItem, DropdownList, DropdownSvg, StyledSimpleBar } from './SelectType.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSpeciesList } from '../../../redux/petLove/selector';
 import { typesInf } from '../../../redux/petLove/operations';
 
-export default function SelectorType ({setSelectedType}){
+export default function SelectorType ({setSelectedType, resetSignal}){
   const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
@@ -26,6 +26,17 @@ export default function SelectorType ({setSelectedType}){
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, [setDropdownArticle]); 
 
+  const resetSelectorType = useCallback(() => {
+    setSelectedArticle('');
+  }, [setSelectedArticle]);
+
+  // Trigger reset when resetSignal changes
+  useEffect(() => {
+    resetSelectorType();
+  }, [resetSignal, resetSelectorType ]);
+
+
+
   const extendedCategories = ["Show all", ...types];
 
   const toggleDropdown = () => setDropdownArticle(!dropdownArticle);
@@ -37,7 +48,7 @@ export default function SelectorType ({setSelectedType}){
   };
 
   const handleItemClick = (category) => {
-    console.log(category)
+    // console.log(category)
     const capitalizedCategory = capitalizeFirstLetter(category);
     setSelectedArticle(capitalizedCategory);
     setSelectedType(category)

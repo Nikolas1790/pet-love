@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import sprite from '../../../img/sprite.svg';
 import { Dropdown, DropdownButton, DropdownItem, DropdownList, DropdownSvg } from './SelectorGender.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSexList } from '../../../redux/petLove/selector';
 import { gendersInf } from '../../../redux/petLove/operations';
 
-export default function SelectorGender ({setSelectedGender}){
+export default function SelectorGender ({ setSelectedGender, resetSignal }){
   const [selectedArticle, setSelectedArticle] = useState("");
   const [dropdownArticle, setDropdownArticle] = useState(false);
   const dropdownRef = useRef();
@@ -26,6 +26,21 @@ export default function SelectorGender ({setSelectedGender}){
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, [setDropdownArticle]); 
 
+
+
+  const resetSelectorGender = useCallback(() => {
+    setSelectedArticle('');
+  }, [setSelectedArticle]);
+
+  // Trigger reset when resetSignal changes
+  useEffect(() => {
+    setSelectedArticle();
+  }, [resetSignal, resetSelectorGender ]);
+
+
+
+
+
   const extendedCategories = ["Show all", ...sex];
 
   const toggleDropdown = () => setDropdownArticle(!dropdownArticle);
@@ -36,7 +51,7 @@ export default function SelectorGender ({setSelectedGender}){
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
   const handleItemClick = (category) => {
-    console.log(category)
+    // console.log(category)
     const capitalizedCategory = capitalizeFirstLetter(category);
     setSelectedArticle(capitalizedCategory);
     setSelectedGender(category)

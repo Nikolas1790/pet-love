@@ -26,8 +26,8 @@ return (
     <DataEntryContainer>
       <SearchField onSearch={handleSearch} width="265px" border="none" resetSignal={resetSignal} />
       <SelectorCategory setSelectedCategory={setSelectedCategory} resetSignal={resetSignal} />
-      <SelectorGender setSelectedGender={setSelectedGender}/>
-      <SelectorType setSelectedType={setSelectedType} />
+      <SelectorGender setSelectedGender={setSelectedGender} resetSignal={resetSignal}/>
+      <SelectorType setSelectedType={setSelectedType} resetSignal={resetSignal} />
       <SearchLocality onLocationChange={onLocationChange} />
     </DataEntryContainer>
 

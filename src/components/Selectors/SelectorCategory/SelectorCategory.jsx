@@ -38,7 +38,7 @@ export default function SelectorCategory ({ setSelectedCategory, resetSignal }){
 
 
 
-  
+
   const extendedCategories = ["Show all", ...categories];
 
   const toggleDropdown = () => setDropdownArticle(!dropdownArticle);
@@ -49,7 +49,7 @@ export default function SelectorCategory ({ setSelectedCategory, resetSignal }){
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
   const handleItemClick = (category) => {
-    console.log(category)
+    // console.log(category)
     const capitalizedCategory = capitalizeFirstLetter(category);
     setSelectedArticle(capitalizedCategory);
     setSelectedCategory(category)
