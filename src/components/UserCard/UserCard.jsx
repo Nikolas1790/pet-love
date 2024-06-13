@@ -1,5 +1,15 @@
+import EditUserBtn from "components/Buttons/EditUserBtn/EditUserBtn";
+import LogOutBtn from "components/Buttons/LogOutBtn/LogOutBtn";
+
 export default function UserCard() {
+
   return (
-      <div>kkkkkkkkkkkkkk</div>    
+    <div>
+      <EditUserBtn />
+
+      
+      <LogOutBtn />
+
+    </div>    
   );
 }  
