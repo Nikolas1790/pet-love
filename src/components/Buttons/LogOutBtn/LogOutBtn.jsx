@@ -13,10 +13,9 @@ export default function LogOutBtn() {
     <div>
       <ButtonOrange label='LOG OUT' onClick={() => handleLogout()} width='136px' />
 
-
       <PortalModal active={openModal} setActive={setOpenModal}>
-          <LogOut closeModals={() => setOpenModal()} />
-        </PortalModal>
+        <LogOut closeModals={() => setOpenModal()} />
+      </PortalModal>
     </div>    
   );
 }  
