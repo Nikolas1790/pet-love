@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="icon-edit" viewBox="0 0 32 32">
+      <path fill="#fff4df" d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0z" style="fill:var(--color1, #fff4df)"/>
+      <path fill="none" stroke="#f6b83d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.263" d="M19.158 10.316a1.802 1.802 0 0 1 1.948-.387 1.788 1.788 0 0 1 .58 2.915L13.16 21.37l-3.474.947.947-3.474 8.526-8.526z" style="stroke:var(--color2, #f6b83d)"/>
+    </symbol>
+  </defs>
+</svg>
