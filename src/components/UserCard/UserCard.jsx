@@ -7,7 +7,7 @@ import { UserCardBlock } from "./UserCard.styled";
 export default function UserCard() {
 
   return (
-    <UserCardBlock>
+    <UserCardBlock>      
       <EditUserBtn />
       <UserBlock />
       <PetsBlock />

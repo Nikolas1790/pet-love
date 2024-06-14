@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import sprite from '../../../img/sprite.svg';
-import { EditUserButton } from './EditUserBtn.styled';
+import { EditUserBtnContainer, EditUserButton } from './EditUserBtn.styled';
 import PortalModal from 'components/PortalModal/PortalModal';
 import ModalEditUser from 'components/Modals/ModalEditUser/ModalEditUser';
 
@@ -12,7 +12,7 @@ export default function EditUserBtn() {
   };
 
   return (
-    <div>
+    <EditUserBtnContainer>
       <EditUserButton onClick={() => handleLogout()}>
         <svg width={50} height={50}>
           <use href={`${sprite}#icon-edit`} />
@@ -22,6 +22,6 @@ export default function EditUserBtn() {
       <PortalModal active={openModal} setActive={setOpenModal}>
         <ModalEditUser closeModals={() => setOpenModal()} />
       </PortalModal>
-    </div>    
+    </EditUserBtnContainer>    
   );
 }  

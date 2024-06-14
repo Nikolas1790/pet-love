@@ -2,7 +2,7 @@ import color from "common/GlobalColors";
 import styled from "styled-components";
 
 export const ModalEdit = styled.div`
-position: relative;
+  position: relative;
   width: 480px;
   height: 580px;
   background: ${color.white};

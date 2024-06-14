@@ -2,6 +2,7 @@ import color from "common/GlobalColors";
 import styled from "styled-components";
 
 export const UserCardBlock = styled.div`
+  position: relative;
   width: 520px;
   height: 928px;
   background: ${color.white};
