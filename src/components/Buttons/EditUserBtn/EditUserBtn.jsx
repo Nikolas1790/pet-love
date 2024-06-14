@@ -2,6 +2,7 @@ import { useState } from 'react';
 import sprite from '../../../img/sprite.svg';
 import { EditUserButton } from './EditUserBtn.styled';
 import PortalModal from 'components/PortalModal/PortalModal';
+import ModalEditUser from 'components/Modals/ModalEditUser/ModalEditUser';
 
 export default function EditUserBtn() {
   const [openModal, setOpenModal] = useState(false);
@@ -19,7 +20,7 @@ export default function EditUserBtn() {
       </EditUserButton>  
 
       <PortalModal active={openModal} setActive={setOpenModal}>
-        <LogOut closeModals={() => setOpenModal()} />
+        <ModalEditUser closeModals={() => setOpenModal()} />
       </PortalModal>
     </div>    
   );
