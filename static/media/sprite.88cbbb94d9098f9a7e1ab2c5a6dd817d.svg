@@ -61,10 +61,16 @@
     </symbol>
     <symbol id="icon-chevron-down" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.556" d="m8 12 8 8 8-8"/>
+    </symbol>  
+    <symbol id="icon-edit" viewBox="0 0 32 32">
+      <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0z" />
+      <path fill="none" stroke="#f6b83d" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.263" d="M19.158 10.316a1.802 1.802 0 0 1 1.948-.387 1.788 1.788 0 0 1 .58 2.915L13.16 21.37l-3.474.947.947-3.474 8.526-8.526z" style="stroke:var(--color2, #f6b83d)"/>
     </symbol>
 
-    
-    
+
+
+
+
 
 
 
