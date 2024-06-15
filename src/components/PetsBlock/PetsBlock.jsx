@@ -1,8 +1,10 @@
+import AddPetComponent from "components/AddPetComponent/AddPetComponent";
+
 export default function PetsBlock() {
 
   return (
     <div>
-      zzzzzzzzzzzzzzzzzzzz
+      <AddPetComponent />
     </div>    
   );
 }  
