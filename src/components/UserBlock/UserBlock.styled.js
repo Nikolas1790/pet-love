@@ -6,6 +6,7 @@ export const UserBlockContainer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 40px;
 `;
 
 export const PhotoContainer = styled.div`
@@ -21,17 +22,29 @@ export const UploadPhoto = styled.p`
   margin-bottom: 20px;
 `;
 
-export const UserInfoContainer = styled.div`
+export const TitleInformation = styled.h4`
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+  margin-bottom: 20px;
+  margin-right: auto; 
+`;
+
+
+export const UserInfoContainer = styled.ul`
   display: flex;
   flex-direction: column;
 `;
 
-export const UserInfoItem = styled.div`
+export const UserInfoItem = styled.li`
   width: 440px;
   height: 52px;
-  padding: 16px;
-  margin-bottom: 14px;
+  padding: 16px;  
   border: 1px solid ${color.blackPrimaryLight};
   border-radius: 30px;
   font-size: 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
 `;

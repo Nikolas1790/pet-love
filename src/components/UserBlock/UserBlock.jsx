@@ -1,5 +1,5 @@
 import sprite from '../../img/sprite.svg';
-import { PhotoContainer, UploadPhoto, UserBlockContainer, UserInfoContainer, UserInfoItem } from './UserBlock.styled';
+import { PhotoContainer, TitleInformation, UploadPhoto, UserBlockContainer, UserInfoContainer, UserInfoItem } from './UserBlock.styled';
 
 export default function UserBlock() {
   const user = {
@@ -21,6 +21,8 @@ export default function UserBlock() {
         )}
         <UploadPhoto>Upload photo</UploadPhoto>
       </PhotoContainer>
+
+      <TitleInformation>My information</TitleInformation>
       <UserInfoContainer>
         <UserInfoItem>{user.name}</UserInfoItem>
         <UserInfoItem>{user.email}</UserInfoItem>

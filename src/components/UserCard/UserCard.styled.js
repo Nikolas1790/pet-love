@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const UserCardBlock = styled.div`
   position: relative;
   width: 520px;
-  height: 928px;
+  min-height: 674px;
   background: ${color.white};
   border-radius: 60px;
   margin-right: 32px;
