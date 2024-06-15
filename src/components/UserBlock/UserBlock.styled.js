@@ -1,4 +1,4 @@
-
+import color from "common/GlobalColors";
 import styled from "styled-components";
 
 export const UserBlockContainer = styled.div`
@@ -19,4 +19,19 @@ export const UploadPhoto = styled.p`
   font-size: 14px;
   margin-top: 8px;
   margin-bottom: 20px;
+`;
+
+export const UserInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const UserInfoItem = styled.div`
+  width: 440px;
+  height: 52px;
+  padding: 16px;
+  margin-bottom: 14px;
+  border: 1px solid ${color.blackPrimaryLight};
+  border-radius: 30px;
+  font-size: 16px;
 `;
