@@ -3,7 +3,7 @@ import LogOut from "components/Modals/LogOutModal/LogOutModal";
 import PortalModal from "components/PortalModal/PortalModal";
 import { useState } from "react";
 
-export default function LogOutBtn() {
+export default function LogOutBtn({page}) {
   const [openModal, setOpenModal] = useState(false);
 
   const handleLogout = () => {
@@ -11,7 +11,7 @@ export default function LogOutBtn() {
   };
   return (
     <div>
-      <ButtonOrange label='LOG OUT' onClick={() => handleLogout()} width='136px' />
+      <ButtonOrange label='LOG OUT' page={page} onClick={() => handleLogout()} width='136px' />
 
       <PortalModal active={openModal} setActive={setOpenModal}>
         <LogOut closeModals={() => setOpenModal()} />

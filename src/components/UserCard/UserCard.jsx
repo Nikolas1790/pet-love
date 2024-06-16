@@ -11,7 +11,7 @@ export default function UserCard() {
       <EditUserBtn />
       <UserBlock />
       <PetsBlock />
-      <LogOutBtn />
+      <LogOutBtn page='profile' />
     </UserCardBlock>    
   );
 }  

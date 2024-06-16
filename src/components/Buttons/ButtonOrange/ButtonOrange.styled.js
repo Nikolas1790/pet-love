@@ -2,9 +2,6 @@ import color from 'common/GlobalColors'
 import styled from 'styled-components'
 
 export const OrangeBtn = styled.button`
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;
@@ -13,15 +10,15 @@ export const OrangeBtn = styled.button`
   width: ${({ width }) => width || '100%'};
   border-radius: 30px;
 
-  color: ${color.white};
-  background: ${color.orangePrimary};
+  color:${({ page }) => page==='profile' ? color.orangePrimary : color.white};
+  background: ${({ page }) => page==='profile' ? color.orangeLight : color.orangePrimary};
 
   transition: all 0.25s linear;
   &:focus {
     outline: none;
   }
   &:hover {
-    background: ${color.orangePrimaryActive};
+    background: ${({ page }) => page==='profile' ? color.orangeDim : color.orangePrimaryActive};;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     outline: none;
   }
