@@ -7,7 +7,6 @@ import LogOutBtn from "components/Buttons/LogOutBtn/LogOutBtn";
 
 export default function UserNav({home}) {
   let user = useSelector(selectUser);
-
   return (
       <NavConteiner>
         {!home && <LogOutBtn />}
