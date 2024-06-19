@@ -1,19 +1,21 @@
 {
   "files": {
     "main.css": "/pet-love/static/css/main.0903f9dc.css",
-    "main.js": "/pet-love/static/js/main.bc233372.js",
+    "main.js": "/pet-love/static/js/main.a96af9ca.js",
     "static/js/47.025a6501.chunk.js": "/pet-love/static/js/47.025a6501.chunk.js",
     "static/js/882.4d5d3092.chunk.js": "/pet-love/static/js/882.4d5d3092.chunk.js",
     "static/js/907.d78b6c19.chunk.js": "/pet-love/static/js/907.d78b6c19.chunk.js",
-    "static/css/277.b3eeb63e.chunk.css": "/pet-love/static/css/277.b3eeb63e.chunk.css",
-    "static/js/277.103fc35b.chunk.js": "/pet-love/static/js/277.103fc35b.chunk.js",
+    "static/css/680.6106d558.chunk.css": "/pet-love/static/css/680.6106d558.chunk.css",
+    "static/js/680.9775d5e1.chunk.js": "/pet-love/static/js/680.9775d5e1.chunk.js",
     "static/js/143.94af8f37.chunk.js": "/pet-love/static/js/143.94af8f37.chunk.js",
-    "static/js/759.542bb110.chunk.js": "/pet-love/static/js/759.542bb110.chunk.js",
+    "static/js/759.5951aa1a.chunk.js": "/pet-love/static/js/759.5951aa1a.chunk.js",
     "static/js/537.71c63be0.chunk.js": "/pet-love/static/js/537.71c63be0.chunk.js",
     "static/js/449.f4fdc4ba.chunk.js": "/pet-love/static/js/449.f4fdc4ba.chunk.js",
     "static/js/218.3c3551bc.chunk.js": "/pet-love/static/js/218.3c3551bc.chunk.js",
-    "static/js/904.828bd96e.chunk.js": "/pet-love/static/js/904.828bd96e.chunk.js",
+    "static/js/7.37e4adb9.chunk.js": "/pet-love/static/js/7.37e4adb9.chunk.js",
+    "static/js/277.f154f787.chunk.js": "/pet-love/static/js/277.f154f787.chunk.js",
     "static/js/498.fdba77e8.chunk.js": "/pet-love/static/js/498.fdba77e8.chunk.js",
+    "static/js/695.1d2318c8.chunk.js": "/pet-love/static/js/695.1d2318c8.chunk.js",
     "static/media/cat404.png": "/pet-love/static/media/cat404.04d5d132c491208e5c92.png",
     "static/media/DesctopHomeImg.jpg": "/pet-love/static/media/DesctopHomeImg.5c5ee3b6fbe11af699d6.jpg",
     "static/media/Manrope-Bold.woff": "/pet-love/static/media/Manrope-Bold.b6c4aa0b0b711186d005.woff",
@@ -29,22 +31,24 @@
     "static/media/DesctopLoginDog.jpg": "/pet-love/static/media/DesctopLoginDog.4e1ff534c9159b51aa68.jpg",
     "index.html": "/pet-love/index.html",
     "main.0903f9dc.css.map": "/pet-love/static/css/main.0903f9dc.css.map",
-    "main.bc233372.js.map": "/pet-love/static/js/main.bc233372.js.map",
+    "main.a96af9ca.js.map": "/pet-love/static/js/main.a96af9ca.js.map",
     "47.025a6501.chunk.js.map": "/pet-love/static/js/47.025a6501.chunk.js.map",
     "882.4d5d3092.chunk.js.map": "/pet-love/static/js/882.4d5d3092.chunk.js.map",
     "907.d78b6c19.chunk.js.map": "/pet-love/static/js/907.d78b6c19.chunk.js.map",
-    "277.b3eeb63e.chunk.css.map": "/pet-love/static/css/277.b3eeb63e.chunk.css.map",
-    "277.103fc35b.chunk.js.map": "/pet-love/static/js/277.103fc35b.chunk.js.map",
+    "680.6106d558.chunk.css.map": "/pet-love/static/css/680.6106d558.chunk.css.map",
+    "680.9775d5e1.chunk.js.map": "/pet-love/static/js/680.9775d5e1.chunk.js.map",
     "143.94af8f37.chunk.js.map": "/pet-love/static/js/143.94af8f37.chunk.js.map",
-    "759.542bb110.chunk.js.map": "/pet-love/static/js/759.542bb110.chunk.js.map",
+    "759.5951aa1a.chunk.js.map": "/pet-love/static/js/759.5951aa1a.chunk.js.map",
     "537.71c63be0.chunk.js.map": "/pet-love/static/js/537.71c63be0.chunk.js.map",
     "449.f4fdc4ba.chunk.js.map": "/pet-love/static/js/449.f4fdc4ba.chunk.js.map",
     "218.3c3551bc.chunk.js.map": "/pet-love/static/js/218.3c3551bc.chunk.js.map",
-    "904.828bd96e.chunk.js.map": "/pet-love/static/js/904.828bd96e.chunk.js.map",
-    "498.fdba77e8.chunk.js.map": "/pet-love/static/js/498.fdba77e8.chunk.js.map"
+    "7.37e4adb9.chunk.js.map": "/pet-love/static/js/7.37e4adb9.chunk.js.map",
+    "277.f154f787.chunk.js.map": "/pet-love/static/js/277.f154f787.chunk.js.map",
+    "498.fdba77e8.chunk.js.map": "/pet-love/static/js/498.fdba77e8.chunk.js.map",
+    "695.1d2318c8.chunk.js.map": "/pet-love/static/js/695.1d2318c8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0903f9dc.css",
-    "static/js/main.bc233372.js"
+    "static/js/main.a96af9ca.js"
   ]
 }
