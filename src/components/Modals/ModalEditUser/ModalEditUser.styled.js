@@ -10,7 +10,42 @@ export const ModalEdit = styled.div`
   padding: 50px;
 `;
 
+export const TitleModalEdit = styled.h3`
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: ${color.blackPrimaryCard};
+  margin-bottom: 20px;
+`;
 
+export const PhotoBlock = styled.div`
+    display: flex;
+  justify-content: center; /* Center the image inside the PhotoBlock */
+  margin-bottom: 12px;
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////
 export const ErrorMessage = styled.p`
   color: red;
   font-size: 12px;
@@ -22,7 +57,6 @@ export const Input = styled.input`
 
   padding: 16px;
 
-  /* margin-top: 5px; */
   margin-bottom: 16px;
   border: 1px solid ${color.orangePrimary};
   border-radius: 30px;

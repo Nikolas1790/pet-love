@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import XButton from "components/XButton/XButton";
-import { ModalEdit, ErrorMessage, Input, Button, FormContainer } from "./ModalEditUser.styled";
+import { ModalEdit, ErrorMessage, Input, Button, FormContainer, TitleModalEdit, PhotoBlock } from "./ModalEditUser.styled";
 import axios from "axios";
+import sprite from '../../../img/sprite.svg';
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -24,6 +25,15 @@ const schema = yup.object().shape({
 });
 
 export default function ModalEditUser({ closeModals }) {
+
+  const user = {
+    avatar: null,
+    name: "Name",
+    email: "name@gmail.com|",
+    phone: "+380"
+  };
+
+
   const {
     register,
     handleSubmit,
@@ -47,6 +57,16 @@ export default function ModalEditUser({ closeModals }) {
 
   return (
     <ModalEdit>
+      <TitleModalEdit>Edit information</TitleModalEdit>
+      <PhotoBlock>
+        {user.avatar ? (
+            <img src={user.avatar} alt="User Avatar" width={110} height={110} />
+          ) : (
+            <svg width={110} height={110}>
+              <use href={`${sprite}#icon-user-without-photo`} />
+            </svg>
+          )}
+      </PhotoBlock>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormContainer>
           <Input type="text" placeholder="Avatar URL" {...register("avatar")} />
