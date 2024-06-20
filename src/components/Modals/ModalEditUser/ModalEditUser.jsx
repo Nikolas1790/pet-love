@@ -1,27 +1,16 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import XButton from "components/XButton/XButton";
-import { ModalEdit, ErrorMessage, Input, Button, FormContainer, TitleModalEdit, PhotoBlock } from "./ModalEditUser.styled";
+import { Formik, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import axios from "axios";
 import sprite from '../../../img/sprite.svg';
+import XButton from "components/XButton/XButton";
+import { ModalEdit, Button, FormContainer, TitleModalEdit, PhotoBlock, Input } from "./ModalEditUser.styled";
 
-const schema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  email: yup
-    .string()
-    .email("Invalid email format")
-    .matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, "Invalid email format")
-    .required("Email is required"),
-  avatar: yup
-    .string()
-    .matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Invalid URL format")
-    .required("Avatar URL is required"),
-  phone: yup
-    .string()
-    .matches(/^\+38\d{10}$/, "Invalid phone number format")
-    .required("Phone number is required"),
+const schema = Yup.object().shape({
+  name: Yup.string(),
+  email: Yup.string().email("Invalid email format").matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, "Invalid email format"),
+  avatar: Yup.string().matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Invalid URL format"),
+  phone: Yup.string().matches(/^\+38\d{10}$/, "Invalid phone number format"),
 });
 
 export default function ModalEditUser({ closeModals }) {
@@ -29,29 +18,25 @@ export default function ModalEditUser({ closeModals }) {
   const user = {
     avatar: null,
     name: "Name",
-    email: "name@gmail.com|",
+    email: "name@gmail.com",
     phone: "+380"
   };
 
+  const initialValues = {
+    avatar: user.avatar || '',
+    name: user.name || '',
+    email: user.email || '',
+    phone: user.phone || '',
+  };
 
-  const {
-    register,
-    handleSubmit,
-    // control,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = async (data) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      // Send data to backend
-      await axios.post("/api/update-user", data);
-      // Close modal on success
+      await axios.post("/api/update-user", values);
       closeModals();
     } catch (error) {
-      // Show error notification
       alert("Error updating user data: " + error.message);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -60,31 +45,39 @@ export default function ModalEditUser({ closeModals }) {
       <TitleModalEdit>Edit information</TitleModalEdit>
       <PhotoBlock>
         {user.avatar ? (
-            <img src={user.avatar} alt="User Avatar" width={110} height={110} />
-          ) : (
-            <svg width={110} height={110}>
-              <use href={`${sprite}#icon-user-without-photo`} />
-            </svg>
-          )}
+          <img src={user.avatar} alt="User Avatar" width={110} height={110} />
+        ) : (
+          <svg width={110} height={110}>
+            <use href={`${sprite}#icon-user-without-photo`} />
+          </svg>
+        )}
       </PhotoBlock>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <FormContainer>
-          <Input type="text" placeholder="Avatar URL" {...register("avatar")} />
-          {errors.avatar && <ErrorMessage>{errors.avatar.message}</ErrorMessage>}
+      <Formik
+        initialValues={initialValues}
+        validationSchema={schema}
+        onSubmit={handleSubmit}
+      >
+        {({ isSubmitting }) => (
+          <Form>
+            <FormContainer>
+              <Input type="text" name="avatar" placeholder="Avatar URL" />
+              <ErrorMessage name="avatar" component="div" />
 
-          <Input type="text" placeholder="Name" {...register("name")} />
-          {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
+              <Input type="text" name="name" placeholder="Name" />
+              <ErrorMessage name="name" component="div" />
 
-          <Input type="email" placeholder="Email" {...register("email")} />
-          {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+              <Input type="email" name="email" placeholder="Email" />
+              <ErrorMessage name="email" component="div" />
 
-          <Input type="text" placeholder="Phone" {...register("phone")} />
-          {errors.phone && <ErrorMessage>{errors.phone.message}</ErrorMessage>}
+              <Input type="text" name="phone" placeholder="Phone" />
+              <ErrorMessage name="phone" component="div" />
 
-          <Button type="submit">Save</Button>
-        </FormContainer>
-      </form>
+              <Button type="submit" disabled={isSubmitting}>Save</Button>
+            </FormContainer>
+          </Form>
+        )}
+      </Formik>
       <XButton closeModals={closeModals} />
     </ModalEdit>
   );
-};
+}

@@ -1,5 +1,6 @@
 import color from "common/GlobalColors";
 import styled from "styled-components";
+import {  Field } from "formik";
 
 export const ModalEdit = styled.div`
   position: relative;
@@ -51,7 +52,7 @@ export const ErrorMessage = styled.p`
   font-size: 12px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   width: 380px;
   height: 52px;
 
