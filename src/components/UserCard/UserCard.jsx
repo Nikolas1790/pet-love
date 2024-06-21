@@ -5,7 +5,6 @@ import UserBlock from "components/UserBlock/UserBlock";
 import { UserCardBlock } from "./UserCard.styled";
 
 export default function UserCard() {
-
   return (
     <UserCardBlock>      
       <EditUserBtn />

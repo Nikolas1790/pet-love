@@ -20,8 +20,8 @@ export const TitleModalEdit = styled.h3`
 `;
 
 export const PhotoBlock = styled.div`
-    display: flex;
-  justify-content: center; /* Center the image inside the PhotoBlock */
+  display: flex;
+  justify-content: center; 
   margin-bottom: 12px;
 `;
 
