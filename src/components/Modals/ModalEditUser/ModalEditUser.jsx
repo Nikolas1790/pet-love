@@ -4,7 +4,8 @@ import * as Yup from "yup";
 import axios from "axios";
 import sprite from '../../../img/sprite.svg';
 import XButton from "components/XButton/XButton";
-import { ModalEdit, Button, FormContainer, TitleModalEdit, PhotoBlock, Input } from "./ModalEditUser.styled";
+import { ModalEdit,  FormContainer, TitleModalEdit, PhotoBlock, Input } from "./ModalEditUser.styled";
+import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
 
 const schema = Yup.object().shape({
   name: Yup.string(),
@@ -72,7 +73,8 @@ export default function ModalEditUser({ closeModals }) {
               <Input type="text" name="phone" placeholder="Phone" />
               <ErrorMessage name="phone" component="div" />
 
-              <Button type="submit" disabled={isSubmitting}>Save</Button>
+              {/* <Button type="submit" disabled={isSubmitting}>Save</Button> */}
+              <ButtonOrange label='Save' type="submit" />
             </FormContainer>
           </Form>
         )}
