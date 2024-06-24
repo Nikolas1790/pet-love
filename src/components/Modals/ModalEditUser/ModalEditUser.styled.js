@@ -68,19 +68,6 @@ export const Input = styled(Field)`
 `;
 
 
-// export const Button = styled.button`
-//   background-color: ${color.primary};
-//   color: white;
-//   padding: 10px 20px;
-//   border: none;
-//   border-radius: 5px;
-//   cursor: pointer;
-
-//   &:hover {
-//     background-color: ${color.primaryDark};
-//   }
-// `;
-
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;

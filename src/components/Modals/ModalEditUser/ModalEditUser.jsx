@@ -73,7 +73,6 @@ export default function ModalEditUser({ closeModals }) {
               <Input type="text" name="phone" placeholder="Phone" />
               <ErrorMessage name="phone" component="div" />
 
-              {/* <Button type="submit" disabled={isSubmitting}>Save</Button> */}
               <ButtonOrange label='Save' type="submit" />
             </FormContainer>
           </Form>
