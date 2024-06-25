@@ -55,16 +55,11 @@ export const ErrorMessage = styled.p`
 export const Input = styled(Field)`
   width: 380px;
   height: 52px;
-
   padding: 16px;
-
   margin-bottom: 16px;
   border: 1px solid ${color.orangePrimary};
   border-radius: 30px;
 
-  /* &:not(:last-child) {
-    margin-bottom: 16px;
-  } */
 `;
 
 
