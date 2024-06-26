@@ -18,13 +18,4 @@ export const HeaderBlock = styled.div`
   border-radius: ${({ home }) => home ? '60px 60px 0 0' : '0'};
   color: ${({ home }) => home ? color.white : color.blackPrimary};
 
-
-  /* @media (min-width: 768px) {
-    width: 768px;
-    padding: 15px 32px; 
-  }
-  @media (min-width: 1440px) {
-    width: 1440px;
-    padding: 15px 40px 15px 20px; 
-  } */
 `
