@@ -1,6 +1,13 @@
 
 export default function MyNotices() {
   return (
-      <div>qqqqqqqqqqqqqqqqqq</div>    
+      <div>
+        <div>
+          dddddddddddddddd
+        </div>
+        <div>
+          rrrrrrrrrrrrrrrr
+        </div>
+      </div>    
   );
 }  
