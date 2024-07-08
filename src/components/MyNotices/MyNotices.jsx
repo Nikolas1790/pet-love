@@ -4,10 +4,10 @@ export default function MyNotices() {
       <div>
         <div>
         <div>
-          tttttttttttttt
+          1111111111111111111111111
         </div>
         <div>
-          rwwwwwwwwwwwwwww
+          2222222222222222222222222
         </div>
         </div>
       </div>    
