@@ -62,11 +62,6 @@ export default function Notices() {
     }));
   }, [dispatch, currentPage, keyword, selectedCategory, selectedType, selectedGender, locationId, sortCriteria.price, sortCriteria.popular]);
 
-  // useEffect(() => {
-  //   console.log('noticesData', noticesData);
-  // }, [noticesData]);
-
-  
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
