@@ -37,7 +37,7 @@ export default function SearchLocality({  onLocationChange  }) {
 
   return (
     <StyledSelect
-    classNamePrefix="react-select"
+     classNamePrefix="react-select"
       value={null}
       inputValue={inputValue}
       onInputChange={handleInputChange}
@@ -45,7 +45,6 @@ export default function SearchLocality({  onLocationChange  }) {
       options={options}
       placeholder="Location"
       isClearable
-      // styles={customStyles}
     />
   );
 };
