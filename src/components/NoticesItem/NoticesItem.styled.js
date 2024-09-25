@@ -20,7 +20,7 @@ export const ImgCard = styled.img`
   object-fit: cover; 
 `
 export const InfMainContainer = styled.div`
-  min-height: 194px; /* Пример минимальной высоты */
+  min-height: 194px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;

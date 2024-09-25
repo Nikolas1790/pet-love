@@ -18,7 +18,7 @@ export default function NoticesFilter ({ setCurrentPage, setKeyword, setSelected
 
   const handleResetFiltersWithSignal = () => {
     handleResetFilters();
-    setResetSignal(prev => !prev);  // Toggle the signal
+    setResetSignal(prev => !prev);
   };
 
 return (

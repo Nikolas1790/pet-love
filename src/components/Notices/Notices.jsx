@@ -22,7 +22,6 @@ export default function Notices() {
 
   const anyFilterSelected = selectedCategory || selectedType || selectedGender || locationId || sortCriteria.popular !== null || sortCriteria.price !== null || keyword;
 
-
   const handleResetFilters = () => {
     setSelectedCategory("");
     setSelectedType("");
@@ -41,7 +40,6 @@ export default function Notices() {
     }
     return article.toLowerCase();
   };
-
 
   useEffect(() => {
     const category = getCategory(selectedCategory);
@@ -76,7 +74,6 @@ export default function Notices() {
     <ContentContainer>
       <NoticesContainer>
         <Title>Find your favorite pet</Title>
-
         <NoticesFilter 
           setCurrentPage={setCurrentPage} 
           setKeyword={setKeyword} 
@@ -88,7 +85,6 @@ export default function Notices() {
           anyFilterSelected={anyFilterSelected}
           handleResetFilters={handleResetFilters}
         />
-
 
         <div>
           <NoticesList noticesData={noticesData} />    

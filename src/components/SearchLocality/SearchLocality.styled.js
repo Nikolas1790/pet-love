@@ -57,8 +57,6 @@ export const StyledSelect = styled(Select)`
 }
 `;
 
-
-
 export const Button = styled.button`
   margin: 10px;
   padding: 10px 20px;
