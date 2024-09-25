@@ -11,6 +11,5 @@ export const TitleMyPets = styled.h4`
   font-size: 18px;
   font-weight: 700;
   line-height: 1.33;
-  margin-bottom: 20px;
   margin-right: auto; 
 `;
