@@ -7,7 +7,6 @@ const color = {
   blackPrimaryLight: 'rgba(38, 38, 38, 0.15)',
   blackPrimarySuperLight: 'rgba(38, 38, 38, 0.05)',
 
-
   blackPrimaryCard:' rgb(43, 43, 42)',
 
   orangePrimary: 'rgb(246, 184, 61)',

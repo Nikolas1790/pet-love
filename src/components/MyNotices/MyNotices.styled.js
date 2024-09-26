@@ -9,19 +9,22 @@ export const Container = styled.div`
 
 export const Tabs = styled.div`
   display: flex;
+  gap: 8px;
   margin-bottom: 32px;
 `;
 
-export const Tab = styled.button`
-  padding: 12px 20px;
-  background-color: ${({ isActive }) => (isActive ? color.orangePrimary : '#FFF')};
-  color: ${({ isActive }) => (isActive ? '#FFF' : '#000')};
-
+export const Tab = styled(({ isActive, ...props }) => <button {...props} />)`
+  padding: 14px;
+  width: 142px;
+  background-color: ${({ isActive }) => (isActive ? color.orangePrimary : color.white)};
+  color: ${({ isActive }) => (isActive ? color.white : color.blackPrimary)};
+  border-radius: 30px;
   cursor: pointer;
+  transition: all 0.25s linear;
 
-  /* &:hover {
-    background-color: #f0f0f0;
-  } */
+  &:hover {
+    background-color: ${color.orangePrimaryActive};
+  }
 `;
 
 export const NoticesList = styled.div`

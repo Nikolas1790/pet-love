@@ -16,7 +16,6 @@ export default function MyNotices() {
   return (
     <Container>
       <Tabs>
-      {/* <ButtonOrange label='My favorite pets' width='142px' onClick={() => handleTabClick('favorites')} /> */}
         <Tab isActive={activeTab === 'favorites'} onClick={() => handleTabClick('favorites')}>
           My favorite pets
         </Tab>

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const CustomBtn = styled(NavLink)`
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
