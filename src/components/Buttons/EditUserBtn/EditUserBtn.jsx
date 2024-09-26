@@ -14,7 +14,7 @@ export default function EditUserBtn() {
   return (
     <EditUserBtnContainer>
       <EditUserButton onClick={() => handleLogout()}>
-        <svg width={50} height={50}>
+        <svg width={38} height={38}>
           <use href={`${sprite}#icon-edit`} />
         </svg>
       </EditUserButton>  

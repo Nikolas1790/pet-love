@@ -4,7 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 643px;
   min-height: 674px;
-  background: yellow;
+  padding-top: 40px;
+  /* background: yellow; */
 `;
 
 export const Tabs = styled.div`
@@ -23,7 +24,7 @@ export const Tab = styled(({ isActive, ...props }) => <button {...props} />)`
   transition: all 0.25s linear;
 
   &:hover {
-    background-color: ${color.orangePrimaryActive};
+    background-color: ${({ isActive }) => (isActive ? color.orangePrimaryActive : color.orangeDim)};
   }
 `;
 
