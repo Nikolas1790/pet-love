@@ -11,7 +11,6 @@ export const UserCardBlock = styled.div`
   border-radius: 60px;
   margin-right: 32px;
   padding: 40px;
-
 `;
 
 export const WrapperLogoutBtn = styled.div`

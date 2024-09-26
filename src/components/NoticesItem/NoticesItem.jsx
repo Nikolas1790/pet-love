@@ -41,7 +41,7 @@ export default function NoticesItem({card}) {
   };
 
   const getFirstName = (fullName) => {
-    return fullName.split(" ")[0]; // Разделяем строку по пробелу и берем первое слово
+    return fullName.split(" ")[0]; 
   };
 
   // Створюємо масив об'єктів з label та value
