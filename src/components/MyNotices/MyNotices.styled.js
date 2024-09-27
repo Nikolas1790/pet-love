@@ -33,3 +33,13 @@ export const NoticesList = styled.div`
   flex-direction: column;
   gap: 16px;
 `;
+
+export const NoFavoritesText = styled.p`
+  text-align: center;
+  width: 478px;
+  margin: 148px auto 0 auto;
+`;
+
+export const NoFavoritesTextSpan = styled.span`
+  color: ${color.orangePrimary};
+`;
