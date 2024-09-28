@@ -1,38 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
 import sprite from '../../../img/sprite.svg';
 import XButton from "components/XButton/XButton";
 import { ModalEdit,  FormContainer, TitleModalEdit, PhotoBlock, Input } from "./ModalEditUser.styled";
 import ButtonOrange from "components/Buttons/ButtonOrange/ButtonOrange";
+import { useDispatch, useSelector } from "react-redux";
+import { currentFull, updateUser } from "../../../redux/auth/operationsAuth";
+import { selectUser } from "../../../redux/auth/selectorAuth";
 
 const schema = Yup.object().shape({
   name: Yup.string(),
   email: Yup.string().email("Invalid email format").matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, "Invalid email format"),
-  avatar: Yup.string().matches(/^https?:\/\/.*\.(?:png|jpg|jpeg|gif|bmp|webp)$/, "Invalid URL format"),
+  avatar: Yup.mixed().required("File is required").test("fileFormat", "Invalid file format", 
+    value => value && value instanceof File && /\.(png|jpg|jpeg|gif|bmp|webp)$/.test(value.name)),
+
   phone: Yup.string().matches(/^\+38\d{10}$/, "Invalid phone number format"),
 });
 
 export default function ModalEditUser({ closeModals }) {
+  const dispatch = useDispatch();
 
-  const user = {
-    avatar: null,
-    name: "Name",
-    email: "name@gmail.com",
-    phone: "+380"
-  };
+  const user  = useSelector(selectUser);
+  useEffect(() => {
+    if (!user || !user.name) {
+      dispatch(currentFull());
+    }
+  }, [dispatch, user]);
+  console.log(user)
 
   const initialValues = {
-    avatar: user.avatar || '',
-    name: user.name || '',
-    email: user.email || '',
-    phone: user.phone || '',
+    avatar: user?.avatar || '',
+    name: user?.name || '',
+    email: user?.email || '',
+    phone: user?.phone || '',
   };
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      await axios.post("/api/update-user", values);
+      const formData = new FormData();
+      formData.append("avatar", values.avatar);
+      formData.append("name", values.name);
+      formData.append("email", values.email);
+      formData.append("phone", values.phone);
+ 
+      await dispatch(updateUser(formData)); 
       closeModals();
     } catch (error) {
       alert("Error updating user data: " + error.message);
@@ -57,11 +69,21 @@ export default function ModalEditUser({ closeModals }) {
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={handleSubmit}
+        enableReinitialize
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, setFieldValue  }) => (
           <Form>
             <FormContainer>
-              <Input type="text" name="avatar" placeholder="Avatar URL" />
+              <Input
+                type="file"
+                name="avatar"
+                accept="image/*"
+                onChange={(event) => {
+                  const file = event.currentTarget.files[0];
+                  setFieldValue("avatar", file);
+                }}
+                 placeholder="Avatar URL"
+              />
               <ErrorMessage name="avatar" component="div" />
 
               <Input type="text" name="name" placeholder="Name" />

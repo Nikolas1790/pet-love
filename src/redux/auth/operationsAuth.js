@@ -96,3 +96,15 @@ export const currentFull = createAsyncThunk(
     }
   }
 );
+
+export const updateUser = createAsyncThunk(
+  'users/update',
+  async (userData, thunkAPI) => {
+    try {
+      const response = await axios.patch('/users/current/edit', userData);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

@@ -10,6 +10,7 @@ export default function UserCard() {
       <EditUserBtn />
       <UserBlock />
       <AddPetComponent />
+      
       <WrapperLogoutBtn>
         <LogOutBtn page='profile' />
       </WrapperLogoutBtn>
