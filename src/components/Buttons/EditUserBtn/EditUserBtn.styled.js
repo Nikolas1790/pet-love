@@ -4,7 +4,8 @@ import styled from "styled-components";
 export const EditUserBtnContainer = styled.div`
   position: absolute;
   top: 40px;
-  right: 40px;
+  /* right: 40px; */
+  ${({ position }) => (position === 'left' ? 'left: 40px;' : 'right: 40px;')}
 `;
 
 export const EditUserButton = styled.button`
