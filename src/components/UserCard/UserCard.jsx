@@ -1,4 +1,3 @@
-// import EditUserBtn from "components/Buttons/EditUserBtn/EditUserBtn";
 import LogOutBtn from "components/Buttons/LogOutBtn/LogOutBtn";
 import UserBlock from "components/UserBlock/UserBlock";
 import { UserCardBlock, WrapperLogoutBtn } from "./UserCard.styled";
@@ -11,7 +10,6 @@ export default function UserCard() {
     <UserCardBlock>   
       <EditUserBtnRight />   
       <EditUserBtnLeft />
-      {/* <EditUserBtn /> */}
       <UserBlock />
       <AddPetComponent />
       
