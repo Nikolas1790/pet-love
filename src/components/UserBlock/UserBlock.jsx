@@ -1,14 +1,17 @@
+import { useSelector } from 'react-redux';
 import sprite from '../../img/sprite.svg';
 import { PhotoContainer, TitleInformation, UploadPhoto, UserBlockContainer, UserInfoContainer, UserInfoItem } from './UserBlock.styled';
+import { selectUser } from '../../redux/auth/selectorAuth';
 
 export default function UserBlock() {
-  const user = {
-    avatar: null,
-    name: "Name",
-    email: "name@gmail.com|",
-    phone: "+380"
-  };
-
+  const user = useSelector(selectUser);
+  // const user = {
+  //   avatar: null,
+  //   name: "Name",
+  //   email: "name@gmail.com|",
+  //   phone: "+380"
+  // };
+console.log(user)
   return (
     <UserBlockContainer>
       <PhotoContainer>

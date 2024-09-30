@@ -13,7 +13,7 @@ const schema = Yup.object().shape({
   name: Yup.string(),
   email: Yup.string().email("Invalid email format").matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, "Invalid email format"),
   avatar: Yup.mixed().required("File is required").test("fileFormat", "Invalid file format", 
-    value => value && value instanceof File && /\.(png|jpg|jpeg|gif|bmp|webp)$/.test(value.name)),
+  value => value && value instanceof File && /\.(png|jpg|jpeg|gif|bmp|webp)$/.test(value.name)),
 
   phone: Yup.string().matches(/^\+38\d{10}$/, "Invalid phone number format"),
 });
@@ -82,7 +82,6 @@ export default function ModalEditUser({ closeModals }) {
                   const file = event.currentTarget.files[0];
                   setFieldValue("avatar", file);
                 }}
-                 placeholder="Avatar URL"
               />
               <ErrorMessage name="avatar" component="div" />
 
