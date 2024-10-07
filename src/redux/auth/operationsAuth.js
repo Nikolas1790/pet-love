@@ -101,6 +101,7 @@ export const updateUser = createAsyncThunk(
   'users/update',
   async (userData, thunkAPI) => {
     try {
+      console.log(userData)
       const response = await axios.patch('/users/current/edit', userData);
       return response.data;
     } catch (error) {

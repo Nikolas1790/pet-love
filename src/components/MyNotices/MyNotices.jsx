@@ -8,7 +8,7 @@ export default function MyNotices() {
   const [activeTab, setActiveTab] = useState('favorites');
   let favoritesList = useSelector(selectFavoritePets);
   // let noticesInf = useSelector(selectNoticesInf);
-  console.log(favoritesList)
+  // console.log(favoritesList)
 
   // console.log(noticesInf)
 

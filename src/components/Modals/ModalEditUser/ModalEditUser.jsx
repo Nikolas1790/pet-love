@@ -12,8 +12,14 @@ import { selectUser } from "../../../redux/auth/selectorAuth";
 const schema = Yup.object().shape({
   name: Yup.string(),
   email: Yup.string().email("Invalid email format").matches(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, "Invalid email format"),
-  avatar: Yup.mixed().required("File is required").test("fileFormat", "Invalid file format", 
-  value => value && value instanceof File && /\.(png|jpg|jpeg|gif|bmp|webp)$/.test(value.name)),
+  avatar: Yup.mixed().test(
+    "fileFormat",
+    "Invalid file format",
+    value => {
+      if (!value || typeof value === 'string') return true; 
+      return value instanceof File && /\.(png|jpg|jpeg|gif|bmp|webp)$/.test(value.name);
+    }
+  ),
 
   phone: Yup.string().matches(/^\+38\d{10}$/, "Invalid phone number format"),
 });
@@ -27,7 +33,7 @@ export default function ModalEditUser({ closeModals }) {
       dispatch(currentFull());
     }
   }, [dispatch, user]);
-  console.log(user)
+  // console.log(user)
 
   const initialValues = {
     avatar: user?.avatar || '',
@@ -39,11 +45,16 @@ export default function ModalEditUser({ closeModals }) {
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       const formData = new FormData();
-      formData.append("avatar", values.avatar);
       formData.append("name", values.name);
       formData.append("email", values.email);
       formData.append("phone", values.phone);
- 
+  
+      if (values.avatar && typeof values.avatar !== 'string') {
+        formData.append("avatar", values.avatar);
+      }
+
+ console.log(...formData);
+
       await dispatch(updateUser(formData)); 
       closeModals();
     } catch (error) {
@@ -80,7 +91,9 @@ export default function ModalEditUser({ closeModals }) {
                 accept="image/*"
                 onChange={(event) => {
                   const file = event.currentTarget.files[0];
-                  setFieldValue("avatar", file);
+                  if (file) {
+                    setFieldValue("avatar", file);
+                  }
                 }}
               />
               <ErrorMessage name="avatar" component="div" />
