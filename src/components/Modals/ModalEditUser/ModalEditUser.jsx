@@ -33,7 +33,6 @@ export default function ModalEditUser({ closeModals }) {
       dispatch(currentFull());
     }
   }, [dispatch, user]);
-  // console.log(user)
 
   const initialValues = {
     avatar: user?.avatar || '',
