@@ -26,10 +26,6 @@ export const PhotoBlock = styled.div`
 `;
 
 
-
-
-
-
 export const ErrorMessage = styled.p`
   color: red;
   font-size: 12px;
@@ -42,7 +38,6 @@ export const Input = styled(Field)`
   margin-bottom: 16px;
   border: 1px solid ${color.orangePrimary};
   border-radius: 30px;
-
 `;
 
 
