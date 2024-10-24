@@ -11,10 +11,6 @@ export const Modal = styled.div`
   background: ${color.white};
   border-radius: 30px;
   padding: 80px ;
-
-  /* @media (min-width: 768px) {
-    width: 536px;
-  } */
 `;
 
 export const Cat = styled.img`
