@@ -5,7 +5,6 @@ export const Container = styled.div`
   width: 643px;
   min-height: 674px;
   padding-top: 40px;
-  /* background: yellow; */
 `;
 
 export const Tabs = styled.div`
