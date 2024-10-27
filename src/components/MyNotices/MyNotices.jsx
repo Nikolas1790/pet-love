@@ -7,10 +7,6 @@ import { selectFavoritePets } from '../../redux/petLove/selector';
 export default function MyNotices() {
   const [activeTab, setActiveTab] = useState('favorites');
   let favoritesList = useSelector(selectFavoritePets);
-  // let noticesInf = useSelector(selectNoticesInf);
-  // console.log(favoritesList)
-
-  // console.log(noticesInf)
 
   const handleTabClick = (tab) => {
     setActiveTab(tab); 
