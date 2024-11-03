@@ -28,8 +28,7 @@ export const StyledSelect = styled(Select)`
 }
 
 .react-select__input {
-  /* margin: 0;
-  padding: 0; */
+  /* margin: 0; */
 }
 
 .react-select__placeholder {
