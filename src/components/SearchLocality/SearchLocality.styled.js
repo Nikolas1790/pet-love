@@ -42,7 +42,6 @@ export const StyledSelect = styled(Select)`
 }
 
 .react-select__dropdown-indicator {
-  /* padding: 4px; */
   display: none;
 }
 
