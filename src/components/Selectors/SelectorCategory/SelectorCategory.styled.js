@@ -35,9 +35,7 @@ export const DropdownButton = styled.button`
   /* &:first-letter {
     text-transform: uppercase;
   } */
-  /* @media (min-width: 768px) {
-    width: 224px;
-  } */
+
 `;
 
 export const DropdownList = styled.ul`
