@@ -50,7 +50,6 @@ export const DropdownList = styled.ul`
   /* max-height: 160px;  */
 
   padding: 14px;
-  /* margin: 0; */
   width: 100%;
   border-radius: 15px;
 `;
