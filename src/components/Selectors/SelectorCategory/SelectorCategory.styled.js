@@ -59,7 +59,6 @@ export const DropdownItem = styled.li`
   font-weight: 500;
   line-height: 1.25;
   color: ${color.blackPrimarySixtyPercebt};
-  /* padding:  3px 0; */
   cursor: pointer;  
 
   &:hover {
