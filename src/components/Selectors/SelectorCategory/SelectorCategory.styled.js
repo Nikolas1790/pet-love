@@ -47,8 +47,7 @@ export const DropdownList = styled.ul`
 
   display: ${({ open }) => (open ? 'block' : 'none')};
   height: 160px; 
-  /* max-height: 160px;  */
-
+  
   padding: 14px;
   width: 100%;
   border-radius: 15px;
