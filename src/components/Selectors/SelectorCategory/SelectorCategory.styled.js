@@ -31,11 +31,6 @@ export const DropdownButton = styled.button`
 
   width: 200px;
   color: ${color.blackPrimary};
- 
-  /* &:first-letter {
-    text-transform: uppercase;
-  } */
-
 `;
 
 export const DropdownList = styled.ul`
