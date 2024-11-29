@@ -7,9 +7,7 @@ position: relative;
 
 export const SearchInput = styled.input`
   padding: 14px;
-  /* display: flex;
-    align-self: center;
-  justify-content: center; */
+
   font-size: 16px;
   width: ${({width}) => width || '230px' };
   border: ${({ border }) => border || `1px solid ${color.blackPrimaryLight}`};
