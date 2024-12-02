@@ -52,9 +52,6 @@ export default function SelectorCategory ({ setSelectedCategory, resetSignal }){
   };
 
 
-
-
-
   return (
     <Dropdown ref={dropdownRef}>
       <DropdownSvg onClick={toggleDropdown}>

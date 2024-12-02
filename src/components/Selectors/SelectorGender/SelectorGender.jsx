@@ -32,12 +32,9 @@ export default function SelectorGender ({ setSelectedGender, resetSignal }){
     setSelectedArticle('');
   }, [setSelectedArticle]);
 
-  // Trigger reset when resetSignal changes
   useEffect(() => {
     setSelectedArticle();
   }, [resetSignal, resetSelectorGender ]);
-
-
 
 
 
