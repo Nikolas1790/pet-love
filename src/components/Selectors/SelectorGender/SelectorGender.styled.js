@@ -32,9 +32,7 @@ export const DropdownButton = styled.button`
   width: 190px;
   color: ${color.blackPrimary};
  
-  /* &:first-letter {
-    text-transform: uppercase;
-  } */
+
   /* @media (min-width: 768px) {
     width: 224px;
   } */
