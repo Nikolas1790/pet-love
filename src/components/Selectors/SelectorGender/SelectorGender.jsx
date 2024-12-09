@@ -48,7 +48,6 @@ export default function SelectorGender ({ setSelectedGender, resetSignal }){
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
   const handleItemClick = (category) => {
-    // console.log(category)
     const capitalizedCategory = capitalizeFirstLetter(category);
     setSelectedArticle(capitalizedCategory);
     setSelectedGender(category)
