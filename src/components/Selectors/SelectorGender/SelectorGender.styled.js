@@ -32,7 +32,6 @@ export const DropdownButton = styled.button`
   width: 190px;
   color: ${color.blackPrimary};
  
-
   /* @media (min-width: 768px) {
     width: 224px;
   } */
@@ -50,7 +49,6 @@ export const DropdownList = styled.ul`
   /* max-height: 160px;  */
 
   padding: 14px;
-  /* margin: 0; */
   width: 100%;
   border-radius: 15px;
 `;
