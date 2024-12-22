@@ -32,8 +32,7 @@ export const DropdownButton = styled.button`
   width: 190px;
   color: ${color.blackPrimary};
  
-  /* @media (min-width: 768px) {
-    width: 224px;
+  /* @media (min-width: 768px) {   
   } */
 `;
 
