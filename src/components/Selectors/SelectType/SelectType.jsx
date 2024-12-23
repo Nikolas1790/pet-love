@@ -30,7 +30,6 @@ export default function SelectorType ({setSelectedType, resetSignal}){
     setSelectedArticle('');
   }, [setSelectedArticle]);
 
-  // Trigger reset when resetSignal changes
   useEffect(() => {
     resetSelectorType();
   }, [resetSignal, resetSelectorType ]);
