@@ -33,7 +33,7 @@ export const SmsImg = styled.img`
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start; /* Выравниваем элементы по центру горизонтально */
+  align-items: start;
   justify-content: center; /* Выравниваем элементы по центру вертикально */
   width: 592px;
   height: 654px;
