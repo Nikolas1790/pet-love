@@ -34,7 +34,7 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center; /* Выравниваем элементы по центру вертикально */
+  justify-content: center;
   width: 592px;
   height: 654px;
   padding: 20px 84px;  
