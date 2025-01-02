@@ -17,7 +17,6 @@ export default function News() {
   useEffect(() => {
     dispatch(newsInf({ page: currentPage, limit: 6, keyword }));
   }, [dispatch, currentPage, keyword]);
-  // console.log(newsData)
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
