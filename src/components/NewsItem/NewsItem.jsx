@@ -1,14 +1,13 @@
 import { ArticleContainer, DateArticle, ImgContainer, LinkContainer, LinkNewPageArticle, TextArticle, TitleArticle } from "./NewsItem.styled";
 
 export default function NewsItem({article}) {  
-    // Функция для форматирования даты
-    function formatDate(dateString) {
-      const date = new Date(dateString);
-      const day = date.getDate().toString().padStart(2, '0');
-      const month = (date.getMonth() + 1).toString().padStart(2, '0'); 
-      const year = date.getFullYear();
-      return `${day}/${month}/${year}`;
-    }
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); 
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
 
   return (
     <ArticleContainer>
