@@ -61,7 +61,6 @@ export const LinkNewPageArticle = styled.a`
   font-size: 16px;
   color: ${color.orangePrimary};
   position: relative;
-  /* text-decoration: none;  */
 
   &::after {
     content: '';
