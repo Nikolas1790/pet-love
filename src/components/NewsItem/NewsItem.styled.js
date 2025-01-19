@@ -75,7 +75,7 @@ export const LinkNewPageArticle = styled.a`
 
   &:hover::after {
     background-color: ${color.orangePrimaryActive}; 
-    width: 0%; /* Это заставит линию исчезать плавно */
+    width: 0%; 
   }
 
   &:focus {
