@@ -37,7 +37,6 @@ export const ClearButton = styled.button`
   top: 15px;
   right: 36px;
   stroke: ${color.blackPrimary};
-    /* background-color: #dc3545; */
 
   &:hover {
     /* background-color: #c82333; */
