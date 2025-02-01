@@ -39,3 +39,15 @@ export default function FriendsItem({friend}) {
     </ItemContainer> 
   );
 }  
+
+
+
+
+
+
+
+
+
+
+
+

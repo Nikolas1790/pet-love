@@ -30,10 +30,7 @@ export const DropdownButton = styled.button`
   padding: 14px;
 
   width: 190px;
-  color: ${color.blackPrimary};
- 
-  /* @media (min-width: 768px) {   
-  } */
+  color: ${color.blackPrimary}; 
 `;
 
 export const DropdownList = styled.ul`
