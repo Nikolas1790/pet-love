@@ -11,7 +11,7 @@ export default function SelectorGender ({ setSelectedGender, resetSignal }){
   const dropdownRef = useRef();
   const dispatch = useDispatch();
   const sex = useSelector(selectSexList);
-
+///
   useEffect(() => {
     dispatch(gendersInf())
   }, [dispatch]);
