@@ -12,13 +12,10 @@ export default function RadioButtons({ setSortCriteria, resetSignal }) {
     setSortCriteria({ popular: null, price: null });
   }, [setSortCriteria]);
 
-  // Trigger reset when resetSignal changes
   useEffect(() => {
     resetRadioButtons();
   }, [resetSignal, resetRadioButtons ]);
 
-
-  
   const handlePopularChange = () => {
     setIsPopular(true);
     setSortCriteria((prev) => ({ ...prev, popular: false }));
