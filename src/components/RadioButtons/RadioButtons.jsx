@@ -3,7 +3,7 @@ import { RadioGroup, RadioContainer, Label, StyledRadioButton, SvgX } from './Ra
 import sprite from '../../img/sprite.svg';
 
 export default function RadioButtons({ setSortCriteria, resetSignal }) {
-  const [isPopular, setIsPopular] = useState(null); // true for Popular, false for Unpopular
+  const [isPopular, setIsPopular] = useState(null); 
   const [isExpensive, setIsExpensive] = useState(null); // true for Expensive, false for Cheap
 
   const resetRadioButtons = useCallback(() => {
