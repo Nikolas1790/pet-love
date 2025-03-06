@@ -4,7 +4,7 @@ import sprite from '../../img/sprite.svg';
 
 export default function RadioButtons({ setSortCriteria, resetSignal }) {
   const [isPopular, setIsPopular] = useState(null); 
-  const [isExpensive, setIsExpensive] = useState(null); // true for Expensive, false for Cheap
+  const [isExpensive, setIsExpensive] = useState(null); 
 
   const resetRadioButtons = useCallback(() => {
     setIsPopular(null);
