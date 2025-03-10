@@ -36,8 +36,6 @@ export default function RadioButtons({ setSortCriteria, resetSignal }) {
     setSortCriteria((prev) => ({ ...prev, price: true }));
   };
 
-
-
   return (
     <RadioContainer>
       <RadioGroup>
