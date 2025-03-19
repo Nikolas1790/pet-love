@@ -15,7 +15,7 @@ export const ImgContainer = styled.img`
   border-radius: 15px; 
   background: ${color.orangeLight};
   margin-bottom: 28px;
-   object-fit: cover; /* Додаємо object-fit для обрізання зображення */
+  object-fit: cover; /* Додаємо object-fit для обрізання зображення */
 `
 
 export const TitleArticle = styled.h3`
@@ -32,15 +32,13 @@ export const TitleArticle = styled.h3`
   height: 2.6em; /* Высота, рассчитанная как line-height * количество строк */
 `
 
-
-
 export const TextArticle = styled.p`
   font-size: 16px;
   margin-bottom: 28px;
 
   display: -webkit-box;
   -webkit-line-clamp: 4; /* Ограничивает количество строк до 4 */
-  -webkit-box-orient: vertical; /* Ориентация контейнера */
+  -webkit-box-orient: vertical; 
   overflow: hidden;
   text-overflow: ellipsis; /* Добавляет многоточие, если текст обрезается */
   height: 5em; /* Высота, рассчитанная как line-height * количество строк */
