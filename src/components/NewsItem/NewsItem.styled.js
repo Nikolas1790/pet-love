@@ -37,7 +37,7 @@ export const TextArticle = styled.p`
   margin-bottom: 28px;
 
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* Ограничивает количество строк до 4 */
+  -webkit-line-clamp: 4; 
   -webkit-box-orient: vertical; 
   overflow: hidden;
   text-overflow: ellipsis;
