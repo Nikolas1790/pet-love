@@ -41,7 +41,7 @@ export const TextArticle = styled.p`
   -webkit-box-orient: vertical; 
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 5em; /* Высота, рассчитанная как line-height * количество строк */
+  height: 5em; 
 `
 
 
