@@ -25,7 +25,7 @@ export const TitleArticle = styled.h3`
   margin-bottom: 14px;
 
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Ограничивает количество строк до 2 */
+  -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis; /* Добавляет многоточие, если текст обрезается */
