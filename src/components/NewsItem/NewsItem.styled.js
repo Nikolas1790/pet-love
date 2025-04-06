@@ -28,7 +28,7 @@ export const TitleArticle = styled.h3`
   -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis; /* Добавляет многоточие, если текст обрезается */
+  text-overflow: ellipsis; 
   height: 2.6em; /* Высота, рассчитанная как line-height * количество строк */
 `
 
