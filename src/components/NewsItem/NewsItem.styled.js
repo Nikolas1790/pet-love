@@ -29,7 +29,7 @@ export const TitleArticle = styled.h3`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis; 
-  height: 2.6em; /* Высота, рассчитанная как line-height * количество строк */
+  height: 2.6em;
 `
 
 export const TextArticle = styled.p`
