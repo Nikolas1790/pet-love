@@ -15,7 +15,7 @@ export const ImgContainer = styled.img`
   border-radius: 15px; 
   background: ${color.orangeLight};
   margin-bottom: 28px;
-  object-fit: cover; /* Додаємо object-fit для обрізання зображення */
+  object-fit: cover; 
 `
 
 export const TitleArticle = styled.h3`
