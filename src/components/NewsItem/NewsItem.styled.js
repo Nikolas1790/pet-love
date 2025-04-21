@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const ArticleContainer = styled.li`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   width: 361px;
   height: 476px;
   /* background: pink; */
