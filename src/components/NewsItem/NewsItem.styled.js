@@ -6,7 +6,6 @@ export const ArticleContainer = styled.li`
   flex-direction: column;
   width: 361px;
   height: 476px;
-  /* background: pink; */
 `
 export const ImgContainer = styled.img`
   width: 361px;
