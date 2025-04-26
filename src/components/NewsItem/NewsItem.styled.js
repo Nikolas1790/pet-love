@@ -62,7 +62,6 @@ export const LinkNewPageArticle = styled.a`
     content: '';
     position: absolute;
     width: 100%;
-    /* width: 10px;; */
     height: 1px;
     left: 0;
     bottom: 0px;
